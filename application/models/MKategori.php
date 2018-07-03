@@ -1,5 +1,5 @@
 <?php
-class Mperusahaan extends CI_Model
+class Mkategori extends CI_Model
 {
 	// function __construct(){
         
@@ -7,6 +7,11 @@ class Mperusahaan extends CI_Model
  //        // $this->load->database();
  //    }
 
+
+    function show_kategori(){
+        $data =  $this->db->get('_category');
+        return $data->result_array();
+    }
     
 }
 
