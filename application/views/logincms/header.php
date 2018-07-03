@@ -23,7 +23,7 @@
                             <input type="text" class="form-control" placeholder="Find your stuff...">
                         </div>
                     </li>
-                    <li class="dropdown notifications">
+                    <!-- <li class="dropdown notifications">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="icon-bell"></i><span class="label-count">5</span></a>
                         <ul class="dropdown-menu pullDown">
                             <li class="header">New Message</li>
@@ -34,7 +34,7 @@
                                             <div class="media">
                                                 <img class="media-object" src="assets/logincms/images/xs/avatar5.jpg" alt="">
                                                 <div class="media-body">
-                                                    <span class="name">Alexander <span class="time">13min ago</span></span>
+                                                    <span class="name">Otret <span class="time">13min ago</span></span>
                                                     <span class="message">Meeting with Shawn at Stark Tower by 8 o'clock.</span>                                        
                                                 </div>
                                             </div>
@@ -88,8 +88,8 @@
                             </li>
                             <li class="footer"> <a href="javascript:void(0);">View All</a> </li>
                         </ul>
-                    </li>
-                    <li class="dropdown task hidden-sm"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="icon-flag"></i>
+                    </li> -->
+                    <!-- <li class="dropdown task hidden-sm"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="icon-flag"></i>
                         <span class="label-count">5</span>
                         </a>
                         <ul class="dropdown-menu pullDown">
@@ -156,7 +156,7 @@
                         </ul>
                     </li>
                     <li><a href="chat.html" ><i class="icon-speech"></i></a></li>
-                    <li><a href="javascript:void(0);" class="fullscreen hidden-sm" data-provide="fullscreen"><i class=" icon-size-fullscreen"></i></a></li>
+                    <li><a href="javascript:void(0);" class="fullscreen hidden-sm" data-provide="fullscreen"><i class=" icon-size-fullscreen"></i></a></li> -->
                     <li class="dropdown profile">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <img class="rounded-circle" src="assets/logincms/images/profile_av.jpg" alt="User">
