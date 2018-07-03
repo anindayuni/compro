@@ -9,7 +9,7 @@
                             <a href="index.html"><i class="icon-home"></i><span>Dashboard</span></a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" class="menu-toggle"><i class="icon-grid"></i><span>Kategori</span></a>
+                            <a href="<?php echo base_url('logincms/kategori'); ?>" class="menu-toggle"><i class="icon-grid"></i><span>Kategori</span></a>
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle"><i class="icon-layers"></i><span>Artikel</span></a>

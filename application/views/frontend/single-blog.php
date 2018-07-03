@@ -109,7 +109,7 @@
                 doloremque facere impedit in ipsum laudantium magni maiores odit pariatur placeat qui quis
             recusandae sunt veniam, vitae voluptatibus?</p>
         </div>
-        <div class="single-post-meta text-uppercase">
+        <!-- <div class="single-post-meta text-uppercase">
 
             <div class="single-tag text-uppercase">
                 <a href="#">featured</a>
@@ -119,9 +119,11 @@
                 <a href="#">WordPress</a>
                 <a href="#">zinnias</a>
             </div>
-        </div>
+        </div> -->
     </article>
-    <div class="user-profile media">
+    <hr/>
+    <br/>
+    <!-- <div class="user-profile media">
         <div class="author-avatar pull-left">
             <img class="img-circle" alt="" src="<?= base_url('assets/frontend/images/author-profile.png'); ?>"></div>
 
@@ -140,7 +142,7 @@
                     <a href="#"><i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="related-posts">
             <h3 class="common-title text-uppercase text-center">You Might Also Like</h3>
             <div class="row">

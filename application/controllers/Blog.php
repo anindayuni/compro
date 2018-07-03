@@ -10,6 +10,11 @@ class Blog extends MY_Controller
 
 	function index()
 	{
+		$this->front_page('frontend/blog-list');
+	}
+
+	function single()
+	{
 		$this->front_page('frontend/single-blog');
 	}
 }

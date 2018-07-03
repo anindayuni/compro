@@ -41,7 +41,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav text-uppercase">
-                        <li class="dropdown">
+                        <!-- <li class="dropdown">
                             <a href="index-2.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">Home</a>
                             <ul class="dropdown-menu">
@@ -53,9 +53,9 @@
                                 <li><a href="large-than-list.html">1st Large Then List</a></li>
                                 <li><a href="list-layout.html">List Layout</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                                aria-haspopup="true" aria-expanded="false">Features</a>
+                        </li> -->
+                        <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                aria-haspopup="true" aria-expanded="false">About Us</a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -77,13 +77,12 @@
                                 <li><a href="typography.html">Typography</a></li>
                                 <li><a href="404.html">404 Page</a></li>
                             </ul>
-                        </li>
-                        <li><a href="lifestyle.html">Lifestyle</a></li>
-                        <li><a href="archive.html">Travel</a></li>
-                        <li><a href="food.html">Food</a></li>
-                        <li><a href="about.html">About me</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-
+                        </li> -->
+                        <li><a href="lifestyle.html">Home</a></li>
+                        <li><a href="archive.html">About Us</a></li> 
+                        <li><a href="<?= base_url('blog'); ?>">Berita</a></li>
+                        <li><a href="archive.html">Gallery</a></li>
+                        <li><a href="food.html">Contact Us</a></li>
                     </ul>
                 </div>
             </nav>
