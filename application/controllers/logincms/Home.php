@@ -10,8 +10,7 @@ class Home extends MY_Controller
 	// 	# code...
 	// }
 	function index(){
-		$this->render_page('backend/home');
-
+		$this->render_page('logincms/home');
 	}
 }
 
