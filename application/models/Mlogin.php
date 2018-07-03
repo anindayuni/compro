@@ -6,8 +6,8 @@ class Mlogin extends CI_Model {
     {
 
         $username = $input['username'];
-        $password = md5($input['password']);
-        // $password = md5(md5($input['password']));
+        // $password = md5($input['password']);
+        $password = md5(md5($input['password']));
 
         $this->db->where('user_login', $username);
         $this->db->where('user_password', $password);

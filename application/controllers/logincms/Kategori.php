@@ -10,9 +10,9 @@ class Kategori extends MY_Controller
 		parent::__construct();
 		$this->load->model('Mkategori');
 	}
-	public function(){
-		
-		$this->render_page('backend/home');
+	public function index(){
+
+		$this->render_page('backend/kategori');
 	}
 
 	
