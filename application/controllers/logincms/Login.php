@@ -1,58 +1,108 @@
 <?php
-class Login extends CI_Controller
+
+session_start(); //we need to start session in order to access it through CI
+
+Class Login extends CI_Controller
 {
-	
-	function __construct()
-	{
+
+	public function __construct() {
 		parent::__construct();
-		// $this->load->model('Mperusahaan');
+
+		// Load database
+		$this->load->model('Mlogin');
 	}
 
-	function index()
-	{
-		$data['hasil'] ="";
-		$data['title'] = 'Company Profile';
-		// $data = array(
-		// 	'captcha' => $this->recaptcha->getWidget(),
-  //           'script_captcha' => $this->recaptcha->getScriptTag(), // javascript recaptcha ditaruh di head
-  //       );
+// Show login page
+	public function index() {
+		$this->load->view('backend/login');
+	}
 
-		$this->form_validation->set_rules('AdmUsr', ' ', 'trim|required');
-		$this->form_validation->set_rules('AdmPswd', ' ', 'trim|required');
+// Show registration page
+// 	public function user_registration_show() {
+// 		$this->load->view('registration_form');
+// 	}
 
-		// $recaptcha = $this->input->post('g-recaptcha-response');
-		// $response = $this->recaptcha->verifyResponse($recaptcha);
+// // Validate and store registration data in database
+// 	public function new_user_registration() {
+
+// // Check validation for user input in SignUp form
+// 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+// 		$this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
+// 		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+// 		if ($this->form_validation->run() == FALSE) {
+// 			$this->load->view('registration_form');
+// 		} else {
+// 			$data = array(
+// 				'user_name' => $this->input->post('username'),
+// 				'user_email' => $this->input->post('email_value'),
+// 				'user_password' => $this->input->post('password')
+// 			);
+// 			$result = $this->login_database->registration_insert($data);
+// 			if ($result == TRUE) {
+// 				$data['message_display'] = 'Registration Successfully !';
+// 				$this->load->view('login_form', $data);
+// 			} else {
+// 				$data['message_display'] = 'Username already exist!';
+// 				$this->load->view('registration_form', $data);
+// 			}
+// 		}
+// 	}
+
+// Check for user login process
+	public function user_login_process() {
+
+		$this->form_validation->set_rules('AdmUsr', 'Username', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('AdmPswd', 'Password', 'trim|required|xss_clean');
 
 		if ($this->form_validation->run() == FALSE) {
-			$data['hasil'] = "";
-		}
+			if(isset($this->session->userdata['logged_in'])){
+				$this->load->render_page('backend/home');
+			}else{
+				$this->load->view('backend/login');
+			}
+		} 
 		else {
-			$cek = $this->Mperusahaan->auth($this->input->post());
+			$data = array(
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password')
+			);
+			$result = $this->login_database->login($data);
+			if ($result == TRUE) {
 
-			if ($cek=='berhasil') {
-				$data['hasil'] = "berhasil";
-			}
-			else
-			{
-				$data['hasil'] = "gagal";
+				$username = $this->input->post('username');
+				$result = $this->login_database->read_user_information($username);
+				if ($result != false) {
+					$session_data = array(
+						'username' => $result[0]->user_name,
+						'email' => $result[0]->user_email,
+					);
+// Add user data in session
+					$this->session->set_userdata('logged_in', $session_data);
+					$this->load->view('admin_page');
+				}
+			} else {
+				$data = array(
+					'error_message' => 'Invalid Username or Password'
+				);
+				$this->load->view('login_form', $data);
 			}
 		}
-
-		$this->load->view('logincms/login');
 	}
 
-	// function logout()
-	// {
-	// 	$user_data = $this->session->all_userdata();
-	// 	foreach ($user_data as $key => $value) {
-	// 		if ($key != 'session_id' && $key != 'ip_address' && $key != 'user_agent' && $key != 'last_activity') {
-	// 			$this->session->unset_userdata($key);
-	// 		}
-	// 	}
-	// 	$this->session->sess_destroy();
+// Logout from admin page
+	public function logout() {
 
-	// 	echo "<script>alert('Anda berhasil logout!');location='".base_url("mastercms")."'</script>";
+// Removing session data
+		$sess_array = array(
+			'username' => ''
+		);
+		$this->session->unset_userdata('logged_in', $sess_array);
+		$data['message_display'] = 'Successfully Logout';
+		$this->load->view('login_form', $data);
+	}
 
-	// }
+}
+
+
 }
 ?>

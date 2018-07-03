@@ -9,11 +9,11 @@
 <title>:: Infinity :: Sign In</title>
 <!-- Favicon-->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="<?php echo base_url('assets/logincms/plugins/bootstrap/css/bootstrap.min.css') ?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/bootstrap/css/bootstrap.min.css') ?>">
 
 <!-- Custom Css -->
-<link rel="stylesheet" href="<?php echo base_url('assets/logincms/css/main.css') ?>">    
-<link rel="stylesheet" href="<?php echo base_url('assets/logincms/css/color_skins.css') ?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/css/main.css') ?>">    
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/css/color_skins.css') ?>">
 </head>
 <body class="theme-purple">
 <div class="authentication">
@@ -51,10 +51,10 @@
     <div id="particles-js"></div>
 </div>
 <!-- Jquery Core Js -->
-<script src="<?php echo base_url('assets/logincms/bundles/libscripts.bundle.js') ?>"></script>
-<script src="<?php echo base_url('assets/logincms/bundles/vendorscripts.bundle.js') ?>"></script> <!-- Lib Scripts Plugin Js -->
+<script src="<?php echo base_url('assets/backend/bundles/libscripts.bundle.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/bundles/vendorscripts.bundle.js') ?>"></script> <!-- Lib Scripts Plugin Js -->
 
-<script src="<?php echo base_url('assets/logincms/plugins/particles-js/particles.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/logincms/plugins/particles-js/particles.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/plugins/particles-js/particles.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/plugins/particles-js/particles.js') ?>"></script>
 </body>
 </html>
