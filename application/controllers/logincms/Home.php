@@ -11,8 +11,8 @@ class Home extends MY_Controller
 	// }
 	function index(){
 		$this->render_page('backend/home');
-
 	}
+	
 }
 
 ?>
