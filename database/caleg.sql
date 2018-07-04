@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2018 at 11:23 AM
+-- Generation Time: Jul 03, 2018 at 12:20 PM
 -- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -48,13 +48,21 @@ CREATE TABLE `_article` (
 CREATE TABLE `_category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(50) DEFAULT NULL,
-  `category_photo` text,
+  `category_photo` varchar(100) DEFAULT NULL,
   `category_date` date DEFAULT NULL,
   `category_status` tinyint(1) DEFAULT NULL,
   `category_type` enum('static','blog','gallery','slider') DEFAULT NULL,
   `category_sub_category` varchar(225) DEFAULT NULL,
   `category_url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `_category`
+--
+
+INSERT INTO `_category` (`category_id`, `category_name`, `category_photo`, `category_date`, `category_status`, `category_type`, `category_sub_category`, `category_url`) VALUES
+(1, 'Tentang Kami', 'tentangkami.png', '2018-07-03', 1, 'static', NULL, 'http://localhost/github/company-profile/tentang-kami'),
+(2, 'Contact Us', 'contact-us.jpg', '2018-07-03', 1, 'static', NULL, 'http://localhost/github/company-profile/contact-us');
 
 -- --------------------------------------------------------
 
@@ -115,7 +123,7 @@ CREATE TABLE `_user` (
 --
 
 INSERT INTO `_user` (`user_id`, `user_email`, `user_login`, `user_password`) VALUES
-(1, 'a@a.com', 'aa', 'aa');
+(2, 'root@logincms.com', 'root@logincms.com', 'c3284d0f94606de1fd2af172aba15bf3');
 
 --
 -- Indexes for dumped tables
@@ -173,13 +181,13 @@ ALTER TABLE `_article`
 -- AUTO_INCREMENT for table `_category`
 --
 ALTER TABLE `_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `_user`
 --
 ALTER TABLE `_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

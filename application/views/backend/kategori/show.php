@@ -27,6 +27,14 @@
                 <div class="card">
                     <div class="header">
                         <h2><strong> Data Kategori</strong></h2>
+                        <ul class="header-dropdown">
+                            <li>
+                                <a href="<?php echo base_url('logincms/kategori/add'); ?>"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Tambah Kategori</button></a>
+                            </li>
+                            <li>
+                                &nbsp;
+                            </li>
+                        </ul>
                     </div>
                     <div class="body table-responsive">
                         <table class="table table-hover">
@@ -45,35 +53,20 @@
                                     <th scope="row"><?php echo $key+1; ?></th>
                                     <td><?php echo $kat['category_name']; ?></td>
                                     <td><img src="<?php echo base_url('assets/backend/images/').$kat['category_photo']; ?>" height="50" width="50"></td>
-                                    <td><?php echo $kat['category_status']; ?></td>
+                                    <td>
+                                        <?php 
+                                        if ($kat['category_status'] == 1){
+                                            echo "On";
+                                        }
+                                        else{
+                                            echo "Off";
+                                        } 
+                                        ?>    
+                                    </td>
                                     <td><?php echo $kat['category_type']; ?></td>
                                     
                                 </tr>
                             <?php endforeach; ?>
-                                <!-- <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Larry</td>
-                                    <td>Jellybean</td>
-                                    <td>@lajelly</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Larry</td>
-                                    <td>Kikat</td>
-                                    <td>@lakitkat</td>
-                                </tr> -->
                             </tbody>
                         </table>
                     </div>
