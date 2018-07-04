@@ -12,7 +12,7 @@
                             <a href="<?php echo base_url('logincms/kategori'); ?>" class="menu-toggle"><i class="icon-grid"></i><span>Kategori</span></a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" class="menu-toggle"><i class="icon-layers"></i><span>Artikel</span></a>
+                            <a href="<?php echo base_url('logincms/artikel'); ?>"><i class="icon-layers"></i><span>Artikel</span></a>
                         </li>
                         <!-- <li class="header">FORMS, CHARTS, TABLES</li> -->
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a>

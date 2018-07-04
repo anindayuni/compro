@@ -24,33 +24,33 @@ class Mkategori extends CI_Model
         return $enums;
     }
 
-    public function upload(){
-        $config['upload_path'] = 'base_url(assets/backend/images)';
-        $config['allowed_types'] = 'jpg|png|jpeg';
-        $config['max_size']  = '2048';
-        $config['remove_space'] = TRUE;
+    // public function upload(){
+    //     $config['upload_path'] = '../../gambar/';
+    //     $config['allowed_types'] = 'jpg|png|jpeg';
+    //     $config['max_size']  = '2048';
+    //     $config['remove_space'] = TRUE;
 
-        $this->load->library('upload', $config); // Load konfigurasi uploadnya
-        if($this->upload->do_upload('input_gambar')){ // Lakukan upload dan Cek jika proses upload berhasil
-          // Jika berhasil :
-          $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
-          return $return;
-        }else{
-          // Jika gagal :
-          $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
-          return $return;
-      }
-    }
+    //     $this->load->library('upload', $config); // Load konfigurasi uploadnya
+    //     if($this->upload->do_upload('category_photo')){ // Lakukan upload dan Cek jika proses upload berhasil
+    //       // Jika berhasil :
+    //       $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+    //       return $return;
+    //     }else{
+    //       // Jika gagal :
+    //       $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
+    //       return $return;
+    //     }
+    // }
 
     public function save($input){
-        $data = array(
-          'deskripsi'=>$this->input->post('input_deskripsi'),
-          'nama_file' => $upload['file']['file_name'],
-          'ukuran_file' => $upload['file']['file_size'],
-          'tipe_file' => $upload['file']['file_type']
-      );
+      //   $data = array(
+      //     'deskripsi'=>$this->input->post('input_deskripsi'),
+      //     'nama_file' => $upload['file']['file_name'],
+      //     'ukuran_file' => $upload['file']['file_size'],
+      //     'tipe_file' => $upload['file']['file_type']
+      // );
 
-        $this->db->insert('_category', $data);
+        $this->db->insert('_category', $input);
     }
     
 }
