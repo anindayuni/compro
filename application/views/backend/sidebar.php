@@ -6,7 +6,7 @@
                     <ul class="list">
                         <li class="header">MAIN</li>
                         <li class="active open">
-                            <a href="index.html"><i class="icon-home"></i><span>Dashboard</span></a>
+                            <a href="<?php echo base_url('logincms/home') ?>"><i class="icon-home"></i><span>Dashboard</span></a>
                         </li>
                         <li>
                             <a href="<?php echo base_url('logincms/kategori'); ?>" class="menu-toggle"><i class="icon-grid"></i><span>Kategori</span></a>
@@ -17,7 +17,7 @@
                         <!-- <li class="header">FORMS, CHARTS, TABLES</li> -->
                         <li><a href="javascript:void(0);" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a>
                         </li>
-                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="icon-settings"></i><span>Setting</span></a>
+                        <li><a href="<?php echo base_url('logincms/settings'); ?>" class="menu-toggle"><i class="icon-settings"></i><span>Setting</span></a>
                             <!-- <ul class="ml-menu">                        
                                 <li><a href="table-normal.html">Normal Tables</a></li>
                                 <li><a href="table-jquerydatatable.html">Jquery Datatables</a></li>

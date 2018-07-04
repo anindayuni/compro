@@ -126,15 +126,15 @@ function showPromptMessage() {
 
 function showAjaxLoaderMessage() {
     swal({
-        title: "Ajax request example",
-        text: "Submit to run ajax request",
+        title: "Anda Yakin Ingin Menghapus Data Ini?",
+        text: "",
         type: "info",
         showCancelButton: true,
         closeOnConfirm: false,
         showLoaderOnConfirm: true,
     }, function () {
         setTimeout(function () {
-            swal("Ajax request finished!");
+            swal("Data Berhasil Dihapus!");
         }, 2000);
     });
 }

@@ -29,17 +29,10 @@
                     <div class="header">
                         <h2><strong>Edit Data</strong> Artikel</h2>
                     </div>
-                    <!-- <?php  
-                        echo "<pre>";
-                        print_r($status);
-                        echo "</pre>";
-                    ?> -->
                     
                     <div class="body">
                         <form class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data">
                             <?php foreach ($artikel as $key => $art): ?>
-                            <!-- <input type="hidden" name="article_create_date" value="<?php echo date('Y-m-d'); ?>"> -->
-                            <!-- <input type="hidden" name="article_id" value="<?php echo $art['article_id']; ?>"> -->
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama / Judul Artikel</label>
