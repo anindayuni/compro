@@ -13,7 +13,7 @@
                                     <li class="breadcrumb-item active">Settings</li>
                                 </ul>
                             </div>            
-                            <div class="col-lg-6 col-md-4 col-sm-12 text-right">
+                            <!-- <div class="col-lg-6 col-md-4 col-sm-12 text-right">
                                 <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm">
                                     <div class="sparkline" data-type="bar" data-width="97%" data-height="28px" data-bar-Width="2" data-bar-Spacing="5" data-bar-Color="#706bd1">3,2,6,5,9,8,7,9,5,1,3,5,7,4,6</div>
                                     <small>Page Views</small>
@@ -23,7 +23,7 @@
                                     <small>Visitors</small>
                                 </div>
                                 <button class="btn btn-primary btn-round btn-simple float-right hidden-xs m-l-10">Create New</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                                 <tr>
                                     <th>Aspek</th>
                                     <th>Keterangan</th>
-                                    <th>Button</th>
+                                    <th>Button  </th>
 
                                 </tr>
                             </thead>
@@ -69,34 +69,49 @@ foreach ($settings as $s) {
 ?>
                                 <tr>
                                     <th>Maintenace</th>
-                                    <td><?php echo $s->settings_maintenance;?></td>
-                             		<td>Button</td>
-                                </tr>
+                                    <td><?php 
+
+                                    if ($s->settings_maintenance==1) {
+                                        echo 'aktif';
+                                    }
+                                    else {
+                                        echo 'non aktif';
+                                    }
+
+
+                                    ;?></td>
+                                    <td><a href="<?php echo base_url('logincms/settings/update_maintenance') ?>"><button class="btn btn-raised btn-primary btn-round" data-type="basic">Update</button></a></td>                                </tr>
                                  <tr>
                                     <th>Instagram</th>
                                     <td><?php echo $s->settings_instagram; ?></td>
-                             		<td>Update</td>
+                             		
+                                    <td><a href="<?php echo base_url('logincms/settings/update_instagram') ?>"><button class="btn btn-raised btn-primary btn-round" data-type="basic">Update</button></a></td>
                                 </tr>
 
 
                                                                  <tr>
                                     <th>Facebook</th>
                                     <td><?php echo $s->settings_facebook; ?></td>
-                             		<td>Update</td>
+                             	
+                                    <td><a href="<?php echo base_url('logincms/settings/update_facebook') ?>"><button class="btn btn-raised btn-primary btn-round" data-type="basic">Update</button></a></td>
                                 </tr>
 
                                 
                                                                  <tr>
                                     <th>Twitter</th>
                                     <td><?php echo $s->settings_twitter ?></td>
-                             		<td>Update</td>
+                             
+                                    <td><a href="<?php echo base_url('logincms/settings/update_twitter') ?>"><button class="btn btn-raised btn-primary btn-round" data-type="basic">Update</button></a></td>
                                 </tr>
 
-                                
+
+
                                                                  <tr>
                                     <th>Youtube</th>
                                     <td><?php echo $s->settings_youtube ?></td>
-                             		<td>Update</td>
+                                    <!-- <td>Update</td> -->
+                                    <td><a href="<?php echo base_url('logincms/settings/update_youtube') ?>"><button class="btn btn-raised btn-primary btn-round" data-type="basic">Update</button></a></td>
+
                                 </tr>
 	
 
