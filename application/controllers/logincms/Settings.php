@@ -113,14 +113,14 @@ class Settings extends MY_Controller
 
 
 
-	public function update_youtube_action_ori($id){
-		$this->db->set('settings_youtube',$this->input->get('youtube_name'));
-		$this->db->where('settings_id',$id);
-		$this->db->update('_settings');
-		$data['settings']=$this->Msettings->list();
+	// public function update_youtube_action_ori($id){
+	// 	$this->db->set('settings_youtube',$this->input->get('youtube_name'));
+	// 	$this->db->where('settings_id',$id);
+	// 	$this->db->update('_settings');
+	// 	$data['settings']=$this->Msettings->list();
 
-		$this->render_page('backend/settings/list',$data);
-	}
+	// 	$this->render_page('backend/settings/list',$data);
+	// }
 
 }
 
