@@ -34,6 +34,13 @@ class Martikel extends CI_Model
 
 		return $ambil->result_array();
 	}
+
+	function edit($input, $article_id){
+		$this->db->where('_article.article_id', $article_id);
+		$this->db->update('_article', $input);
+
+	}
+
 }
 
 ?>

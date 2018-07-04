@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="date" class="tanggal form-control" placeholder="" name="article_publish_date" required="required">
+                                        <input type="date" class="form-control" placeholder="" name="article_publish_date" required="required">
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('.tanggal').datepicker({
-            format: "dd-mm-yyyy",
+            format: "yyyy-mm-dd",
             autoclose:true
         });
     });

@@ -39,6 +39,7 @@
                         <form class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data">
                             <?php foreach ($artikel as $key => $art): ?>
                             <!-- <input type="hidden" name="article_create_date" value="<?php echo date('Y-m-d'); ?>"> -->
+                            <!-- <input type="hidden" name="article_id" value="<?php echo $art['article_id']; ?>"> -->
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama / Judul Artikel</label>
@@ -102,7 +103,7 @@
                                     <div class="card">
                                         <div class="body">
                                             <textarea id="ckeditor" name="article_content">
-
+                                                <?php echo $art['article_content']; ?>
                                             </textarea>
                                         </div>
                                     </div>
