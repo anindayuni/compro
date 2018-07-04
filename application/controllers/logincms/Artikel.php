@@ -19,7 +19,19 @@ class Artikel extends MY_Controller
 
 	function add(){
 		$data['kategori'] = $this->Martikel->kategori();
+		if ($this->input->post()) {
+			$input = $this->input->post();
+			$this->Martikel->save($input);
+			redirect('logincms/artikel', 'refresh');
+		}
+
 		$this->render_page('backend/artikel/add', $data);
+	}
+
+	function edit($article_id){
+		$data['kategori'] = $this->Martikel->kategori();
+		$data['artikel'] = $this->Martikel->artikel_by_id($article_id);
+		$this->render_page('backend/artikel/edit', $data);
 	}
 }
 
