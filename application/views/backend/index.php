@@ -13,10 +13,14 @@
 
 <!-- Bootstrap Material Datetime Picker Css -->
 <link href="<?php echo base_url('assets/backend/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') ?>" rel="stylesheet" />
+
+<!-- Datepicker -->
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css') ?>">
+
 <!-- Bootstrap Select Css -->
 <link href="<?php echo base_url('assets/backend/plugins/bootstrap-select/css/bootstrap-select.css') ?>" rel="stylesheet" />
 <link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css') ?>">
-<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+<!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"> -->
 
 <!-- Custom Css -->
 <link rel="stylesheet" href="<?php echo base_url('assets/backend/css/main.css'); ?>">
@@ -50,7 +54,12 @@
 <script src="<?php echo base_url('assets/backend/js/pages/forms/form-validation.js') ?>"></script>
 
 <!-- File upload -->
-<script src="assets/plugins/dropzone/dropzone.js"></script> <!-- Dropzone Plugin Js --> 
+<script src="<?php echo base_url('assets/backend/plugins/dropzone/dropzone.js') ?>"></script> <!-- Dropzone Plugin Js --> 
 
+
+
+<!-- CKeditor  -->
+<script src="<?php echo base_url('assets/backend/plugins/ckeditor/ckeditor.js') ?>"></script>  
+<script src="<?php echo base_url('assets/backend/js/pages/forms/editors.js') ?>"></script>  
 </body>
 </html>

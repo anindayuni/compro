@@ -6,11 +6,11 @@
                     <div class="body block-header">
                         <div class="row">
                             <div class="col-lg-6 col-md-8 col-sm-12">
-                                <h2>Form Input Data Kategori</h2>
+                                <h2>Form Input Data Artikel</h2>
                                 <ul class="breadcrumb p-l-0 p-b-0 ">
                                     <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i> Home</a></li>
-                                    <li class="breadcrumb-item"><a href="">Kategori</a></li>
-                                    <li class="breadcrumb-item active">Tambah Kategori</li>
+                                    <li class="breadcrumb-item"><a href="">Artikel</a></li>
+                                    <li class="breadcrumb-item active">Tambah Artikel</li>
                                 </ul>
                             </div>            
                             <div class="col-lg-6 col-md-4 col-sm-12 text-right">
@@ -27,7 +27,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Tambah Data</strong> Kategori</h2>
+                        <h2><strong>Tambah Data</strong> Artikel</h2>
                         <!-- <ul class="header-dropdown">
                             <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
@@ -52,11 +52,31 @@
                             <input type="hidden" name="category_date" value="<?php echo date('Y-m-d'); ?>">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Nama Kategori</label>
+                                    <label>Nama / Judul Artikel</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Masukkan Nama Kategori" name="category_name" required="required">
+                                        <input type="text" class="form-control" placeholder="Masukkan Nama Kategori" name="article_title" required="required">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Create Date</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="" name="article_create_date" required="required" disabled="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Publish Date</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <input type="date" class="tanggal form-control" placeholder="" name="article_publish_date" required="required">
                                     </div>
                                 </div>
                             </div>
@@ -67,35 +87,40 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <select class="form-control show-tick" name="category_status">
-                                        <option value="0">Off</option>
-                                        <option value="1">On</option>
+                                        <option value="0">Non Aktif</option>
+                                        <option value="1">Aktif</option>
                                     </select>
                                 </div> 
                             </div><br>
 
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Type</label>
+                                    <label>Kategori</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <select class="form-control show-tick" name="category_type">
-                                        <?php foreach ($type as $key => $tp): ?>
-                                        <option value="<?php echo $tp; ?>"><?php echo $tp; ?></option>
+                                        <?php foreach ($kategori as $key => $kat): ?>
+                                        <option value="<?php echo $kat['category_id']; ?>"><?php echo $kat['category_name']; ?></option>
                                     <?php endforeach; ?>
                                     </select>
                                 </div> 
                             </div><br>
 
-                             <div class="row clearfix">
+                            <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label >Foto</label>
+                                    <label>Konten</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                        <input type="file" name="category_photo">
+                                    <div class="card">
+                                        <div class="body">
+                                            <textarea id="ckeditor">
+
+                                            </textarea>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </div> 
+                            </div><br>
+                             
 
                             <div class="row clearfix">
                                 <div class="col-sm-8 offset-sm-2">
@@ -114,3 +139,12 @@
         
     </div>
 </section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.tanggal').datepicker({
+            format: "dd-mm-yyyy",
+            autoclose:true
+        });
+    });
+</script>
