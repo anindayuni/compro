@@ -30,36 +30,36 @@
 
 
 
-        <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="card">
-                    <div class="header">
+                        <div class="row clearfix">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card">
+                                    <div class="header">
 
-                        <?php 
+<?php 
 
-                        if ($status['settings_maintenance']==0) {
-                            $hasil_status='non aktif';
-                        }
+if ($status['settings_maintenance']==0) {
+    $hasil_status='non aktif';
+}
 
-                        else {
-                           $hasil_status='aktif';   
-                       }
-                       ?>
-                       <h2><strong>Update</strong> Maintenance <?php echo $status['settings_maintenance'].' - '.$hasil_status ; ?>
-                   </div>
+else {
+ $hasil_status='aktif';   
+}
+ ?>
+                                        <h2><strong>Update</strong> Maintenance <?php echo $status['settings_maintenance'].' - '.$hasil_status ; ?>
+                                        </div>
 
-                   <!-- form  -->
-
-
-                   <div class="body">
+                                        <!-- form  -->
 
 
+                                        <div class="body">
 
-                    <div class="row clearfix">
-                        <div class="col-sm-6 col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <form action="<?php echo base_url('logincms/settings/update_maintenance_action/1') ?>" method="get" >
-                                    <?php echo form_dropdown($name = 'maintenance_name', $options = array(''=>$hasil_status,'1'=>'aktif','0'=>'non aktif'), $selected = array(''), $extra = 'class="form-control show-tick"') ?>
+
+
+                                            <div class="row clearfix">
+                                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <form action="<?php echo base_url('logincms/settings/update_maintenance_action/1') ?>" method="get" >
+                                                            <?php echo form_dropdown($name = 'maintenance_name', $options = array(''=>$hasil_status,'1'=>'aktif','0'=>'non aktif'), $selected = array(''), $extra = 'class="form-control show-tick"') ?>
                                                          <!-- <select class="form-control show-tick" tabindex="-98">
                                                             <option value="">-- Please select --</option>
                                                             <option value="1">Aktif</option>
