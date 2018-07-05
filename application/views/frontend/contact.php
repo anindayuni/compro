@@ -17,44 +17,37 @@
                 dolor sit meat. Lorem ipsum dolor sits mate, consenteth sad pacing editor, sed diam, not my
                 ear
             mod temper causal etc just do to Dolores et sebum. Stet Clarita.</p>
-            <p>
-                incident cut laborer et Dolores Magna aliquot eat, sed diam voluptuary. At every es et
-                accused
-                eat just to do colors et ea album. Stet Clarita and gun Berg run, no sea Taki Mata sanctum
-                est
-                Lorem ipsum dolor sit mate.
-            </p>
         </div>
         <div id="respond" class="comment-respond">
             <h3 id="reply-title" class="comment-reply-title">Contact form </h3>
-
-            <form id="contact-form" class="contact-form" name="contact-form" method="post" action="#">
+            <?php echo $this->session->flashdata('msg'); ?>
+            <form class="contact-form" method="post">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <input type="text" class="form-control" required="required" placeholder="Name"
-                            name="your-name">
+                            name="contact_us_name" autofocus="autofocus">
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6">  
                         <div class="form-group">
                             <input type="email" class="form-control" required="required"
                             placeholder="Email Id"
-                            name="your-email">
+                            name="contact_us_email">
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <input type="text" class="form-control" required="required"
+                            <input type="text" class="form-control"  maxlength="100" required="required"
                             placeholder="Subject"
-                            name="Subject">
+                            name="contact_us_subject">
                         </div>
                     </div>
 
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <textarea name="Comment" id="message" required="required" class="form-control" rows="7"
-                            placeholder="Message"></textarea>
+                            <textarea name="contact_us_message" id="message" required="required" class="form-control" rows="7"
+                            placeholder="Your Message"></textarea>
 
                         </div>
                     </div>
