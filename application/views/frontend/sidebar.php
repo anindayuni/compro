@@ -68,7 +68,7 @@
             <ul>
                 <?php foreach ($category as $key => $cat): ?>
                     <li class="cat-item"><a
-                        href="<?= base_url().$cat['category_url']; ?>"><?= $cat['category_name']; ?></a> <span
+                        href="<?= base_url().'category/'.$cat['category_url']; ?>"><?= $cat['category_name']; ?></a> <span
                         class="post_count pull-right"> (<?= $cat['jml']; ?> )</span>
                     </li>
                 <?php endforeach ?>

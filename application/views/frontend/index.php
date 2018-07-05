@@ -80,7 +80,7 @@
                         </li> -->
                         <li><a href="<?= base_url(); ?>">Home</a></li>
                         <li><a href="archive.html">About Us</a></li> 
-                        <li><a href="<?= base_url('blog'); ?>">Berita</a></li>
+                        <li><a href="<?= base_url('news'); ?>">Berita</a></li>
                         <li><a href="archive.html">Gallery</a></li>
                         <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
                     </ul>
