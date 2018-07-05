@@ -3,15 +3,15 @@
 class Home extends MY_Controller
 {
 	
-	// function __construct(argument)
-	// {
-	// 	# code...
-	// }
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('MKategori');
+	}
 
 	function index()
 	{
-		// $this->load->view('frontend/slider');
-		$this->front_page('frontend/content');
+		$this->front_page('frontend/content',$data);
 	}
 }
 ?>

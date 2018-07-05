@@ -112,25 +112,12 @@
                 <h2>Categories</h2>
             </div>
             <ul>
-                <li class="cat-item"><a
-                    href="#">Food</a> <span
-                    class="post_count pull-right"> (4 )</span>
-                </li>
-                <li class="cat-item">
-                    <a href="#">Lifestyle</a>
-                    <span class="post_count pull-right"> (4 )</span>
-                </li>
-                <li class="cat-item"><a
-                    href="#">Story</a> <span
-                    class="post_count pull-right"> (3 )</span>
-                </li>
-                <li class="cat-item"><a
-                    href="#">Travel</a> <span
-                    class="post_count pull-right"> (4 )</span>
-                </li>
-                <li class="cat-item"><a href="#">Uncategorized</a>
-                    <span class="post_count pull-right"> (1 )</span>
-                </li>
+                <?php foreach ($category as $key => $cat): ?>
+                    <li class="cat-item"><a
+                        href="<?= base_url().$cat['category_url']; ?>"><?= $cat['category_name']; ?></a> <span
+                        class="post_count pull-right"> (<?= $cat['jml']; ?> )</span>
+                    </li>
+                <?php endforeach ?>
             </ul>
         </div>
     </div>

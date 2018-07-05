@@ -7,6 +7,14 @@ class Mkategori extends CI_Model
  //        // $this->load->database();
  //    }
 
+    function all_categories()
+    {
+        $data = $this->db->query("SELECT c.category_name, c.category_url, COUNT(a.article_id_category) as jml FROM _category c
+                        LEFT JOIN _article a on c.category_id = a.article_id_category
+                        WHERE c.category_type = 'blog' AND c.category_status = 1
+                        GROUP BY c.category_name");
+        return $data->result_array();
+    }
 
     function show_kategori(){
         $data =  $this->db->get('_category');
