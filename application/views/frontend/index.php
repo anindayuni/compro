@@ -9,7 +9,7 @@
     <title>Zinnia blog template</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,400i,700"
-          rel="stylesheet">
+    rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/font-awesome.min.css'); ?>">
@@ -22,25 +22,25 @@
     <!--[if lt IE 9]>
     <script src="assets/frontend/js/html5shiv.js"></script>
     <script src="assets/frontend/js/respond.js"></script>
-    <![endif]-->
+<![endif]-->
 </head>
 <body>
-<div class="container zinnia-page">
-    <header>
-        <div class="zinnia-logo text-center">
-            <h1><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/frontend/images/logo.png'); ?>" alt=""></a></h1>
-        </div>
-        <div class="zinnia-menu text-center">
-            <nav class="navbar">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav text-uppercase">
+    <div class="container zinnia-page">
+        <header>
+            <div class="zinnia-logo text-center">
+                <h1><a href="<?= base_url(); ?>"><img src="<?= base_url('assets/frontend/images/logo.png'); ?>" alt=""></a></h1>
+            </div>
+            <div class="zinnia-menu text-center">
+                <nav class="navbar">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav text-uppercase">
                         <!-- <li class="dropdown">
                             <a href="index-2.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">Home</a>
@@ -82,7 +82,7 @@
                         <li><a href="archive.html">About Us</a></li> 
                         <li><a href="<?= base_url('blog'); ?>">Berita</a></li>
                         <li><a href="archive.html">Gallery</a></li>
-                        <li><a href="food.html">Contact Us</a></li>
+                        <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
                     </ul>
                 </div>
             </nav>
@@ -90,7 +90,7 @@
     </header>
     <div class="zinnia-main-content">
         <div class="row">
-            
+
             <?php echo $content; ?>
             <?php echo $sidebar; ?>
 
@@ -99,7 +99,8 @@
 </div>
 <footer class="zinnia-footer">
     <div class="container">
-        <div class="footer-instagram text-center">
+    <hr/>
+        <!-- <div class="footer-instagram text-center">
 
             <div id="footer-instagram" class="owl-carousel owl-theme">
 
@@ -126,11 +127,11 @@
             <div class="instagram-overlay-text text-uppercase">
                 <h2>Zinnia @ <a href="#">Instagram</a></h2>
             </div>
-        </div>
+        </div> -->
         <div class="footer-social">
-            <div class="footer-logo text-center">
+            <!-- <div class="footer-logo text-center">
                 <a href="#"> <img src="<?= base_url('assets/frontend/images/logo.png'); ?>" alt=""></a>
-            </div>
+            </div> -->
             <div class="footer-social-link text-capitalize">
                 <ul class="list-inline text-center">
                     <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
@@ -144,7 +145,7 @@
 
     </div>
     <div class="container footer-copyright-text text-center">
-        <p>&copy; 2017 Zinnia - Designed & Developed by <a href="#">ShapedTheme</a></p>
+        <p>&copy; 2018 Develop by  <a href="http://www.otret.com" target="_blank">Otret.com</a></p>
     </div>
 </footer>
 <!--//Script//-->

@@ -70,15 +70,16 @@
                                     
                                     <td>
                                         <center>
-                                        <a href="">
-                                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
-                                        </a>
-                                        <a href="">
-                                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
-                                        </a>
-                                        <a href="">
-                                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i></button>
-                                        </a>
+                                        <div class="js-sweetalert">
+                                            <a href="">
+                                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
+                                            </a>
+                                            <a href="<?php echo base_url('logincms/artikel/edit/').$art['article_id']; ?>">
+                                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
+                                            </a>
+                                            <button class="btn btn-raised btn-primary waves-effect btn-round" data-type="ajax-loader"><i class="icon-trash"></i></button>
+
+                                       </div>
                                         </center>
                                     </td>
                                     

@@ -10,7 +10,7 @@ class Home extends MY_Controller
 
 	function index()
 	{
-		$this->load->view('frontend/slider');
+		// $this->load->view('frontend/slider');
 		$this->front_page('frontend/content');
 	}
 }

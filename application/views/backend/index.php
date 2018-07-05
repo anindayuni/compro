@@ -28,6 +28,9 @@
 
 <!-- Dropzone Css -->
 <link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/dropzone/dropzone.css'); ?>">
+
+<!-- dialog -->
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/sweetalert/sweetalert.css') ?>"/>
 </head>
 <body class="theme-purple">
 
@@ -56,10 +59,13 @@
 <!-- File upload -->
 <script src="<?php echo base_url('assets/backend/plugins/dropzone/dropzone.js') ?>"></script> <!-- Dropzone Plugin Js --> 
 
-
-
 <!-- CKeditor  -->
 <script src="<?php echo base_url('assets/backend/plugins/ckeditor/ckeditor.js') ?>"></script>  
-<script src="<?php echo base_url('assets/backend/js/pages/forms/editors.js') ?>"></script>  
+<script src="<?php echo base_url('assets/backend/js/pages/forms/editors.js') ?>"></script>
+
+<!-- Dialog Alert -->
+<script src="<?php echo base_url('assets/backend/plugins/sweetalert/sweetalert.min.js') ?>"></script> <!-- SweetAlert Plugin Js --> 
+<script src="<?php echo base_url('assets/backend/js/pages/ui/dialogs.js') ?>"></script>
+
 </body>
 </html>
