@@ -60,6 +60,11 @@ class Artikel extends MY_Controller
 		}
 		$this->render_page('backend/artikel/edit', $data);
 	}
+
+	function detail($article_id){
+		$data['artikel'] = $this->Martikel->artikel_by_id($article_id);
+		$this->render_page('backend/artikel/detail', $data);
+	}
 }
 
 ?>
