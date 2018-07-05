@@ -4,12 +4,6 @@
  */
 class Martikel extends CI_Model
 {
-	
-	// function __construct(argument)
-	// {
-	// 	# code...
-	// }
-
 	function show_artikel(){
 		$this->db->join('_category', '_category.category_id = _article.article_id_category');
 		$this->db->order_by('article_id', 'DESC');
@@ -36,9 +30,9 @@ class Martikel extends CI_Model
 		return $ambil->result_array();
 	}
 
-	function edit($input, $article_id){
+	function edit($update, $article_id){
 		$this->db->where('_article.article_id', $article_id);
-		$this->db->update('_article', $input);
+		$this->db->update('_article', $update);
 
 	}
 

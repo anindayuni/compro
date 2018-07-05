@@ -38,6 +38,7 @@
                     <div class="body">
                         <form class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="article_create_date" value="<?php echo date('Y-m-d'); ?>">
+                            <input type="hidden" name="article_publish_date" value="<?php echo date('Y-m-d'); ?>">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama / Judul Artikel</label>
@@ -47,38 +48,7 @@
                                         <input type="text" class="form-control" placeholder="Masukkan Judul Artikel" name="article_title" required="required">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Create Date</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control"  name="article_create_date" required="required" disabled="" value="<?php echo date('Y-m-d'); ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Publish Date</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                        <input type="date" class="form-control" placeholder="" name="article_publish_date" required="required">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Status</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <select class="form-control show-tick" name="article_status">
-                                        <option value="0">Non Aktif</option>
-                                        <option value="1">Aktif</option>
-                                    </select>
-                                </div> 
-                            </div><br>
+                            </div> <br>
 
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
@@ -108,6 +78,23 @@
                                 </div> 
                             </div><br>
                              
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Status</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <div class="radio inlineblock m-r-20">
+                                            <input type="radio" name="article_status" id="male" class="with-gap" value="0" checked="">
+                                            <label for="male">Non Aktif</label>
+                                        </div>                                
+                                        <div class="radio inlineblock">
+                                            <input type="radio" name="article_status" id="Female" class="with-gap" value="1" >
+                                            <label for="Female">Aktif</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row clearfix">
                                 <div class="col-sm-8 offset-sm-2">

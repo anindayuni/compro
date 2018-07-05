@@ -90,6 +90,17 @@
                                     <label><?php echo $art['category_name']; ?></label>
                                 </div> 
                             </div><br>
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Nama / Judul Artikel</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <label>: </label>
+                                        <label><?php echo $art['article_url']; ?></label>
+                                    </div>
+                                </div>
+                            </div><br>
 
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">

@@ -6,11 +6,11 @@
                     <div class="body block-header">
                         <div class="row">
                             <div class="col-lg-6 col-md-8 col-sm-12">
-                                <h2>Form Input Data Kategori</h2>
+                                <h2>Form Edit Data Kategori</h2>
                                 <ul class="breadcrumb p-l-0 p-b-0 ">
                                     <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i> Home</a></li>
                                     <li class="breadcrumb-item"><a href="">Kategori</a></li>
-                                    <li class="breadcrumb-item active">Tambah Kategori</li>
+                                    <li class="breadcrumb-item active">Edit Kategori</li>
                                 </ul>
                             </div>            
                             <div class="col-lg-6 col-md-4 col-sm-12 text-right">
@@ -27,20 +27,23 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Tambah Data</strong> Kategori</h2>
+                        <h2><strong>Edit Data</strong> Kategori</h2>
                     </div>
                     
                     <div class="body">
                         
                         <form class="form-horizontal" id="form_validation" method="POST" enctype="multipart/form-data">
-                            <input type="hidden" name="category_date" value="<?php echo date('Y-m-d'); ?>">
+
+                            <?php foreach ($kategori as $key => $kat): ?>
+                            <input type="hidden" name="category_id" value="<?php echo $kat['category_id']; ?>">
+                            <input type="hidden" name="category_date" value="<?php echo $kat['category_date']; ?>">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama Kategori</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Masukkan Nama Kategori" name="category_name" required="required">
+                                        <input type="text" class="form-control" name="category_name" required="required" value="<?php echo $kat['category_name']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +54,7 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Masukkan Sub Kategori" name="category_sub_category">
+                                        <input type="text" class="form-control" name="category_sub_category" value="<?php echo $kat['category_sub_category']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -62,8 +65,8 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <select class="form-control show-tick" name="category_status">
-                                        <option value="0">Off</option>
-                                        <option value="1">On</option>
+                                        <option value="0" <?php if($kat['category_status'] == 0){echo "selected=selected";} ?>>Off</option>
+                                        <option value="1" <?php if($kat['category_status'] == 1){echo "selected=selected";} ?>>On</option>
                                     </select>
                                 </div> 
                             </div><br>
@@ -75,7 +78,7 @@
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <select class="form-control show-tick" name="category_type">
                                         <?php foreach ($type as $key => $tp): ?>
-                                        <option value="<?php echo $tp; ?>"><?php echo $tp; ?></option>
+                                        <option value="<?php echo $tp; ?>" <?php if($kat['category_type'] == $tp){echo "selected=selected";} ?> ><?php echo $tp; ?></option>
                                     <?php endforeach; ?>
                                     </select>
                                 </div> 
@@ -87,7 +90,7 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="file" name="category_photo">
+                                        <input type="file" name="category_photo" value="<?php echo $kat['category_photo']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +103,7 @@
                                     <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">Submit</button>
                                 </div>
                             </div>
+                        <?php endforeach; ?>
                         </form>
                     </div>
                 </div>

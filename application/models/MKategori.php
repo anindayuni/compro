@@ -24,25 +24,7 @@ class Mkategori extends CI_Model
         }
         return $enums;
     }
-
-    // public function upload(){
-    //     $config['upload_path'] = '../../gambar/';
-    //     $config['allowed_types'] = 'jpg|png|jpeg';
-    //     $config['max_size']  = '2048';
-    //     $config['remove_space'] = TRUE;
-
-    //     $this->load->library('upload', $config); // Load konfigurasi uploadnya
-    //     if($this->upload->do_upload('category_photo')){ // Lakukan upload dan Cek jika proses upload berhasil
-    //       // Jika berhasil :
-    //       $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
-    //       return $return;
-    //     }else{
-    //       // Jika gagal :
-    //       $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_errors());
-    //       return $return;
-    //     }
-    // }
-
+ 
     public function save($input){
         $data['category_name'] = $input['category_name'];
         $data['category_date'] = $input['category_date'];
@@ -60,9 +42,42 @@ class Mkategori extends CI_Model
         {
             $data['category_photo'] = $this->upload->data('file_name');
         }
+        else{
+            $data['category_photo'] = 'no-image.jpg';
+        }
 
 
-        $this->db->insert('_category', $input);
+        $this->db->insert('_category', $data);
+    }
+
+    public function category_by_id($category_id){
+        $this->db->where('category_id', $category_id);
+        $ambil = $this->db->get('_category');
+
+        return $ambil->result_array();
+    }
+
+    public function edit($input, $category_id)
+    {
+        $data['category_name'] = $input['category_name'];
+        $data['category_date'] = $input['category_date'];
+        $data['category_status'] = $input['category_status'];
+        $data['category_type'] = $input['category_type'];
+        $data['category_url'] = $input['category_url'];
+
+        $config['upload_path']      = './gambar';
+        $config['allowed_types']    = 'gif|jpg|png|jpeg';
+
+        // panggil library upload
+        $this->load->library('upload', $config);
+        // jika benar upload gambar
+        if ($this->upload->do_upload('category_photo'))
+        {
+            $data['category_photo'] = $this->upload->data('file_name');
+        }
+
+        $this->db->where('category_id', $category_id);
+        $this->db->update('_category', $data);
     }
     
 }

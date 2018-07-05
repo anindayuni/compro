@@ -1,6 +1,4 @@
- <!-- Main Content -->
-<section class="content">
-    <div class="container">
+
         <div class="row clearfix">
             <div class="col-lg-12">
                 <div class="card">

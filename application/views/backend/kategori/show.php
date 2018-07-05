@@ -54,7 +54,7 @@
                                 <tr>
                                     <th scope="row"><?php echo $key+1; ?></th>
                                     <td><?php echo $kat['category_name']; ?></td>
-                                    <td><img src="<?php echo base_url('assets/backend/images/').$kat['category_photo']; ?>" height="50" width="50"></td>
+                                    <td><img src="<?php echo base_url('gambar/').$kat['category_photo']; ?>" height="50" width="50"></td>
                                     <td>
                                         <?php 
                                         if ($kat['category_status'] == 1){
@@ -69,7 +69,10 @@
                                     <td><?php echo $kat['category_url']; ?></td>
                                     <td>
                                         <center>
-                                        <a href="">
+                                        <a href="<?php echo base_url('logincms/kategori/detail/').$kat['category_id']; ?>">
+                                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
+                                        </a>
+                                        <a href="<?php echo base_url('logincms/kategori/edit/').$kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                         </a>
                                         <a href="">
