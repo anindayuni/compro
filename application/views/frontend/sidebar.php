@@ -20,7 +20,7 @@
                 </ul>
             </div>
         </div>
-        <div class="widget instagram-widget">
+        <!-- <div class="widget instagram-widget">
             <div class="widget-title text-uppercase text-center">
                 <h2>Instagram @Zinnia</h2>
             </div>
@@ -37,7 +37,7 @@
                     <li><a href="#"><img src="<?= base_url('assets/frontend/images/ft-insta-2.jpg'); ?>" alt=""></a></li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         <div class="widget latest-post-widget">
             <div class="widget-title text-uppercase text-center">
                 <h2>Latest Posts</h2>
