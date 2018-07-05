@@ -17,6 +17,7 @@ class Mkategori extends CI_Model
     }
 
     function show_kategori(){
+        $this->db->order_by('category_id', 'DESC');
         $data =  $this->db->get('_category');
         return $data->result_array();
     }
@@ -51,12 +52,23 @@ class Mkategori extends CI_Model
     // }
 
     public function save($input){
-      //   $data = array(
-      //     'deskripsi'=>$this->input->post('input_deskripsi'),
-      //     'nama_file' => $upload['file']['file_name'],
-      //     'ukuran_file' => $upload['file']['file_size'],
-      //     'tipe_file' => $upload['file']['file_type']
-      // );
+        $data['category_name'] = $input['category_name'];
+        $data['category_date'] = $input['category_date'];
+        $data['category_status'] = $input['category_status'];
+        $data['category_type'] = $input['category_type'];
+        $data['category_url'] = $input['category_url'];
+
+        $config['upload_path']      = './gambar';
+        $config['allowed_types']    = 'gif|jpg|png|jpeg';
+
+        // panggil library upload
+        $this->load->library('upload', $config);
+        // jika benar upload gambar
+        if ($this->upload->do_upload('category_photo'))
+        {
+            $data['category_photo'] = $this->upload->data('file_name');
+        }
+
 
         $this->db->insert('_category', $input);
     }

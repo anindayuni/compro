@@ -28,27 +28,11 @@
                 <div class="card">
                     <div class="header">
                         <h2><strong>Tambah Data</strong> Kategori</h2>
-                        <!-- <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else</a></li>
-                                </ul>
-                            </li>
-                            <li class="remove">
-                                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
-                            </li>
-                        </ul> -->
                     </div>
-                    <!-- <?php  
-                        echo "<pre>";
-                        print_r($status);
-                        echo "</pre>";
-                    ?> -->
                     
                     <div class="body">
-                        <form class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data">
+                        
+                        <form class="form-horizontal" id="form_validation" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="category_date" value="<?php echo date('Y-m-d'); ?>">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">

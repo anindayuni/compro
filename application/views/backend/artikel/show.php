@@ -70,16 +70,18 @@
                                     
                                     <td>
                                         <center>
-                                        <div class="js-sweetalert">
-                                            <a href="">
-                                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
-                                            </a>
-                                            <a href="<?php echo base_url('logincms/artikel/edit/').$art['article_id']; ?>">
-                                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
-                                            </a>
-                                            <button class="btn btn-raised btn-primary waves-effect btn-round" data-type="ajax-loader"><i class="icon-trash"></i></button>
+                                            <!-- <div class="js-sweetalert"> -->
+                                                <a href="<?php echo base_url('logincms/artikel/detail/').$art['article_id']; ?>">
+                                                    <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
+                                                </a>
+                                                <a href="<?php echo base_url('logincms/artikel/edit/').$art['article_id']; ?>">
+                                                    <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
+                                                </a>
+                                                <a href="#defaultModal/<?php echo $art['article_id']; ?>" data-toggle="modal" data-target="#defaultModal/<?php echo $art['article_id']; ?>">
+                                                    <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i></button>
+                                                </a>
 
-                                       </div>
+                                            <!-- </div> -->
                                         </center>
                                     </td>
                                     
@@ -94,3 +96,25 @@
         <!-- #END# Hover Rows --> 
     </div>
 </section>
+                                                <!-- Modal Default Size -->
+                                                <div class="modal fade" id="defaultModal/1" tabindex="-1" role="dialog">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                            
+                                                            </div>
+                                                           
+                                                            <pre>
+                                                                <?php print_r('$art[article_id]'); ?>
+                                                            </pre>
+                                                            
+                                                            <div class="modal-body">Apakah Anda Yakin Ingin Menghapus Data Ini? </div>
+                                                            <div class="modal-footer">
+                                                                <a href="<?php echo base_url('logincms/artikel/hapus/').$art['article_id']; ?>">
+                                                                    <button type="button" class="btn btn-primary btn-round waves-effect">YA</button>
+                                                                </a>
+                                                                <button type="button" class="btn btn-danger btn-simple btn-round waves-effect" data-dismiss="modal">TIDAK</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>

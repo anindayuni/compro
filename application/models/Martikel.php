@@ -12,6 +12,7 @@ class Martikel extends CI_Model
 
 	function show_artikel(){
 		$this->db->join('_category', '_category.category_id = _article.article_id_category');
+		$this->db->order_by('article_id', 'DESC');
 		$ambil = $this->db->get('_article');
 
 		return $ambil->result_array();

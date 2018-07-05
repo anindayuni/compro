@@ -20,16 +20,33 @@ class Kategori extends MY_Controller
 	public function add()
 	{
 		$data['type'] = $this->Mkategori->type();
+		$data['category_name'] = $this->input->post('category_name');
 
 		if($this->input->post())
 		{
 			$input = $this->input->post();
-			$this->Mkategori->save($input);
-			redirect('logincms/kategori', 'refresh');
+            $string = $this->input->post('category_name');
+
+                $replace = '-';         
+                $string = strtolower($string);
+                $string = preg_replace("/[\/\.]/", " ", $string);     
+                $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
+                $string = preg_replace("/[\s-]+/", " ", $string);
+                $string = preg_replace("/[\s_]/", $replace, $string);
+                $string = substr($string, 0, 100);
+            
+            $input['category_url'] = base_url().$string;
+            $this->Mkategori->save($input);
+            redirect('logincms/kategori', 'refresh');
 		}
 			
 	
 		$this->render_page('backend/kategori/add', $data);
+	}
+
+	public function edit()
+	{
+
 	}
 }
 
