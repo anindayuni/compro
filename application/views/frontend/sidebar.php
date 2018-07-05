@@ -42,95 +42,36 @@
             <div class="widget-title text-uppercase text-center">
                 <h2>Latest Posts</h2>
             </div>
-            <div class="latest-post">
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#" class="popular-img"><img src="<?= base_url('assets/frontend/images/latest-thumb-1.jpg'); ?>" alt="">
-                        </a>
-                    </div>
-                    <div class="latest-post-content">
-                        <div class="single-tag">
-                            <a href="#"> Lifestyle</a>
+            <?php foreach ($article as $key => $art): ?>
+                <div class="latest-post">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#" class="popular-img"><img src="<?= base_url('assets/frontend/images/latest-thumb-1.jpg'); ?>" alt="">
+                            </a>
                         </div>
-                        <h2><a href="#">A Theme to Tell Stories</a></h2>
-                        <p>May 27, 2017</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="latest-post">
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#" class="popular-img"><img src="<?= base_url('assets/frontend/images/latest-thumb-2.jpg'); ?>" alt="">
-                        </a>
-                    </div>
-                    <div class="latest-post-content">
-                        <div class="single-tag">
-                            <a href="#"> Lifestyle</a>
+                        <div class="latest-post-content">
+                            <div class="single-tag">
+                                <a href="<?= base_url().'category/'.$art['category_url']; ?>"> <?= $art['category_name']; ?></a>
+                            </div>
+                            <h2><a href="<?= base_url().'news/'.$art['article_url'] ?>"><?= substr($art['article_title'], 0,150); ?></a></h2>
+                            <p><?= date('d M Y', strtotime($art['article_publish_date'])); ?></p>
                         </div>
-                        <h2><a href="#">Just Wondering at Beach</a></h2>
-                        <p>May 27, 2017</p>
-                    </div>
 
+                    </div>
                 </div>
-            </div>
-            <div class="latest-post">
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#" class="popular-img"><img src="<?= base_url('assets/frontend/images/latest-thumb-3.jpg'); ?>" alt="">
-                        </a>
-                    </div>
-                    <div class="latest-post-content">
-                        <div class="single-tag">
-                            <a href="#"> Lifestyle</a>
-                        </div>
-                        <h2><a href="#">Lorem Ipsum Dolor sit amet</a></h2>
-                        <p>May 27, 2017</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="latest-post">
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#" class="popular-img"><img src="<?= base_url('assets/frontend/images/latest-thumb-4.jpg'); ?>" alt="">
-                        </a>
-                    </div>
-                    <div class="latest-post-content">
-                        <div class="single-tag">
-                            <a href="#"> Lifestyle</a>
-                        </div>
-                        <h2><a href="#">Home is Peaceful Place</a></h2>
-                        <p>May 27, 2017</p>
-                    </div>
-
-                </div>
-            </div>
+            <?php endforeach ?>
         </div>
         <div class="widget widget-categories">
             <div class="widget-title text-uppercase text-center">
                 <h2>Categories</h2>
             </div>
             <ul>
-                <li class="cat-item"><a
-                    href="#">Food</a> <span
-                    class="post_count pull-right"> (4 )</span>
-                </li>
-                <li class="cat-item">
-                    <a href="#">Lifestyle</a>
-                    <span class="post_count pull-right"> (4 )</span>
-                </li>
-                <li class="cat-item"><a
-                    href="#">Story</a> <span
-                    class="post_count pull-right"> (3 )</span>
-                </li>
-                <li class="cat-item"><a
-                    href="#">Travel</a> <span
-                    class="post_count pull-right"> (4 )</span>
-                </li>
-                <li class="cat-item"><a href="#">Uncategorized</a>
-                    <span class="post_count pull-right"> (1 )</span>
-                </li>
+                <?php foreach ($category as $key => $cat): ?>
+                    <li class="cat-item"><a
+                        href="<?= base_url().'category/'.$cat['category_url']; ?>"><?= $cat['category_name']; ?></a> <span
+                        class="post_count pull-right"> (<?= $cat['jml']; ?> )</span>
+                    </li>
+                <?php endforeach ?>
             </ul>
         </div>
     </div>
