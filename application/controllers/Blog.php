@@ -13,9 +13,14 @@ class Blog extends MY_Controller
 		$this->front_page('frontend/blog-list');
 	}
 
-	function single()
+	function single($url)
 	{
-		$this->front_page('frontend/single-blog');
+		$data['single'] = $this->Martikel->single_article($url);
+		$this->front_page('frontend/single-blog',$data);
+	}
+
+	function category($url){
+		
 	}
 }
 ?>

@@ -11,7 +11,7 @@ class Home extends MY_Controller
 
 	function index()
 	{
-		$this->front_page('frontend/content',$data);
+		$this->front_page('frontend/content');
 	}
 }
 ?>

@@ -52,6 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 // frontend routes start
 $route['contact-us'] = 'contact';
+$route['news/(:any)'] = 'blog/single/$1';
+$route['category/(:any)'] = 'blog/category/$1';
 // frontend routes end
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
