@@ -58,7 +58,7 @@
                                         <td><?php echo $f->photo_id_article ?></td>
                                         <td><img height="50px" width="50px" src="<?php echo base_url("gambar/$f->photo_img")?>"></td>
                                         <td><?php echo $f->photo_date?></td>
-                                        <td><a href="<?php echo base_url('logincms/foto/delete/').$f->photo_id?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Delete</a></td>
+                                        <td><a href="<?php echo base_url('logincms/foto/delete/').$f->photo_id?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-trash"> </i> Delete </button></a></td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
