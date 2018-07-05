@@ -18,12 +18,12 @@
                     <a class="navbar-brand" href="index.html"><img src="<?php echo base_url('assets/backend/images/logo.svg'); ?>" width="30" alt="infinity"><span class="m-l-10">infinity</span></a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="search_bar hidden-xs">
+                    <!-- <li class="search_bar hidden-xs">
                         <div class="input-group">                
                             <input type="text" class="form-control" placeholder="Find your stuff...">
                         </div>
-                    </li>
-                    <li class="dropdown profile">
+                    </li> -->
+                    <!-- <li class="dropdown profile">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <img class="rounded-circle" src="<?php echo base_url('assets/backend/images/profile_av.jpg'); ?>" alt="User">
                         </a>
@@ -47,7 +47,8 @@
                             <li><a href="locked.html"><i class="icon-lock m-r-10"></i><span>Locked</span></a></li>
                             <li><a href="sign-in.html"><i class="icon-power m-r-10"></i><span>Sign Out</span></a></li>
                         </ul>
-                    </li>
+                    </li> -->
+                    <li><a href="<?php echo base_url('logincms/login/logout'); ?>" >Logout <i class="icon-logout"></i></a></li>
                     <li><a href="javascript:void(0);" class="js-right-sidebar"><i class="icon-equalizer"></i></a></li>
                 </ul>
             </div>

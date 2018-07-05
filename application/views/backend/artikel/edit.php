@@ -33,6 +33,9 @@
                     <div class="body">
                         <form class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data">
                             <?php foreach ($artikel as $key => $art): ?>
+                            <input type="hidden" name="article_url" value="<?php echo $art['article_url']; ?>">
+                            <input type="hidden" name="article_create_date" value="<?php echo $art['article_create_date']; ?>">
+                            <input type="hidden" name="article_publish_date" value="<?php echo $art['article_publish_date']; ?>">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama / Judul Artikel</label>
@@ -42,37 +45,6 @@
                                         <input type="text" class="form-control" placeholder="Masukkan Judul Artikel" name="article_title" required="required" value="<?php echo $art['article_title']; ?>">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Create Date</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control"  name="article_create_date" required="required" disabled="" value="<?php echo $art['article_create_date']; ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Publish Date</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                        <input type="date" class="tanggal form-control" placeholder="" name="article_publish_date" required="required" value="<?php echo $art['article_publish_date']; ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Status</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <select class="form-control show-tick" name="article_status">
-                                        <option <?php if ($art['article_status'] == '0') {echo "selected=selected";} ?> value="0">Non Aktif</option>
-                                        <option <?php if ($art['article_status'] == '1') {echo "selected=selected";} ?> value="1">Aktif</option>
-                                    </select>
-                                </div> 
                             </div><br>
 
                             <div class="row clearfix">
@@ -102,6 +74,24 @@
                                     </div>
                                 </div> 
                             </div><br>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Status</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <div class="radio inlineblock m-r-20">
+                                            <input type="radio" name="article_status" id="male" class="with-gap" value="0" <?php if($art['article_status'] == 0) {echo "checked=''";} ?> >
+                                            <label for="male">Non Aktif</label>
+                                        </div>                                
+                                        <div class="radio inlineblock">
+                                            <input type="radio" name="article_status" id="Female" class="with-gap" value="1" <?php if($art['article_status'] == 1) {echo "checked=''";} ?>>
+                                            <label for="Female">Aktif</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                              
                              <?php endforeach; ?>
 
