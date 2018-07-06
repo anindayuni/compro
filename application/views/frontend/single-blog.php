@@ -7,7 +7,7 @@
             <h2 class="post-title"><?= $single['article_title']; ?></h2>
         </div>
         <div class="post-thumb">
-            <img src="<?= base_url('assets/frontend/images/post-thumb-1.jpg'); ?>" alt="">
+            <a href="#" class="popular-img"><img src="<?php if (!empty($single['photo_img'])) echo base_url().'gambar/'.$single['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-height: 400px;" alt="">
             <div class="post-overlay-meta">
                 <ul class="post-meta pull-left">
                     <li class="author">By <a href="#">Admin</a> |</li>

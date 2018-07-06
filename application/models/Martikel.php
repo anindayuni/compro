@@ -9,6 +9,7 @@ class Martikel extends CI_Model
 	{
 		$this->db->where('article_status', '1');
 		$this->db->join('_category', '_category.category_id = _article.article_id_category');
+		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
 		$this->db->order_by('article_id', 'DESC');
 		$ambil = $this->db->get('_article');
 		return $ambil->result_array();
@@ -17,8 +18,8 @@ class Martikel extends CI_Model
 	function latest_article(){
 		$this->db->limit(5);
 		$this->db->where('article_status', '1');
-		$this->db->join('_category', '_category.category_id = _article.article_id_category');
-		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id');
+		$this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
+		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
 		$this->db->order_by('article_id', 'DESC');
 		$ambil = $this->db->get('_article');
 		return $ambil->result_array();
@@ -27,6 +28,7 @@ class Martikel extends CI_Model
 	function front_article(){
 		$this->db->where('article_status', '1');
 		$this->db->join('_category', '_category.category_id = _article.article_id_category');
+		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
 		$this->db->order_by('article_id', 'DESC');
 		$ambil = $this->db->get('_article');
 		return $ambil->result_array();
@@ -36,7 +38,8 @@ class Martikel extends CI_Model
 	{
 		$this->db->like('article_url', $url);
 		$this->db->where('article_status', '1');
-		$this->db->join('_category', '_category.category_id = _article.article_id_category');
+		$this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
+		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
 		$data = $this->db->get('_article');
 		return $data->row_array();
 	}
@@ -46,6 +49,7 @@ class Martikel extends CI_Model
 		$this->db->like('c.category_url', $url);
 		$this->db->where('a.article_status', '1');
 		$this->db->join('_category c', 'c.category_id = a.article_id_category');
+		$this->db->join('_photo', '_photo.photo_id_article = a.article_id', 'left');
 		$data = $this->db->get('_article a');
 		return $data->result_array();
 	}

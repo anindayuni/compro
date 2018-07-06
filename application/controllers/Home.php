@@ -14,7 +14,6 @@ class Home extends MY_Controller
 	function index()
 	{
 		$data['article'] = $this->Martikel->front_article();
-		
 		$this->front_page('frontend/content',$data);
 	}
 
