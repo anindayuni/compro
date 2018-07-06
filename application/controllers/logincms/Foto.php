@@ -15,7 +15,7 @@ class Foto extends MY_Controller
 
 	public function index(){
 		$data=array(
-			'foto'=>$this->Mfoto->list(),
+			'foto'=>$this->Mfoto->list_foto(),
 
 		);
 		$this->render_page('backend/foto/list',$data);
@@ -67,7 +67,7 @@ class Foto extends MY_Controller
     $this->db->insert('_photo',$data);
 
 
-    $data['foto']=$this->Mfoto->list();
+    $data['foto']=$this->Mfoto->list_foto();
     // $this->render_page('backend/foto/list',$data);
     redirect('logincms/foto', 'refresh');
 
@@ -77,7 +77,7 @@ class Foto extends MY_Controller
 
   public function delete($id)
   { 
-   $data['foto']=$this->Mfoto->list();
+   $data['foto']=$this->Mfoto->list_foto();
    $this->db->delete('_photo', array('photo_id' => $id));
    $this->render_page('backend/foto/list',$data);
    redirect('logincms/foto', 'refresh');
