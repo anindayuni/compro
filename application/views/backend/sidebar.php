@@ -18,7 +18,7 @@
                         <!-- <li><a href="<?php echo base_url('logincms/foto'); ?>" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a> -->
                         <!-- </li> -->
 
-                        <li> <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block"><i class="icon-map"></i><span>Foto</span></a>
+                        <li> <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block"><i class="icon-picture"></i><span>Foto</span></a>
                             <ul class="ml-menu">
                                 <li><a href="<?php echo base_url('logincms/gallery'); ?>" class=" waves-effect waves-block">Gallery</a></li>
                                 <li><a href="<?php echo base_url('logincms/slider'); ?>">Slider</a></li>
