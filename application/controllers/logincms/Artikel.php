@@ -28,7 +28,6 @@ class Artikel extends MY_Controller
 		if ($this->input->post()) {
 			$input = $this->input->post();
 
-
 			$string = $this->input->post('article_title');
 
 				$replace = '-';         
@@ -40,7 +39,15 @@ class Artikel extends MY_Controller
 				$string = substr($string, 0, 100);
 			
 			$input['article_url'] = $string;
-			$this->Martikel->save($input);
+			
+			$photo['photo_img'] = $this->Martikel->save($input); //Simpan data article di tabel article dulu
+			$cari_id = $this->Martikel->artikel_terbaru(); //cari id article yang baru saja disimpan
+			$photo['photo_id_article'] = $cari_id['id'];
+			$photo['photo_date'] = date('Y-m-d');
+			$photo['photo_information'] = 'featured-image';
+
+			$this->Martikel->save_photo($photo);
+
 			redirect('logincms/artikel', 'refresh');
 		}
 
@@ -63,6 +70,7 @@ class Artikel extends MY_Controller
 				$update['article_content'] = $this->input->post('article_content');
 				$update['article_publish_date'] = date('Y-m-d');
 				$this->Martikel->edit($update, $article_id);
+				$this->Martikel->edit_photo();
 			}
 			else{
 				$update['article_title'] = $this->input->post('article_title');
@@ -73,6 +81,7 @@ class Artikel extends MY_Controller
 				$update['article_content'] = $this->input->post('article_content');
 				$update['article_publish_date'] = $this->input->post('article_publish_date');
 				$this->Martikel->edit($update, $article_id);
+				$this->Martikel->edit_photo();
 			}
 
 			redirect('logincms/artikel', 'refresh');

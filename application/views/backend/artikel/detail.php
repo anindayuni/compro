@@ -92,7 +92,7 @@
                             </div><br>
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Nama / Judul Artikel</label>
+                                    <label>URL</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
