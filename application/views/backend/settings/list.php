@@ -56,11 +56,11 @@
                                    <div class="form-group">
                                     <div class="radio inlineblock m-r-20">
                                         <input type="radio" name="maintenance_name" id="aktif" class="with-gap" value="1" <?php echo $cekAktif ?>>
-                                        <label for="aktif">Male</label>
+                                        <label for="aktif">Aktif</label>
                                     </div>                                
                                     <div class="radio inlineblock">
                                         <input type="radio" name="maintenance_name" id="non_aktif" class="with-gap" value="0" <?php echo $cekNonAktif ?>>
-                                        <label for="non_aktif">Female</label>
+                                        <label for="non_aktif">Non Aktif</label>
                                     </div>
                                 </div>
                             </div>
