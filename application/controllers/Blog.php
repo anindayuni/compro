@@ -10,12 +10,25 @@ class Blog extends MY_Controller
 
 	function index()
 	{
-		$this->front_page('frontend/blog-list');
+		$data['articles'] = $this->Martikel->all_articles();
+		$this->front_page('frontend/blog-list',$data);
 	}
 
-	function single()
+	function single($url)
 	{
-		$this->front_page('frontend/single-blog');
+		$data['single'] = $this->Martikel->single_article($url);
+		$this->front_page('frontend/single-blog',$data);
+	}
+
+	function category($url)
+	{
+		$data['category_list'] = $this->Martikel->show_by_category($url);
+		$this->front_page('frontend/category_list',$data);
+	}
+
+	function blog_list()
+	{
+		$this->front_page('frontend/blog-list');
 	}
 }
 ?>

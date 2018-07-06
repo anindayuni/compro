@@ -1,4 +1,4 @@
-<section class="content" style="min-height: 800px;">
+ <section class="content" style="min-height: 800px;">
     <div class="container">
         <div class="row clearfix">
             <div class="col-lg-12">

@@ -22,8 +22,8 @@ class MY_Controller extends CI_Controller
 	function front_page($content, $data = NULL)
 	{
 		$data['category'] = $this->MKategori->all_categories();
-
-		$data['slider'] = $this->load->view('frontend/slider', $data, TRUE);
+		$data['article'] = $this->Martikel->latest_article();
+		
 		$data['sidebar'] = $this->load->view('frontend/sidebar', $data, TRUE);
 		$data['content'] = $this->load->view($content, $data, TRUE);
 

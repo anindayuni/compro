@@ -2,9 +2,9 @@
     <article class="single-blog-post">
         <div class="post-header text-center">
             <div class="single-tag">
-                <a href="#"> Travel</a>
+                <a href="<?= base_url().'category/'.$single['category_url']; ?>"> <?= $single['category_name']; ?></a>
             </div>
-            <h2 class="post-title">Follow your Best Dreams</h2>
+            <h2 class="post-title"><?= $single['article_title']; ?></h2>
         </div>
         <div class="post-thumb">
             <img src="<?= base_url('assets/frontend/images/post-thumb-1.jpg'); ?>" alt="">
@@ -26,88 +26,10 @@
                 </div>
             </div>
         </div>
-        <div class="post-content">
-            <p>
-                Lorem ipsum dolor sits mate, commenter sad pacing elite, sed diam on my air mod temporal
-                incident laborer et dolor manga aliya at, sed diam voluptuary. At zero Los et accuse eat
-                just to
-                due colors et cerebrum. Stet Clarita and gun egg run, no sea take Mata Sanctus est Lorem
-                ipsum
-                dolor sit meat. Lorem ipsum dolor sits mate, consenteth sad pacing editor, sed diam, not my
-                ear
-            mod temper causal etc just do to Dolores et sebum. Stet Clarita.</p>
-            <p>
-                incident cut laborer et Dolores Magna aliquot eat, sed diam voluptuary. At every es et
-                accused
-                eat just to do colors et ea album. Stet Clarita and gun Berg run, no sea Taki Mata sanctum
-                est
-                Lorem ipsum dolor sit mate.
-            </p>
-            <br>
-            <p>
-                <img class="media-left" src="<?= base_url('assets/frontend/images/post-img.jpg'); ?>" alt="">
-                Mass market termsheet research &amp; development user experience network effects
-                infrastructure
-                graphical user interface traction infographic paradigm shift lean startup focus venture.
-                Bootstrapping A/B testing crowdfunding termsheet startup twitter social proof client
-                prototype first
-                mover advantage innovator social media. Startup termsheet hypotheses equity pivot seed money
-                low
-                hanging fruit iPad lean startup virality creative client technology buyer. Responsive web
-                design
-                iteration seed round infographic angel investor agile development research &amp; development
-                customer MVP termsheet buyer social proof. hackathon backing seed
-                <del>Founders user experience</del>
-                Responsive web design
-                iteration seed round infographic angel investor agile development research &amp; development
-                customer MVP termsheet buyer social proof. hackathon backing seed.
-            </p>
-            <br>
-            <blockquote>
-                <p>For 50 years, WWF has been protecting the future of nature. The world's leading
-                    conservation
-                    organization, WWF works in 100 countries and is supported by 1.2 million members in the
-                    United
-                States and close to 5 million globally.</p>
-                <footer>From WWF's website</footer>
-            </blockquote>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate debitis delectus
-                distinctio doloremque dolores earum enim eum ex fuga id illum ipsa mollitia nulla placeat
-            possimus quas quia, quisquam tempora.</p>
-
-            <h4>Basic Table</h4>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td><a href="http://demo.wpexpand.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52383d3a3c12372a333f223e377c313d3f">[email&#160;protected]</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mary</td>
-                        <td>Moe</td>
-                        <td><a href="http://demo.wpexpand.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e08d819299a08598818d908c85ce838f8d">[email&#160;protected]</a></td>
-                    </tr>
-                    <tr>
-                        <td>July</td>
-                        <td>Dooley</td>
-                        <td><a href="http://demo.wpexpand.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a405f46536a4f524b475a464f04494547">[email&#160;protected]</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p> Adipisicing elit. Cupiditate debitis delectus
-                distinctio doloremque dolores earum enim eum ex fuga id illum ipsa mollitia nulla placeat
-            possimus quas quia, quisquam tempora.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut debitis distinctio
-                doloremque facere impedit in ipsum laudantium magni maiores odit pariatur placeat qui quis
-            recusandae sunt veniam, vitae voluptatibus?</p>
+        <div class="post-content" style="text-align: justify;">
+           <p>
+               <?= $single['article_content']; ?>
+           </p>
         </div>
         <!-- <div class="single-post-meta text-uppercase">
 
