@@ -47,6 +47,20 @@ class Slider extends MY_Controller
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);
 
+		   if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        $this->load->view('upload_form', $error);
+                }
+                else
+                {
+                        $data = array('upload_data' => $this->upload->data());
+
+                        // $this->load->view('upload_success', $data);
+                }
+
+                
 		$id_category=$this->db->get_where('_category',array('category_type'=>'slider'))->row_array();
 		$data_artikel=array(
 			'article_title'=>$this->input->post('nama_slider'),
