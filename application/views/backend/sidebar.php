@@ -14,18 +14,15 @@
                         <li>
                             <a href="<?php echo base_url('logincms/artikel'); ?>"><i class="icon-layers"></i><span>Artikel</span></a>
                         </li>
-                        <li>
-                            <a href="<?php echo base_url('logincms/static_page'); ?>"><i class="icon-doc"></i><span>Static</span></a>
-                        </li>
                         <!-- <li class="header">FORMS, CHARTS, TABLES</li> -->
-                        <li><a href="<?php echo base_url('logincms/foto'); ?>" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a>
-                        </li>
+                        <!-- <li><a href="<?php echo base_url('logincms/foto'); ?>" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a> -->
+                        <!-- </li> -->
 
                         <li> <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block"><i class="icon-map"></i><span>Foto</span></a>
                             <ul class="ml-menu">
-                                <li><a href="map-google.html" class=" waves-effect waves-block">Gallery</a></li>
-                                <li><a href="map-yandex.html" class=" waves-effect waves-block">Slider</a></li>
-                                <li><a href="map-jvectormap.html" class=" waves-effect waves-block">Foto Artikel</a></li>
+                                <li><a href="<?php echo base_url('logincms/gallery'); ?>" class=" waves-effect waves-block">Gallery</a></li>
+                                <li><a href="<?php echo base_url('logincms/slider'); ?>">Slider</a></li>
+                                <!-- <li><a href="map-jvectormap.html" class=" waves-effect waves-block">Foto Artikel</a></li> -->
                             </ul>
                         </li>
 
