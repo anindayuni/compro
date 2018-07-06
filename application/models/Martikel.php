@@ -66,17 +66,17 @@ class Martikel extends CI_Model
 		return $data->result_array();
 	}
 
-	function show_artikel(){
-		$this->db->join('_category', '_category.category_id = _article.article_id_category');
-		$this->db->order_by('article_id', 'DESC');
-		$ambil = $this->db->get('_article');
+	function show_artikel() //Menampilkan artikel yang bukan bertipe static
+	{
+		$ambil = $this->db->query("SELECT * FROM _article JOIN _category ON _category.category_id = _article.article_id_category WHERE _category.category_type != 'static' ORDER BY article_id DESC");
 
 		return $ambil->result_array();
 	}
 
 	function kategori(){
-		$ambil = $this->db->get('_category');
-
+		// $this->db->where('category_type !=')
+		// $ambil = $this->db->get('_category');
+		$ambil = $this->db->query("SELECT * FROM _category WHERE category_type != 'static' ");
 		return $ambil->result_array();
 	}
 
@@ -126,6 +126,13 @@ class Martikel extends CI_Model
 		return $ambil->result_array();
 	}
 
+	function show_image($article_id){ //Hanya berlaku jika gambar untuk artikel hanya 1, kalau banyak buat lagi function baru
+		$this->db->where('photo_id_article', $article_id);
+		$ambil = $this->db->get('_photo');
+
+		return $ambil->result_array();
+	}
+
 	function edit($update, $article_id){
 		$data['article_title'] = $update['article_title'];
         $data['article_url'] = $update['article_url'];
@@ -153,6 +160,14 @@ class Martikel extends CI_Model
 		$this->db->update('_article', $data);
 		return $kirim;
 	}
+
+	function update_photo($photo, $article_id){
+		$this->db->where('photo_id_article', $article_id);
+		$this->db->update('_photo', $photo);
+	}
+
+
+
 
 }
 
