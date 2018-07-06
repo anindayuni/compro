@@ -1,3 +1,8 @@
+<?php if ($sosmed['settings_maintenance'] == '0') {
+    header('Status: 301 Moved Permanently', false, 301); 
+    header('Location: maintenance'); 
+    exit(); 
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

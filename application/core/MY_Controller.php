@@ -7,6 +7,7 @@ class MY_Controller extends CI_Controller
 		parent::__construct();
 		$this->load->model('MKategori');
 		$this->load->model('Martikel');
+		$this->load->model('Msettings');
 	}
 
 	function render_page($content, $data = NULL)
@@ -23,6 +24,7 @@ class MY_Controller extends CI_Controller
 	{
 		$data['category'] = $this->MKategori->all_categories();
 		$data['article'] = $this->Martikel->latest_article();
+		$data['sosmed'] = $this->Msettings->sosmed();
 		
 		$data['slider'] = $this->load->view('frontend/slider', $data, TRUE);
 		$data['sidebar'] = $this->load->view('frontend/sidebar', $data, TRUE);

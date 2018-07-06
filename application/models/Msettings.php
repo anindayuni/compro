@@ -1,16 +1,17 @@
 <?php 
 
-/**
- * 
- */
 class Msettings extends CI_Model
 {
-	
-
-	public function list()
+	public function setting_list()
 	{
 		$data = $this->db->get('_settings')->result();
 		return $data;
+	}
+
+	function sosmed()
+	{
+		$data = $this->db->get('_settings');
+		return $data->row_array();
 	}
 
 	function update($id){	
