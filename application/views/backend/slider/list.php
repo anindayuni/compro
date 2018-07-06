@@ -70,21 +70,22 @@
                                             $tampil_status='Aktif';
                                         }
                                         ?>
-                                        <td><?php echo $tampil_status ?>
-                                        
-                                        
-                                        <a href="<?php echo base_url('logincms/slider/edit/').$f->article_id?>"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-pencil"> </i>  </button></a>
-                                    </td>
-                                    <td>
-                                        <a href="<?php echo base_url('logincms/slider/delete/').$f->article_id?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-trash"> </i>  </button></a>
+
+                                        <!-- <td><?php echo $tampil_status ?></td> -->
+                                        <td><input type="radio" name="buah" onclick="displayResult(this.value)" value="Anggur">Anggur
+                                            <input type="radio" name="buah" onclick="displayResult(this.value)" value="Apel">Apel
+                                        </td>
+                                        <td>
+                                            <a href="<?php echo base_url('logincms/slider/edit/').$f->article_id?>"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-pencil"> </i>  </button></a>
+                                            <a href="<?php echo base_url('logincms/slider/delete/').$f->article_id?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-trash"> </i>  </button></a>
 
 
-                                    </td>
-                                </tr>
-                            <?php endforeach ?>
-                        </tbody>
-                    </table>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
