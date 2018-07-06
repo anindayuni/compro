@@ -4,12 +4,12 @@
 
 
     if ($status['settings_maintenance']==0) {
-        $cekAktif=FALSE;
-        $cekNonAktif=TRUE;
+        $cekAktif='';
+        $cekNonAktif='checked=""';
     }
     else {
-       $cekAktif=TRUE;   
-       $cekNonAktif=FALSE;   
+       $cekAktif='checked=""';   
+       $cekNonAktif='';   
    }
    ?>
 
@@ -49,96 +49,86 @@
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Maintenance</label>
+
+
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                   <!--      <div class="form-group">
-                                            <div class="radio inlineblock m-r-20">
-                                                <input type="radio" name="maintenance_name" id="male" class="with-gap" value="1" checked="true">
-
-                                                <label for="male">Aktif</label>
-                                            </div>                                
-                                            <div class="radio inlineblock">
-                                               <input type="radio" name="maintenance_name" id="Female" class="with-gap" value="0" checked="">
-                                               <label for="Female">Non Aktif</label>
-                                           </div>
-                                       </div>
- -->
-
-
-                                        <!-- <div class="radio inlineblock m-r-20"> -->
-                                           <?php echo form_radio($data = array('name'=>'maintenance_name'), $value = '1', $checked = $cekAktif, $extra = ' class="with-gap"') ?> <label>Aktif</label> <br>
-                                       <!-- </div> -->
-                                            <!-- <div class="radio inlineblock"> -->
-                                           <?php echo form_radio($data = array('name'=>'maintenance_name'), $value = '0', $checked = $cekNonAktif, $extra = ' class="with-gap"') ?> <label>Non Aktif</label>
-                                           <!-- </div> -->
-                                       </div>
-                                   </div>
-                               </div>
-                               <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Instagram</label>
+                                   <div class="form-group">
+                                    <div class="radio inlineblock m-r-20">
+                                        <input type="radio" name="maintenance_name" id="aktif" class="with-gap" value="1" <?php echo $cekAktif ?>>
+                                        <label for="aktif">Male</label>
+                                    </div>                                
+                                    <div class="radio inlineblock">
+                                        <input type="radio" name="maintenance_name" id="non_aktif" class="with-gap" value="0" <?php echo $cekNonAktif ?>>
+                                        <label for="non_aktif">Female</label>
+                                    </div>
                                 </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                     <input type="text" class="form-control" name="instagram_name" placeholder="Url" value="<?php echo $url['settings_instagram'] ?>">
-                                 </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label>Instagram</label>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-8">
+                                <div class="form-group">
+                                 <input type="text" class="form-control" name="instagram_name" placeholder="Url" value="<?php echo $url['settings_instagram'] ?>">
                              </div>
                          </div>
-                         <div class="row clearfix">
-                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <label>Facebook</label>
-                            </div>
-                            <div class="col-lg-10 col-md-10 col-sm-8">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="facebook_name" placeholder="Url" value="<?php echo $url['settings_facebook'] ?>">
-                                </div>
+                     </div>
+                     <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                            <label>Facebook</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="facebook_name" placeholder="Url" value="<?php echo $url['settings_facebook'] ?>">
                             </div>
                         </div>
-                        <div class="row clearfix">
-                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <label>Twitter</label>
-                            </div>
-                            <div class="col-lg-10 col-md-10 col-sm-8">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="twitter_name" placeholder="Url" value="<?php echo $url['settings_twitter'] ?>">
-                                </div>
-                            </div>
-
-                        </div><br>
-                        <div class="row clearfix">
-                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <label>Youtube</label>
-                            </div>
-                            <div class="col-lg-10 col-md-10 col-sm-8">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="youtube_name" placeholder="Url" value="<?php echo $url['settings_youtube'] ?>">
-                                </div>
-                            </div>
-
-                        </div><br>
-
-
-
-
-
-                        <div class="row clearfix">
-                            <div class="col-sm-8 offset-sm-2">
-                                &nbsp;
-                            </div>
-                            <div class="col-sm-8 offset-sm-2">
-                                <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-pencil"></i> Update</button>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                            <label>Twitter</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="twitter_name" placeholder="Url" value="<?php echo $url['settings_twitter'] ?>">
                             </div>
                         </div>
-                    </form>
-                </div>
+
+                    </div><br>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                            <label>Youtube</label>
+                        </div>
+                        <div class="col-lg-10 col-md-10 col-sm-8">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="youtube_name" placeholder="Url" value="<?php echo $url['settings_youtube'] ?>">
+                            </div>
+                        </div>
+
+                    </div><br>
+
+
+
+
+
+                    <div class="row clearfix">
+                        <div class="col-sm-8 offset-sm-2">
+                            &nbsp;
+                        </div>
+                        <div class="col-sm-8 offset-sm-2">
+                            <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-pencil"></i> Update</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 
 
-    <?php 
+<?php 
 }
 ?>
 
