@@ -1,6 +1,6 @@
 <?php if ($sosmed['settings_maintenance'] == '0') {
     header('Status: 301 Moved Permanently', false, 301); 
-    header('Location: maintenance'); 
+    header('Location: '.base_url('maintenance')); 
     exit(); 
 } ?>
 <!DOCTYPE html>
@@ -139,11 +139,10 @@
             </div> -->
             <div class="footer-social-link text-capitalize">
                 <ul class="list-inline text-center">
-                    <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i>Google Plus</a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
-                    <li><a href="#"><i class="fa fa-pinterest"></i>Pinterest</a></li>
+                    <li><a href="<?php if (!empty($sosmed['settings_facebook'])) echo $sosmed['settings_facebook']; else echo "#";  ?>" target="_blank"><i class="fa fa-facebook"></i>Facebook</a></li>
+                    <li><a href="<?php if (!empty($sosmed['settings_instagram'])) echo $sosmed['settings_instagram']; else echo "#";  ?>" target="_blank"><i class="fa fa-instagram"></i>Instagram</a></li>
+                    <li><a href="<?php if (!empty($sosmed['settings_twitter'])) echo $sosmed['settings_twitter']; else echo "#";  ?>" target="_blank"><i class="fa fa-twitter"></i>Twitter</a></li>
+                    <li><a href="<?php if (!empty($sosmed['settings_youtube'])) echo $sosmed['settings_youtube']; else echo "#";  ?>" target="_blank"><i class="fa fa-youtube"></i>Youtube</a></li>
                 </ul>
             </div>
         </div>
