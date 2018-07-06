@@ -6,11 +6,11 @@
                     <div class="body block-header">
                         <div class="row">
                             <div class="col-lg-6 col-md-8 col-sm-12">
-                                <h2>Form Edit Data Artikel</h2>
+                                <h2>Form Edit Static Page</h2>
                                 <ul class="breadcrumb p-l-0 p-b-0 ">
                                     <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i> Home</a></li>
-                                    <li class="breadcrumb-item"><a href="">Artikel</a></li>
-                                    <li class="breadcrumb-item active">Edit Artikel</li>
+                                    <li class="breadcrumb-item"><a href="">Static</a></li>
+                                    <li class="breadcrumb-item active">Static Page</li>
                                 </ul>
                             </div>            
                             <div class="col-lg-6 col-md-4 col-sm-12 text-right">
@@ -27,22 +27,23 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Edit Data</strong> Artikel</h2>
+                        <h2><strong>Edit Data</strong> Static Page</h2>
                     </div>
                     
                     <div class="body">
                         <form class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data">
-                            <?php foreach ($artikel as $key => $art): ?>
-                            <input type="hidden" name="article_url" value="<?php echo $art['article_url']; ?>">
-                            <input type="hidden" name="article_create_date" value="<?php echo $art['article_create_date']; ?>">
-                            <input type="hidden" name="article_publish_date" value="<?php echo $art['article_publish_date']; ?>">
+                            <?php foreach ($static as $key => $st): ?>
+                            <input type="hidden" name="article_url" value="<?php echo $st['article_url']; ?>">
+                            <input type="hidden" name="article_create_date" value="<?php echo $st['article_create_date']; ?>">
+                            <input type="hidden" name="article_publish_date" value="<?php echo $st['article_publish_date']; ?>">
+                            <input type="hidden" name="article_id_category" value="<?php echo $st['article_id_category']; ?>">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama / Judul Artikel</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Masukkan Judul Artikel" name="article_title" required="required" value="<?php echo $art['article_title']; ?>">
+                                        <input type="text" class="form-control" name="article_title" required="required" value="<?php echo $st['article_title']; ?>">
                                     </div>
                                 </div>
                             </div><br>
@@ -52,21 +53,8 @@
                                     <label>Kategori</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <select class="form-control show-tick" name="article_id_category">
-                                        <?php foreach ($kategori as $key => $kat): ?>
-                                        <option <?php if ($art['article_id_category'] ==  $kat['category_id']) {echo "selected=selected";} ?> value="<?php echo $kat['category_id']; ?>"><?php echo $kat['category_name']; ?></option>
-                                    <?php endforeach; ?>
-                                    </select>
-                                </div> 
-                            </div><br>
-
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Featured Image</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="file" name="photo_img">
+                                        <input type="text" class="form-control" required="required" value="<?php echo $st['category_name']; ?>" disabled="">
                                     </div>
                                 </div> 
                             </div><br>
@@ -79,7 +67,7 @@
                                     <div class="card">
                                         <div class="body">
                                             <textarea id="ckeditor" name="article_content">
-                                                <?php echo $art['article_content']; ?>
+                                                <?php echo $st['article_content']; ?>
                                             </textarea>
                                         </div>
                                     </div>
@@ -93,11 +81,11 @@
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
                                         <div class="radio inlineblock m-r-20">
-                                            <input type="radio" name="article_status" id="male" class="with-gap" value="0" <?php if($art['article_status'] == 0) {echo "checked=''";} ?> >
+                                            <input type="radio" name="article_status" id="male" class="with-gap" value="0" <?php if($st['article_status'] == 0) {echo "checked=''";} ?> >
                                             <label for="male">Non Aktif</label>
                                         </div>                                
                                         <div class="radio inlineblock">
-                                            <input type="radio" name="article_status" id="Female" class="with-gap" value="1" <?php if($art['article_status'] == 1) {echo "checked=''";} ?>>
+                                            <input type="radio" name="article_status" id="Female" class="with-gap" value="1" <?php if($st['article_status'] == 1) {echo "checked=''";} ?>>
                                             <label for="Female">Aktif</label>
                                         </div>
                                     </div>
