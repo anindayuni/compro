@@ -1,4 +1,3 @@
-            <pre><?php print_r($sosmed); ?></pre>
 <div class="col-md-4">
     <div class="zinnia-sidebar">
         <div class="widget about-me text-center">
@@ -43,13 +42,11 @@
             <div class="widget-title text-uppercase text-center">
                 <h2>Latest Posts</h2>
             </div>
-            <pre><?php print_r($article); ?></pre>
             <?php foreach ($article as $key => $art): ?>
                 <div class="latest-post">
                     <div class="media">
                         <div class="media-left">
-                            <!-- <a href="#" class="popular-img"><img src="<?= base_url('assets/frontend/images/latest-thumb-1.jpg'); ?>" alt=""> -->
-                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['category_url'])) echo base_url('gambar/').$art['category_url']; else echo base_url('gambar/no-image.png'); ?>" alt="">
+                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['photo_img'])) echo base_url().'gambar/'.$art['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 115px; max-height: 90px; min-width: 115px;" alt="<?= $art['article_title']; ?>">
                             </a>
                         </div>
                         <div class="latest-post-content">

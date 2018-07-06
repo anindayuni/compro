@@ -9,12 +9,13 @@
                 <h2 class="post-title"><a href="<?= base_url().'news/'.$artikel['article_url']; ?>"><?= $artikel['article_title']; ?></a></h2>
             </div>
             <div class="post-thumb">
-                <a href="#"> <img src="<?= base_url('assets/frontend/images/post-thumb-1.jpg'); ?>" alt=""></a>
+                <!-- <a href="#"> <img src="<?= base_url('assets/frontend/images/post-thumb-1.jpg'); ?>" alt=""></a> -->
+                <a href="#" class="popular-img"><img src="<?php if (!empty($artikel['photo_img'])) echo base_url().'gambar/'.$artikel['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 716px; max-height: 435px; min-width: 716px;" alt="<?= $artikel['article_title']; ?>">
                 <div class="post-overlay-meta">
                     <ul class="post-meta pull-left">
-                        <li class="author">By <a href="#">Admin</a> |</li>
-                        <li class="date">Jul 14, 2015 |</li>
-                        <li class="comments"><a href="#">1 Comments</a></li>
+                        <!-- <li class="author">By <a href="#">Admin</a> |</li> -->
+                        <li class="date"><?= date('d M Y', strtotime($artikel['article_publish_date'])); ?></li>
+                        <!-- <li class="comments"><a href="#">1 Comments</a></li> -->
                     </ul>
 
                     <div class="share-block pull-right">

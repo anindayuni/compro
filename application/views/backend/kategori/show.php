@@ -68,17 +68,19 @@
                                     <td><?php echo $kat['category_type']; ?></td>
                                     <td><?php echo $kat['category_url']; ?></td>
                                     <td>
-                                        <center>
+                                       <!--  <center> -->
                                         <a href="<?php echo base_url('logincms/kategori/detail/').$kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
                                         </a>
                                         <a href="<?php echo base_url('logincms/kategori/edit/').$kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                         </a>
+                                        <?php if ($kat['category_type'] != "static") : ?>
                                         <a href="">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i></button>
                                         </a>
-                                        </center>
+                                        <?php endif; ?>
+                                       <!--  </center> -->
                                     </td>
                                     
                                 </tr>
