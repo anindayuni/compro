@@ -5,7 +5,7 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <div class="single-carousel one">
-                        <div class="slide-component text-center">
+                        <!-- <div class="slide-component text-center">
                             <div class="single-tag text-uppercase">
                                 <a href="#">Travel</a>
                             </div>
@@ -16,12 +16,12 @@
 
                             <a class="slide-read-more" href="#">Read more</a>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="item">
                     <div class="single-carousel two">
-                        <div class="slide-component text-center">
+                        <!-- <div class="slide-component text-center">
                             <div class="single-tag text-uppercase">
                                 <a href="#">Lifestyle</a>
                             </div>
@@ -32,13 +32,13 @@
 
                             <a class="slide-read-more" href="#">Read more</a>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
                 <div class="item">
                     <div class="single-carousel three">
-                        <div class="slide-component text-center">
+                        <!-- <div class="slide-component text-center">
                             <div class="single-tag text-uppercase">
                                 <a href="#">Dream</a>
                             </div>
@@ -49,7 +49,7 @@
 
                             <a class="slide-read-more" href="#">Read more</a>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
