@@ -36,9 +36,6 @@ class Foto extends MY_Controller
 
     $config['upload_path']      = './gambar';
     $config['allowed_types']    = 'gif|jpg|png|jpeg';
-                // $config['max_size']             = 100;
-                // $config['max_width']            = 1024;
-                // $config['max_height']           = 768;
 
     $this->load->library('upload', $config);
     $this->upload->initialize($config);

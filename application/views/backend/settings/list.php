@@ -95,7 +95,7 @@
                             </div>
                         </div>
 
-                    </div><br>
+                    </div>
                     <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                             <label>Youtube</label>
