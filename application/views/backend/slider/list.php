@@ -63,29 +63,37 @@
                                         <td><?php echo date('m-d-Y', strtotime($f->article_create_date))?></td>
                                         
                                         <?php 
-                                        if ($f->article_status==0) {
-                                            $tampil_status='Non Aktif';
-                                        }
-                                        else {
-                                            $tampil_status='Aktif';
-                                        }
+                                        // if ($f->article_status==0) {
+                                        //     $tampil_status='Non Aktif';
+                                        // }
+                                        // else {
+                                        //     $tampil_status='Aktif';
+                                        // }
                                         ?>
 
                                         <!-- <td><?php echo $tampil_status ?></td> -->
-                                        <td><input type="radio" name="buah" onclick="displayResult(this.value)" value="Anggur">Anggur
-                                            <input type="radio" name="buah" onclick="displayResult(this.value)" value="Apel">Apel
-                                        </td>
                                         <td>
-                                            <a href="<?php echo base_url('logincms/slider/edit/').$f->article_id?>"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-pencil"> </i>  </button></a>
-                                            <a href="<?php echo base_url('logincms/slider/delete/').$f->article_id?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-trash"> </i>  </button></a>
+                                            <script type="text/javascript">
+                                                function displayResult(status){ 
+                                                   document.getElementById("result").value=status; 
+                                               }
+                                           </script>
+
+                                           <input type="radio" name="status" onclick="displayResult(this.value)" value="1">Aktif
+                                           <input type="radio" name="status" onclick="displayResult(this.value)" value="0">Non Aktif
+                                           <input type="text" id="result">
+                                       </td>
+                                       <td>
+                                        <a href="<?php echo base_url('logincms/slider/edit/').$f->article_id?>"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-pencil"> </i>  </button></a>
+                                        <a href="<?php echo base_url('logincms/slider/delete/').$f->article_id?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-trash"> </i>  </button></a>
 
 
-                                        </td>
-                                    </tr>
-                                <?php endforeach ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
