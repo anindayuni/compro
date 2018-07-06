@@ -91,7 +91,6 @@
     <div class="zinnia-main-content">
         <div class="row">
 
-            <?php echo $slider; ?>
             <?php echo $content; ?>
             <?php echo $sidebar; ?>
 

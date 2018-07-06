@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                     <div class="body table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                             <thead>
                                 <tr>
                                     <th>#</th>

@@ -12,7 +12,7 @@ class Home extends MY_Controller
 	function index()
 	{
 		$data['article'] = $this->Martikel->front_article();
-		$data['slider'] = $this->load->view('frontend/slider', $data);
+		
 		$this->front_page('frontend/content',$data);
 	}
 }
