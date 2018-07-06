@@ -4,8 +4,6 @@
  */
 class Martikel extends CI_Model
 {
-<<<<<<< HEAD
-=======
 	
 	// function __construct(argument)
 	// {
@@ -54,8 +52,6 @@ class Martikel extends CI_Model
 		$data = $this->db->get('_article a');
 		return $data->result_array();
 	}
-
->>>>>>> da39e0cd253a84d6c872e8d930eb9c8c6e202f4e
 	function show_artikel(){
 		$this->db->join('_category', '_category.category_id = _article.article_id_category');
 		$this->db->order_by('article_id', 'DESC');

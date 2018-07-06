@@ -1,3 +1,4 @@
+<?php echo $slider; ?>
 <div class="col-md-8">
     <?php foreach ($article as $key => $artikel): ?>
         <article class="single-blog-post">
