@@ -29,12 +29,7 @@
                     <div class="header">
                         <h2><strong>Tambah Data</strong> Artikel</h2>
                     </div>
-                    <!-- <?php  
-                        echo "<pre>";
-                        print_r($status);
-                        echo "</pre>";
-                    ?> -->
-                    
+                
                     <div class="body">
                         <form class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="article_create_date" value="<?php echo date('Y-m-d'); ?>">
@@ -60,6 +55,17 @@
                                         <option value="<?php echo $kat['category_id']; ?>"><?php echo $kat['category_name']; ?></option>
                                     <?php endforeach; ?>
                                     </select>
+                                </div> 
+                            </div><br>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Featured Image</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <input type="file" name="photo_img">
+                                    </div>
                                 </div> 
                             </div><br>
 
