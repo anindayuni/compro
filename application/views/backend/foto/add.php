@@ -1,4 +1,32 @@
- <!-- Main Content -->
+ <!-- <h1>Tambah Gambar</h1><hr> -->
+<!-- Menampilkan Error jika validasi tidak valid -->
+<!-- <div style="color: red;"><?php echo (isset($message))? $message : ""; ?></div>
+<?php echo form_open("logincms/foto/add_action", array('enctype'=>'multipart/form-data')); ?>
+  <table cellpadding="8">
+    <tr>
+      <td>Deskripsi</td>
+      <td><input type="text" name="input_deskripsi" value="<?php echo set_value('input_deskripsi'); ?>"></td>
+    </tr>
+    <tr>
+      <td>Gambar</td>
+      <td><input type="file" name="input_gambar"></td>
+    </tr>
+  </table>
+    
+  <hr>
+  <input type="submit" name="submit" value="Simpan">
+  <a href="<?php echo base_url(); ?>"><input type="button" value="Batal"></a>
+<?php echo form_close(); ?>
+ -->
+
+
+
+
+<?php 
+// die;
+ ?>
+
+<!-- Main Content -->
  <section class="content">
     <div class="container">
         <div class="row clearfix">
@@ -26,18 +54,20 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Data</strong> Foto  </h2>
+                        <h2><strong>Data</strong>Foto</h2>
 
                     </div>
                     <div class="body">
-                        <form action="<?php echo base_url('logincms/foto/add_action') ?>" method="post">
+                        <!-- <form action="<?php echo base_url('logincms/foto/tambah') ?>" method="post" enctype="multipart/form-data"> -->
+                            <?php echo form_open("logincms/foto/add_action", array('enctype'=>'multipart/form-data')); ?>
+
                             <div class="row clearfix">
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="form-group">
-                                       <label>Judul Artikel</label>
-                                   </div>
-                               </div>
-                               <div class="col-lg-3 col-md-3 col-sm-3">
+                                     <label>Judul Artikel</label>
+                                 </div>
+                             </div>
+                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="form-group">
 
                                     <select name="judul_artikel" class="form-control show-tick">
@@ -63,7 +93,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="form-group">
 
-                                    <input type="file" name="userfile" size="20" />
+                                    <input type="file" name="userfile"/>
 
                                 </div>
                             </div>
@@ -78,18 +108,18 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-3">
                                 <div class="form-group">
+                                  <input type="submit" name="submit" value="Simpan">
+                                    <!-- <button type="submit" value="upload" class="btn btn-raised btn-primary btn-round"><i class="fa fa-check"></i> Simpan</button> -->
 
-                                 <button type="submit" value="upload" class="btn btn-raised btn-primary btn-round"><i class="fa fa-check"></i> Simpan</button>
+                                </div>
+                            </div>
 
-                             </div>
-                         </div>
+                        </div>
 
-                     </div>
-
-                 </form>
-             </div>
-         </div>
-     </div>
- </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 

@@ -9,6 +9,7 @@ class Mfoto extends CI_Model
 		return $data;
 	}
 
+
 }
 
 ?>

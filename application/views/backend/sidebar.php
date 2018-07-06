@@ -15,7 +15,7 @@
                             <a href="<?php echo base_url('logincms/artikel'); ?>"><i class="icon-layers"></i><span>Artikel</span></a>
                         </li>
                         <!-- <li class="header">FORMS, CHARTS, TABLES</li> -->
-                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a>
+                        <li><a href="<?php echo base_url('logincms/foto'); ?>" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a>
                         </li>
                         <li><a href="<?php echo base_url('logincms/settings'); ?>" class="menu-toggle"><i class="icon-settings"></i><span>Setting</span></a>
                             <!-- <ul class="ml-menu">                        

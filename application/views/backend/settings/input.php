@@ -1,5 +1,5 @@
  <!-- Main Content -->
-<section class="content">
+ <section class="content">
     <div class="container">
         <div class="row clearfix">
             <div class="col-lg-12">
@@ -482,7 +482,7 @@
                         <p>Check out each collumn for more details</p>                        
                     </div>
                     <div class="sparkline" data-type="bar" data-width="97%" data-height="117px" data-bar-Width="8" data-bar-Spacing="15"
-                        data-bar-Color="#ffffff">7,5,6,4,8,7,5,6,2,3,5,11,2,3,4,1,4,7,2,3,6,4,5,5,6,2,3,5,6,2,3,4,2,4</div>
+                    data-bar-Color="#ffffff">7,5,6,4,8,7,5,6,2,3,5,11,2,3,4,1,4,7,2,3,6,4,5,5,6,2,3,5,6,2,3,4,2,4</div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5 col-md-12">
@@ -545,25 +545,25 @@
                     <table class="table table-striped m-b-0">
                         <tbody>
                             <tr>
-                            <td>Wind</td>
-                            <td class="font-medium">ESE 17 mph</td>
-                        </tr>
-                        <tr>
-                            <td>Humidity</td>
-                            <td class="font-medium">72%</td>
-                        </tr>
-                        <tr>
-                            <td>Pressure</td>
-                            <td class="font-medium">25.56 in</td>
-                        </tr>
-                        <tr>
-                            <td>Cloud Cover</td>
-                            <td class="font-medium">80%</td>
-                        </tr>
-                        <tr>
-                            <td>Ceiling</td>
-                            <td class="font-medium">25280 ft</td>
-                        </tr>
+                                <td>Wind</td>
+                                <td class="font-medium">ESE 17 mph</td>
+                            </tr>
+                            <tr>
+                                <td>Humidity</td>
+                                <td class="font-medium">72%</td>
+                            </tr>
+                            <tr>
+                                <td>Pressure</td>
+                                <td class="font-medium">25.56 in</td>
+                            </tr>
+                            <tr>
+                                <td>Cloud Cover</td>
+                                <td class="font-medium">80%</td>
+                            </tr>
+                            <tr>
+                                <td>Ceiling</td>
+                                <td class="font-medium">25280 ft</td>
+                            </tr>
                         </tbody>
                     </table>
                     <div class="carousel slide" data-ride="carousel">
