@@ -18,6 +18,7 @@ class Martikel extends CI_Model
 		$this->db->limit(5);
 		$this->db->where('article_status', '1');
 		$this->db->join('_category', '_category.category_id = _article.article_id_category');
+		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id');
 		$this->db->order_by('article_id', 'DESC');
 		$ambil = $this->db->get('_article');
 		return $ambil->result_array();
@@ -64,8 +65,42 @@ class Martikel extends CI_Model
 	}
 
 	function save($input){
-		$this->db->insert('_article',$input);
+		$data['article_title'] = $input['article_title'];
+        $data['article_url'] = $input['article_url'];
+        $data['article_content'] = $input['article_content'];
+        $data['article_create_date'] = $input['article_create_date'];
+        $data['article_publish_date'] = $input['article_publish_date'];
+        $data['article_status'] = $input['article_status'];
+        $data['article_id_category'] = $input['article_id_category'];
+
+        $config['upload_path']      = './gambar';
+        $config['allowed_types']    = 'gif|jpg|png|jpeg';
+
+        // panggil library upload
+        $this->load->library('upload', $config);
+        // jika benar upload gambar
+        if ($this->upload->do_upload('photo_img'))
+        {
+            $kirim = $this->upload->data('file_name');
+        }
+        else{
+            $kirim = 'no-image.jpg';
+        }
+
+        $this->db->insert('_article', $data);
+        return $kirim;
+
 	}
+
+	function artikel_terbaru(){
+		$ambil = $this->db->query('select max(article_id) as id from _article');
+		return $ambil->row_array();
+	}
+
+	function save_photo($photo){
+		$this->db->insert('_photo', $photo);
+	}
+
 
 	function artikel_by_id($article_id){
 		$this->db->join('_category', '_category.category_id = _article.article_id_category');
@@ -76,9 +111,31 @@ class Martikel extends CI_Model
 	}
 
 	function edit($update, $article_id){
-		$this->db->where('_article.article_id', $article_id);
-		$this->db->update('_article', $update);
+		$data['article_title'] = $update['article_title'];
+        $data['article_url'] = $update['article_url'];
+        $data['article_content'] = $update['article_content'];
+        $data['article_create_date'] = $update['article_create_date'];
+        $data['article_publish_date'] = $update['article_publish_date'];
+        $data['article_status'] = $update['article_status'];
+        $data['article_id_category'] = $update['article_id_category'];
 
+        $config['upload_path']      = './gambar';
+        $config['allowed_types']    = 'gif|jpg|png|jpeg';
+
+        // panggil library upload
+        $this->load->library('upload', $config);
+        // jika benar upload gambar
+        if ($this->upload->do_upload('photo_img'))
+        {
+            $kirim = $this->upload->data('file_name');
+        }
+        else{
+            $kirim = 'no-image.jpg';
+        }
+
+		$this->db->where('_article.article_id', $article_id);
+		$this->db->update('_article', $data);
+		return $kirim;
 	}
 
 }

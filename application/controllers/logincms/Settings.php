@@ -16,7 +16,7 @@ class Settings extends MY_Controller
 
 	public function index(){
 		$data=array(
-			'settings'=>$this->Msettings->list(),
+			'settings'=>$this->Msettings->setting_list(),
 			'url'=>$this->db->get_where('_settings',array('settings_id'=>1))->row_array(),
 		);
 		$data['status']=$this->db->get('_settings')->row_array();

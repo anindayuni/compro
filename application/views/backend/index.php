@@ -34,6 +34,9 @@
 </head>
 <body class="theme-purple">
 
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/jquery-datatable/dataTables.bootstrap4.min.css') ?>">
+
 	<?php echo $header; ?>
 	<?php echo $sidebar; ?>
 	<?php echo $content; ?>
@@ -66,6 +69,17 @@
 <!-- Dialog Alert -->
 <script src="<?php echo base_url('assets/backend/plugins/sweetalert/sweetalert.min.js') ?>"></script> <!-- SweetAlert Plugin Js --> 
 <script src="<?php echo base_url('assets/backend/js/pages/ui/dialogs.js') ?>"></script>
+
+<!-- Jquery DataTable Plugin Js --> 
+<script src="<?php echo base_url('assets/backend/bundles/datatablescripts.bundle.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/plugins/jquery-datatable/buttons/dataTables.buttons.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/plugins/jquery-datatable/buttons/buttons.colVis.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/plugins/jquery-datatable/buttons/buttons.html5.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/backend/plugins/jquery-datatable/buttons/buttons.print.min.js') ?>"></script>
+
+<script src="<?php echo base_url('assets/backend/js/pages/tables/jquery-datatable.js') ?>"></script>
+
 
 </body>
 </html>

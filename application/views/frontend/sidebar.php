@@ -1,3 +1,4 @@
+            <pre><?php print_r($sosmed); ?></pre>
 <div class="col-md-4">
     <div class="zinnia-sidebar">
         <div class="widget about-me text-center">
@@ -12,14 +13,14 @@
             </div>
             <div class="about-me-social">
                 <ul class="list-inline">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                    <li><a href="<?php if (!empty($sosmed['settings_facebook'])) echo $sosmed['settings_facebook']; else echo "#";  ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="<?php if (!empty($sosmed['settings_instagram'])) echo $sosmed['settings_instagram']; else echo "#";  ?>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="<?php if (!empty($sosmed['settings_twitter'])) echo $sosmed['settings_twitter']; else echo "#";  ?>"><i class="fa fa-twitter" target="_blank"></i></a></li>
+                    <li><a href="<?php if (!empty($sosmed['settings_youtube'])) echo $sosmed['settings_youtube']; else echo "#";  ?>"><i class="fa fa-youtube" target="_blank"></i></a></li>
                 </ul>
             </div>
         </div>
+
         <!-- <div class="widget instagram-widget">
             <div class="widget-title text-uppercase text-center">
                 <h2>Instagram @Zinnia</h2>
@@ -42,11 +43,13 @@
             <div class="widget-title text-uppercase text-center">
                 <h2>Latest Posts</h2>
             </div>
+            <pre><?php print_r($article); ?></pre>
             <?php foreach ($article as $key => $art): ?>
                 <div class="latest-post">
                     <div class="media">
                         <div class="media-left">
-                            <a href="#" class="popular-img"><img src="<?= base_url('assets/frontend/images/latest-thumb-1.jpg'); ?>" alt="">
+                            <!-- <a href="#" class="popular-img"><img src="<?= base_url('assets/frontend/images/latest-thumb-1.jpg'); ?>" alt=""> -->
+                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['category_url'])) echo base_url('gambar/').$art['category_url']; else echo base_url('gambar/no-image.png'); ?>" alt="">
                             </a>
                         </div>
                         <div class="latest-post-content">
