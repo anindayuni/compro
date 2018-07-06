@@ -36,7 +36,7 @@
                         <p><?= substr(strip_tags($article['article_content']), 0,195) ?></p>
                  </div>
                  <div class="read-more-text text-left text-uppercase">
-                    <a href="single-blog.html">continue reading</a>
+                    <a href="<?= base_url().'news/'.$article['article_url']; ?>">continue reading</a>
                 </div>
             </div>
         </div>

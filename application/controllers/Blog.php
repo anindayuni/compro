@@ -17,6 +17,7 @@ class Blog extends MY_Controller
 	function single($url)
 	{
 		$data['single'] = $this->Martikel->single_article($url);
+		$data['random_articles'] = $this->Martikel->get_random_articles($url);
 		$this->front_page('frontend/single-blog',$data);
 	}
 
