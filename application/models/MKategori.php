@@ -1,27 +1,24 @@
 <?php
 class Mkategori extends CI_Model
 {
-	// function __construct(){
-        
- //        parent::__construct();
- //        // $this->load->database();
- //    }
-
     function all_categories()
     {
         $data = $this->db->query("SELECT c.category_name, c.category_url, COUNT(a.article_id_category) as jml FROM _category c
                         LEFT JOIN _article a on c.category_id = a.article_id_category
-                        WHERE c.category_type = 'blog' AND c.category_status = 1
+                        WHERE c.category_type = 'blog' AND c.category_status = 1 AND a.article_status = 1
                         GROUP BY c.category_name");
         return $data->result_array();
     }
-
+    function get_name($url)
+    {
+        $this->db->like('category_url',$url);
+        return $this->db->get('_category')->row_array();
+    }
     function show_kategori(){
         $this->db->order_by('category_id', 'DESC');
         $data =  $this->db->get('_category');
         return $data->result_array();
     }
-
     function type(){
         $enums = array();
         // if ($table == '' || $field == '') return $enums;
@@ -32,7 +29,6 @@ class Mkategori extends CI_Model
         }
         return $enums;
     }
- 
     public function save($input){
         $data['category_name'] = $input['category_name'];
         $data['category_date'] = $input['category_date'];

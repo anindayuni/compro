@@ -1,7 +1,4 @@
 <?php 
-/**
- * 
- */
 class Mstatic extends CI_Model
 {
 	function show_static()
@@ -30,6 +27,10 @@ class Mstatic extends CI_Model
 	{
 		$this->db->where('article_id', $article_id);
 		$this->db->update('_article', $update);
+	}
+	function add_contact_us($input)
+	{
+		return $this->db->insert('_contact_us', $input);
 	}
 
 }

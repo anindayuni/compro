@@ -1,22 +1,13 @@
 <div class="col-sm-8">
     <article class="single-blog-post">
         <div class="post-header text-center">
-
-            <h2 class="post-title">Contact us</h2>
+            <h2 class="post-title"><?= $contact['article_title']; ?></h2>
         </div>
         <div class="post-thumb">
             <img src="<?= base_url('assets/frontend/images/post-thumb-1.jpg'); ?>" alt="">
         </div>
         <div class="post-content">
-            <p>
-                Lorem ipsum dolor sits mate, commenter sad pacing elite, sed diam on my air mod temporal
-                incident laborer et dolor manga aliya at, sed diam voluptuary. At zero Los et accuse eat
-                just to
-                due colors et cerebrum. Stet Clarita and gun egg run, no sea take Mata Sanctus est Lorem
-                ipsum
-                dolor sit meat. Lorem ipsum dolor sits mate, consenteth sad pacing editor, sed diam, not my
-                ear
-            mod temper causal etc just do to Dolores et sebum. Stet Clarita.</p>
+            <p><?= $contact['article_content']; ?></p>
         </div>
         <div id="respond" class="comment-respond">
             <h3 id="reply-title" class="comment-reply-title">Contact form </h3>
@@ -26,7 +17,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <input type="text" class="form-control" required="required" placeholder="Name"
-                            name="contact_us_name" autofocus="autofocus">
+                            name="contact_us_name">
                         </div>
                     </div>
                     <div class="col-sm-6">  

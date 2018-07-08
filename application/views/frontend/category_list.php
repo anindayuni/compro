@@ -1,7 +1,9 @@
-<?php echo $slider; ?>
+<?php if (!empty($slider)): ?>
+    <?php echo $slider; ?>
+<?php endif ?>
 <div class="col-md-8 list">
     <div class="archive-header text-center">
-        <div class="archive-title">Browse Category by <span class="archive-name">LIFESTYLE</span>
+        <div class="archive-title">Browse Category by <span class="archive-name"><?= $category_name['category_name']; ?></span>
         </div>
     </div>
     <?php foreach ($category_list as $key => $list): ?>
@@ -10,7 +12,7 @@
                 <div class="media-left">
                     <div class="post-thumb">
                         <!-- <a href="#"> <img src="<?= base_url('assets/frontend/images/list-1.jpg'); ?>" alt=""></a> -->
-                        <a href="#" class="popular-img"><img src="<?php if (!empty($list['photo_img'])) echo base_url().'gambar/'.$list['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 362px; max-height: 270px; min-width: 362px;" alt="<?= $list['article_title']; ?>">
+                        <a href="#" class="popular-img"><img src="<?php if (!empty($list['photo_img'])) echo base_url().'gambar/'.$list['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 362px; max-height: 270px;" alt="<?= $list['article_title']; ?>">
                             <div class="post-overlay-meta">
                                 <ul class="post-meta pull-left">
                                     <li class="author">By <a href="#">Admin</a> |</li>
@@ -47,13 +49,17 @@
             </article>
         <?php endforeach ?>
 
-
         <div class="post-navigation text-uppercase">
+            <div class="next-navigation">
+                <?php echo $mpaging; ?>
+            </div>
+        </div>
+        <!-- <div class="post-navigation text-uppercase">
             <div class="next-navigation pull-left">
                 <a href="#"><i class="fa fa-angle-double-left"></i> Prev Posts </a>
             </div>
             <div class="next-navigation pull-right">
                 <a href="#">Next Posts <i class="fa fa-angle-double-right"></i></a>
             </div>
-        </div>
+        </div> -->
     </div>

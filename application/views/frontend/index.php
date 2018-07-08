@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <!-- Page Title -->
-    <title>Zinnia blog template</title>
+    <title><?php if(!empty($sosmed['settings_namesite'])) echo $sosmed['settings_namesite']; else echo "Company Profile CMS"; ?></title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,400i,700"
     rel="stylesheet">
@@ -46,47 +46,10 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav text-uppercase">
-                        <!-- <li class="dropdown">
-                            <a href="index-2.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">Home</a>
-                            <ul class="dropdown-menu">
-                                <li class="active"><a href="index-2.html">Home Default</a></li>
-                                <li><a href="index-3.html">Fixed Image background</a></li>
-                                <li><a href="large-than-grid.html">1st Large Then Grid</a></li>
-                                <li><a href="grid-layout.html">Grid Layout</a></li>
-                                <li><a href="grid-3-columns.html">Grid 3 Columns</a></li>
-                                <li><a href="large-than-list.html">1st Large Then List</a></li>
-                                <li><a href="list-layout.html">List Layout</a></li>
-                            </ul>
-                        </li> -->
-                        <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                                aria-haspopup="true" aria-expanded="false">About Us</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-haspopup="true" aria-expanded="false">Layouts</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="full-width.html">Full-width</a></li>
-                                        <li><a href="index-2.html">Right Sidebar</a></li>
-                                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="single-blog.html">Standard Post</a></li>
-                                <li><a href="link-post.html">Link post</a></li>
-                                <li><a href="video-post.html">Video post</a></li>
-                                <li><a href="audio-post.html">Audio post</a></li>
-                                <li><a href="slider-post.html">Gallery Post</a></li>
-                                <li><a href="contact.html">Contact one</a></li>
-                                <li><a href="contact-with-map.html">Contact With Map</a></li>
-                                <li><a href="archive.html">Archive</a></li>
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="404.html">404 Page</a></li>
-                            </ul>
-                        </li> -->
                         <li><a href="<?= base_url(); ?>">Home</a></li>
-                        <li><a href="archive.html">About Us</a></li> 
+                        <li><a href="<?= base_url('about-us'); ?>">About Us</a></li> 
                         <li><a href="<?= base_url('news'); ?>">Berita</a></li>
-                        <li><a href="archive.html">Gallery</a></li>
+                        <li><a href="<?= base_url('gallery'); ?>">Gallery</a></li>
                         <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
                     </ul>
                 </div>
@@ -148,8 +111,14 @@
         </div>
 
     </div>
-    <div class="container footer-copyright-text text-center">
-        <p>&copy; 2018 Develop by  <a href="http://www.otret.com" target="_blank">Otret.com</a></p>
+    <div class="container footer-copyright-text">
+        <p class="pull-left"><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?>
+            <ul class="navbar-nav pull-right">
+                <?php foreach ($static_page as $key => $page): ?>
+                    <li><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
+                <?php endforeach ?>
+            </ul>
+        </p>
     </div>
 </footer>
 <!--//Script//-->

@@ -49,8 +49,6 @@
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Maintenance</label>
-
-
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                    <div class="form-group">
@@ -67,63 +65,104 @@
                         </div>
                         <div class="row clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <label>Instagram</label>
+                                <label>Judul Website</label>
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8">
                                 <div class="form-group">
-                                 <input type="text" class="form-control" name="instagram_name" placeholder="Url" value="<?php echo $url['settings_instagram'] ?>">
+                                 <input type="text" class="form-control" maxlength="100" name="nama_website" placeholder="Nama Website" value="<?php echo $url['settings_namesite']; ?>">
                              </div>
                          </div>
                      </div>
                      <div class="row clearfix">
                         <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                            <label>Facebook</label>
+                            <label>Keyword</label>
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-8">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="facebook_name" placeholder="Url" value="<?php echo $url['settings_facebook'] ?>">
-                            </div>
-                        </div>
+                             <input type="text" class="form-control" maxlength="100" name="meta_keyword" placeholder="Meta Keyword" value="<?php echo $url['settings_meta_keyword']; ?>">
+                         </div>
+                     </div>
+                 </div>
+                 <div class="row clearfix">
+                    <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                        <label>Meta Description</label>
                     </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                            <label>Twitter</label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="twitter_name" placeholder="Url" value="<?php echo $url['settings_twitter'] ?>">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row clearfix">
-                        <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                            <label>Youtube</label>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-8">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="youtube_name" placeholder="Url" value="<?php echo $url['settings_youtube'] ?>">
-                            </div>
-                        </div>
-
-                    </div><br>
-
-
-
-
-
-                    <div class="row clearfix">
-                        <div class="col-sm-8 offset-sm-2">
-                            &nbsp;
-                        </div>
-                        <div class="col-sm-8 offset-sm-2">
-                            <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-pencil"></i> Update</button>
-                        </div>
-                    </div>
-                </form>
+                    <div class="col-lg-10 col-md-10 col-sm-8">
+                        <div class="form-group">
+                         <input type="text" class="form-control" maxlength="150" name="meta_description" placeholder="Meta Description" value="<?php echo $url['settings_meta_description']; ?>">
+                     </div>
+                 </div>
+             </div>
+             <div class="row clearfix">
+                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                    <label>Instagram</label>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-8">
+                    <div class="form-group">
+                     <input type="text" class="form-control" name="instagram_name" placeholder="Url" value="<?php echo $url['settings_instagram'] ?>">
+                 </div>
+             </div>
+         </div>
+         <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label>Facebook</label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="facebook_name" placeholder="Url" value="<?php echo $url['settings_facebook'] ?>">
+                </div>
             </div>
         </div>
-    </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label>Twitter</label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="twitter_name" placeholder="Url" value="<?php echo $url['settings_twitter'] ?>">
+                </div>
+            </div>
+
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label>Youtube</label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="youtube_name" placeholder="Url" value="<?php echo $url['settings_youtube'] ?>">
+                </div>
+            </div>
+
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                <label>Footer Setting</label>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-8">
+                <div class="form-group">
+                    <input type="text" class="form-control" maxlength="150" name="footer" placeholder="Copyright" value="<?php echo $url['settings_footer']; ?>">
+                </div>
+            </div>
+
+        </div><br>
+
+
+
+
+
+        <div class="row clearfix">
+            <div class="col-sm-8 offset-sm-2">
+                &nbsp;
+            </div>
+            <div class="col-sm-8 offset-sm-2">
+                <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-pencil"></i> Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>
 </div>
 
 
