@@ -51,7 +51,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home';
 // frontend routes start
-$route['contact-us'] = 'contact';
+$route['contact-us'] = 'statics/contact_us';
+$route['about-us'] = 'statics/about_us';
+$route['faq'] = 'statics/faq';
+$route['gallery'] = 'statics/gallery';
 $route['news'] = 'blog';
 $route['news/(:any)'] = 'blog/single/$1';
 $route['category/(:any)'] = 'blog/category/$1';

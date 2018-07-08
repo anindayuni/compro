@@ -42,18 +42,18 @@
             <div class="widget-title text-uppercase text-center">
                 <h2>Latest Posts</h2>
             </div>
-            <?php foreach ($article as $key => $art): ?>
+            <?php foreach ($latest_article as $key => $art): ?>
                 <div class="latest-post">
                     <div class="media">
                         <div class="media-left">
-                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['photo_img'])) echo base_url().'gambar/'.$art['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 115px; max-height: 90px; min-width: 115px;" alt="<?= $art['article_title']; ?>">
+                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['photo_img'])) echo base_url().'gambar/'.$art['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 115px; max-height: 90px; min-height: 90px;min-width: 115px;" alt="<?= $art['article_title']; ?>">
                             </a>
                         </div>
                         <div class="latest-post-content">
                             <div class="single-tag">
                                 <a href="<?= base_url().'category/'.$art['category_url']; ?>"> <?= $art['category_name']; ?></a>
                             </div>
-                            <h2><a href="<?= base_url().'news/'.$art['article_url'] ?>"><?= substr($art['article_title'], 0,150); ?></a></h2>
+                            <h2><a href="<?= base_url().'news/'.$art['article_url'] ?>"><?= substr($art['article_title'], 0,65); ?></a></h2>
                             <p><?= date('d M Y', strtotime($art['article_publish_date'])); ?></p>
                         </div>
 

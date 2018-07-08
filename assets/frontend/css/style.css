@@ -105,21 +105,29 @@ footer .container {
 div#zinniaCarousel {
   overflow: hidden;
   margin-bottom: 50px; }
+   div#zinniaCarousel .single-carousel img{
+    background-repeat:no-repeat;
+    /*-webkit-background-size: cover;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    width: 100%;
+    height: auto;
+    /*max-height: 530px;*/
+  }
   div#zinniaCarousel .single-carousel.one {
-    background: url("../images/post-thumb-3.jpg") no-repeat; no-repeat;
     /*background: url(assets/frontend/images/post-thumb-3.jpg) no-repeat;*/
     -webkit-background-size: cover;
     background-size: cover; }
   div#zinniaCarousel .single-carousel.two {
-    background: url(../images/post-thumb-2.jpg) no-repeat;
+    /*background: url(../images/post-thumb-2.jpg) no-repeat;*/
     -webkit-background-size: cover;
     background-size: cover; }
   div#zinniaCarousel .single-carousel.three {
-    background: url(../images/post-thumb-7.jpg) no-repeat;
+    /*background: url(../images/post-thumb-7.jpg) no-repeat;*/
     -webkit-background-size: cover;
     background-size: cover; }
   div#zinniaCarousel .single-carousel {
-    height: 530px;
+    /*height: 530px;*/
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }

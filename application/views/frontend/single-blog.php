@@ -72,46 +72,24 @@
                     <div class="col-sm-4">
                         <div class="single-related-posts">
                             <a href="#" title="">
-                                <a href="#" class="popular-img text-center"><img src="<?php if (!empty($random['photo_img'])) echo base_url().'gambar/'.$random['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-height: 167px; min-height: 160px; max-width: 218px;" alt="<?= $random['article_title']; ?>">
+                                <a href="<?= $random['article_url']; ?>" class="popular-img text-center"><img src="<?php if (!empty($random['photo_img'])) echo base_url().'gambar/'.$random['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-height: 167px; min-height: 160px; max-width: 218px;" alt="<?= $random['article_title']; ?>">
                             </a>
                             <header>
-                                <h3><a href="#"><?= $random['article_title']?></a></h3>
+                                <h3><a href="<?= $random['article_url']; ?>"><?= substr($random['article_title'], 0,100) ?></a></h3>
                             </header>
                         </div>
                     </div>
                 <?php endforeach ?>
-                <!-- <div class="col-sm-4">
-                    <div class="single-related-posts">
-                        <a href="#" title="">
-                            <img src="<?= base_url('assets/frontend/images/ralated-post-thumb-2.jpg'); ?>"
-                            class="img-responsive related-thumb wp-post-image" alt="">
-                        </a>
-                        <header>
-                            <h3><a href="#">Preparing Slides for…</a></h3>
-                        </header>
-                    </div>
-                </div> -->
-                <!-- <div class="col-sm-4">
-                    <div class="single-related-posts">
-                        <a href="#" title="">
-                            <img src="<?= base_url('assets/frontend/images/ralated-post-thumb-3.jpg'); ?>"
-                            class="img-responsive related-thumb wp-post-image" alt="">
-                        </a>
-                        <header>
-                            <h3><a href="#">Preparing Slides for…</a></h3>
-                        </header>
-                    </div>
-                </div> -->
             </div>
         </div>
 
 
-        <div class="post-navigation text-uppercase">
+        <!-- <div class="post-navigation text-uppercase">
             <div class="next-navigation pull-left">
                 <a href="#"><i class="fa fa-angle-double-left"></i> Prev Posts </a>
             </div>
             <div class="next-navigation pull-right">
                 <a href="#">Next Posts <i class="fa fa-angle-double-right"></i></a>
             </div>
-        </div>
+        </div> -->
     </div>

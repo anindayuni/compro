@@ -1,9 +1,4 @@
 <?php 
-
-
-/**
- * 
- */
 class Settings extends MY_Controller
 {
 	
