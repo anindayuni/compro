@@ -1,5 +1,5 @@
- <!-- Main Content -->
- <section class="content">
+<!-- Main Content -->
+<section class="content">
     <div class="container">
         <div class="row clearfix">
             <div class="col-lg-12">
@@ -30,7 +30,7 @@
                         <h2><strong> Data foto </strong></h2>
                         <ul class="header-dropdown">
                             <li>
-                                <a href="http://localhost/github/company-profile/logincms/foto/add"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Tambah foto</button></a>
+                                <a href="<?php echo base_url('logincms/foto/add') ?>"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Tambah foto</button></a>
                             </li>
                             <li>
                                 &nbsp;
@@ -49,19 +49,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-<?php 
-$no=1;
-foreach ($foto as $f): ?>
-    
-                                <tr>
-                                    <td><?php echo $no++ ?></td>
-                                    <td><?php echo $f->photo_id_article ?></td>
-                                    <td><?php echo $f->photo_img?></td>
-                                    <td><?php echo $f->photo_date?></td>
-                                    <td><a href="<?php echo base_url('logincms/foto/delete/').$f->photo_id?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Delete</a></td>
-                                </tr>
-<?php endforeach ?>
-                                                            </tbody>
+                                <?php 
+                                $no=1;
+                                foreach ($foto as $f): ?>
+
+                                    <tr>
+                                        <td><?php echo $no++ ?></td>
+                                        <td><?php echo $f->photo_id_article ?></td>
+                                        <td><img height="50px" width="50px" src="<?php echo base_url("gambar/$f->photo_img")?>"></td>
+                                        <td><?php echo $f->photo_date?></td>
+                                        <td><a href="<?php echo base_url('logincms/foto/delete/').$f->photo_id?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')"> <button class="btn btn-raised btn-primary btn-round" data-type="basic"><i class="icon-trash"> </i>  </button></a></td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>

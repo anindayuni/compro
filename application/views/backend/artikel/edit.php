@@ -62,6 +62,17 @@
 
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Featured Image</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <input type="file" name="photo_img">
+                                    </div>
+                                </div> 
+                            </div><br>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Konten</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">

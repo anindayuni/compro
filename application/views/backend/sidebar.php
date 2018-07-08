@@ -15,8 +15,18 @@
                             <a href="<?php echo base_url('logincms/artikel'); ?>"><i class="icon-layers"></i><span>Artikel</span></a>
                         </li>
                         <!-- <li class="header">FORMS, CHARTS, TABLES</li> -->
-                        <li><a href="javascript:void(0);" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a>
+                        <!-- <li><a href="<?php echo base_url('logincms/foto'); ?>" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a> -->
+                        <!-- </li> -->
+
+                        <li> <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block"><i class="icon-picture"></i><span>Foto</span></a>
+                            <ul class="ml-menu">
+                                <li><a href="<?php echo base_url('logincms/gallery'); ?>" class=" waves-effect waves-block">Gallery</a></li>
+                                <li><a href="<?php echo base_url('logincms/slider'); ?>">Slider</a></li>
+                                <!-- <li><a href="map-jvectormap.html" class=" waves-effect waves-block">Foto Artikel</a></li> -->
+                            </ul>
                         </li>
+
+
                         <li><a href="<?php echo base_url('logincms/settings'); ?>" class="menu-toggle"><i class="icon-settings"></i><span>Setting</span></a>
                             <!-- <ul class="ml-menu">                        
                                 <li><a href="table-normal.html">Normal Tables</a></li>

@@ -25,14 +25,28 @@
         <!-- Horizontal Layout -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12">
+                <?php foreach ($artikel as $key => $art): ?>
                 <div class="card">
                     <div class="header">
                         <h2><strong>Detail</strong> Artikel</h2>
+                        <ul class="header-dropdown">
+                            <li class="dropdown">
+                                <label>Create Date</label>
+                                <label>: </label>
+                                <label><?php echo date("d-F-Y", strtotime($art['article_create_date'])); ?></label>
+                            </li>
+                            &nbsp; | &nbsp;
+                            <li class="remove">
+                                <label>Publish Date</label>
+                                <label>: </label>
+                                <label><?php echo date("d-F-Y", strtotime($art['article_publish_date'])); ?></label>
+                            </li>
+                        </ul>
                     </div>
                     
                     <div class="body">
                         <form class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data">
-                            <?php foreach ($artikel as $key => $art): ?>
+                            
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama / Judul Artikel</label>
@@ -41,28 +55,6 @@
                                     <div class="form-group">
                                         <label>: </label>
                                         <label><?php echo $art['article_title']; ?></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Create Date</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                        <label>: </label>
-                                        <label><?php echo date("d-F-Y", strtotime($art['article_create_date'])); ?></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Publish Date</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <div class="form-group">
-                                        <label>: </label>
-                                        <label><?php echo date("d-F-Y", strtotime($art['article_publish_date'])); ?></label>
                                     </div>
                                 </div>
                             </div>
@@ -92,12 +84,26 @@
                             </div><br>
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Nama / Judul Artikel</label>
+                                    <label>URL</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
                                         <label>: </label>
                                         <label><?php echo $art['article_url']; ?></label>
+                                    </div>
+                                </div>
+                            </div><br>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Featured Image</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <label>: </label>
+                                        <?php foreach ($gambar as $key => $gbr) : ?>
+                                        <img src="<?php echo base_url('gambar/').$gbr['photo_img']; ?>" width="100" height="100">
+                                    <?php endforeach; ?>
                                     </div>
                                 </div>
                             </div><br>
@@ -114,6 +120,24 @@
                                     </div>
                                 </div> 
                             </div><br>
+
+
+                            <div class="row clearfix">
+                                
+                                
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-8">
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
                              
                              <?php endforeach; ?>
                             

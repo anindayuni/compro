@@ -1,55 +1,26 @@
 <?php 
 
-/**
- * 
- */
 class Msettings extends CI_Model
 {
-	
-
-	public function list()
+	public function setting_list()
 	{
 		$data = $this->db->get('_settings')->result();
 		return $data;
 	}
 
-	function update_youtube($id){	
+	function sosmed()
+	{
+		$data = $this->db->get('_settings');
+		return $data->row_array();
+	}
+
+	function update($id){	
 		
 		$this->db->where('settings_id',$id);
 		$this->db->update('_settings');
 		redirect('logincms/settings', 'refresh');
 	}
 
-
-	function update_twitter($id){	
-		
-		$this->db->where('settings_id',$id);
-		$this->db->update('_settings');
-		redirect('logincms/settings', 'refresh');
-	}
-
-	function update_facebook($id){	
-		
-		$this->db->where('settings_id',$id);
-		$this->db->update('_settings');
-		redirect('logincms/settings', 'refresh');
-	}
-
-
-	function update_instagram($id){	
-		
-		$this->db->where('settings_id',$id);
-		$this->db->update('_settings');
-		redirect('logincms/settings', 'refresh');
-	}
-
-
-	function update_maintenance($id){	
-		
-		$this->db->where('settings_id',$id);
-		$this->db->update('_settings');
-		redirect('logincms/settings', 'refresh');
-	}
 
 
 }

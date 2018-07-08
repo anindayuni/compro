@@ -7,13 +7,20 @@ class Home extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('MKategori');
+		$this->load->model('Msettings');
+
 	}
 
 	function index()
 	{
 		$data['article'] = $this->Martikel->front_article();
-		$data['slider'] = $this->load->view('frontend/slider', $data);
 		$this->front_page('frontend/content',$data);
+	}
+
+	function maintenance()
+	{
+		$data['sosmed'] = $this->Msettings->sosmed();
+		$this->load->view('frontend/maintenance',$data);
 	}
 }
 ?>

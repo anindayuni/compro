@@ -18,7 +18,7 @@ class Artikel extends MY_Controller
 
 	function index(){
 
-		$data ['artikel'] = $this->Martikel->show_artikel();
+		$data['artikel'] = $this->Martikel->show_artikel();
 		$this->render_page('backend/artikel/show', $data);
 
 	}
@@ -27,7 +27,6 @@ class Artikel extends MY_Controller
 		$data['kategori'] = $this->Martikel->kategori();
 		if ($this->input->post()) {
 			$input = $this->input->post();
-
 
 			$string = $this->input->post('article_title');
 
@@ -40,7 +39,15 @@ class Artikel extends MY_Controller
 				$string = substr($string, 0, 100);
 			
 			$input['article_url'] = $string;
-			$this->Martikel->save($input);
+			
+			$photo['photo_img'] = $this->Martikel->save($input); //Simpan data article di tabel article dulu
+			$cari_id = $this->Martikel->artikel_terbaru(); //cari id article yang baru saja disimpan
+			$photo['photo_id_article'] = $cari_id['id'];
+			$photo['photo_date'] = date('Y-m-d');
+			$photo['photo_information'] = 'featured-image';
+
+			$this->Martikel->save_photo($photo);
+
 			redirect('logincms/artikel', 'refresh');
 		}
 
@@ -62,7 +69,13 @@ class Artikel extends MY_Controller
 				$update['article_url'] = $this->input->post('article_url');
 				$update['article_content'] = $this->input->post('article_content');
 				$update['article_publish_date'] = date('Y-m-d');
-				$this->Martikel->edit($update, $article_id);
+
+				$photo['photo_img'] = $this->Martikel->edit($update, $article_id);
+				$photo['photo_id_article'] = $article_id;
+				$photo['photo_date'] = date('Y-m-d');
+				$photo['photo_information'] = 'featured-image';
+
+				$this->Martikel->update_photo($photo, $article_id);
 			}
 			else{
 				$update['article_title'] = $this->input->post('article_title');
@@ -72,7 +85,13 @@ class Artikel extends MY_Controller
 				$update['article_url'] = $this->input->post('article_url');
 				$update['article_content'] = $this->input->post('article_content');
 				$update['article_publish_date'] = $this->input->post('article_publish_date');
-				$this->Martikel->edit($update, $article_id);
+
+				$photo['photo_img'] = $this->Martikel->edit($update, $article_id);
+				$photo['photo_id_article'] = $article_id;
+				$photo['photo_date'] = date('Y-m-d');
+				$photo['photo_information'] = 'featured-image';
+
+				$this->Martikel->update_photo($photo, $article_id);
 			}
 
 			redirect('logincms/artikel', 'refresh');
@@ -82,6 +101,8 @@ class Artikel extends MY_Controller
 
 	function detail($article_id){
 		$data['artikel'] = $this->Martikel->artikel_by_id($article_id);
+		$data['gambar'] = $this->Martikel->show_image($article_id);
+
 		$this->render_page('backend/artikel/detail', $data);
 	}
 }
