@@ -1,22 +1,6 @@
 <?php 
 class Martikel extends CI_Model
 {
-<<<<<<< HEAD
-
-	function all_articles()
-	{
-=======
-	function latest_article(){
-		$this->db->limit(5);
->>>>>>> c67794853dedcfe8e3b8fd7ba24db4de8faf499f
-		$this->db->where('article_status', '1');
-		$this->db->where('_category.category_type', 'blog');
-		$this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
-		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
-		$this->db->order_by('article_id', 'DESC');
-		$ambil = $this->db->get('_article');
-		return $ambil->result_array();
-	}
 	function front_article(){
 		$this->db->where('article_status', '1');
 		$this->db->where('_category.category_type', 'blog');
@@ -66,17 +50,6 @@ class Martikel extends CI_Model
 		$data = $this->db->get('_article a');
 		return $data->result_array();
 	}
-<<<<<<< HEAD
-
-
-	// function show_artikel()
-	// {
-	// 	$this->db->join('_category', '_category.category_id = _article.article_id_category');
-	// 	$this->db->order_by('article_id', 'DESC');
-	// 	$ambil = $this->db->get('_article');
-	// }
-
-=======
 	function show_by_category_pagination($url,$limit,$page=0)
 	{
 		$this->db->limit($limit, $page);
@@ -87,7 +60,6 @@ class Martikel extends CI_Model
 		$data = $this->db->get('_article a');
 		return $data->result_array();
 	}
->>>>>>> c67794853dedcfe8e3b8fd7ba24db4de8faf499f
 	function show_artikel() //Menampilkan artikel yang bukan bertipe static
 	{
 		$ambil = $this->db->query("SELECT * FROM _article JOIN _category ON _category.category_id = _article.article_id_category WHERE _category.category_type != 'static' ORDER BY article_id DESC");

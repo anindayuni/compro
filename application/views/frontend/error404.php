@@ -22,20 +22,13 @@
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/owl.theme.default.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/font-awesome.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/style.css'); ?>">
-
-    <!-- HTML5 shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="assets/frontend/js/html5shiv.js"></script>
-    <script src="assets/frontend/js/respond.js"></script>
-<![endif]-->
 </head>
 <body>
     <div class="container zinnia-page">
         <header>
-            <div class="zinnia-logo text-center">
-                <!-- <h1><a href="#"><img src="<?= base_url('assets/frontend/images/logo.png'); ?>" alt=""></a></h1> -->
+            <!-- <div class="zinnia-logo text-center">
                 <h1><a href="<?= base_url(); ?>"><img src="<?= base_url('gambar/banner/kangemil.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>" title="<?= $sosmed['settings_namesite']; ?>"></a></h1>
-            </div>
+            </div> -->
             <div class="zinnia-menu text-center">
                 <nav class="navbar">
                     <div class="navbar-header">
@@ -47,60 +40,40 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav text-uppercase">
-                        <li><a href="<?= base_url(); ?>">Home</a></li>
-                        <li><a href="<?= base_url('about-us'); ?>">About Us</a></li> 
-                        <li><a href="<?= base_url('news'); ?>">Berita</a></li>
-                        <li><a href="<?= base_url('gallery'); ?>">Gallery</a></li>
-                        <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
-                    </ul>
+                            <li><a href="<?= base_url(); ?>">Home</a></li>
+                            <li><a href="<?= base_url('about-us'); ?>">About Us</a></li> 
+                            <li><a href="<?= base_url('news'); ?>">Berita</a></li>
+                            <li><a href="<?= base_url('gallery'); ?>">Gallery</a></li>
+                            <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="zinnia-main-content">
+            <div class="row">
+
+                <div class="zinnia-main-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-error text-center">
+                                <div class="home-content ">
+                                    <h2>404</h2>
+                                    <h3 class="text-uppercase blog-heading"> Nothing found!</h3>
+                                    <p>Ops! You are in Wrong page, <a href="<?= base_url(); ?>"> Go Home</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </nav>
-        </div>
-    </header>
-    <div class="zinnia-main-content">
-        <div class="row">
 
-            <?php echo $content; ?>
-            <?php echo $sidebar; ?>
-
+            </div>
         </div>
     </div>
-</div>
-<footer class="zinnia-footer">
-    <div class="container">
-    <hr/>
-        <!-- <div class="footer-instagram text-center">
-
-            <div id="footer-instagram" class="owl-carousel owl-theme">
-
-                <div class="item">
-                    <a href="#"><img src="<?= base_url('assets/frontend/images/ft-insta-3.jpg'); ?>" alt=""></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="<?= base_url('assets/frontend/images/ft-insta-4.jpg'); ?>" alt=""></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="<?= base_url('assets/frontend/images/ft-insta-5.jpg'); ?>" alt=""></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="<?= base_url('assets/frontend/images/ft-insta-6.jpg'); ?>" alt=""></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="<?= base_url('assets/frontend/images/ft-insta-7.jpg'); ?>" alt=""></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="<?= base_url('assets/frontend/images/ft-insta-8.jpg'); ?>" alt=""></a>
-                </div>
-
-            </div>
-            <div class="instagram-overlay-text text-uppercase">
-                <h2>Zinnia @ <a href="#">Instagram</a></h2>
-            </div>
-        </div> -->
+    <footer class="zinnia-footer">
+        <div class="container">
+            <hr/>
         <div class="footer-social">
-            <!-- <div class="footer-logo text-center">
-                <a href="#"> <img src="<?= base_url('assets/frontend/images/logo.png'); ?>" alt=""></a>
-            </div> -->
             <div class="footer-social-link text-capitalize">
                 <ul class="list-inline text-center">
                     <li><a href="<?php if (!empty($sosmed['settings_facebook'])) echo $sosmed['settings_facebook']; else echo "#";  ?>" target="_blank"><i class="fa fa-facebook"></i>Facebook</a></li>
@@ -114,13 +87,13 @@
     </div>
     <div class="container footer-copyright-text">
         <p class="pull-left"><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?>
-            <ul class="navbar-nav pull-right">
-                <?php foreach ($static_page as $key => $page): ?>
-                    <li><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
-                <?php endforeach ?>
-            </ul>
-        </p>
-    </div>
+        <ul class="navbar-nav pull-right">
+            <?php foreach ($static_page as $key => $page): ?>
+                <li><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
+            <?php endforeach ?>
+        </ul>
+    </p>
+</div>
 </footer>
 <!--//Script//-->
 <script src="<?= base_url('assets/frontend/js/jquery-1.11.3.min.js'); ?>"></script>

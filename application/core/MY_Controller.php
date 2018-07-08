@@ -31,6 +31,7 @@ class MY_Controller extends CI_Controller
 		$data['slider'] = $this->load->view('frontend/slider', $data, TRUE);
 		$data['sidebar'] = $this->load->view('frontend/sidebar', $data, TRUE);
 		$data['content'] = $this->load->view($content, $data, TRUE);
+
 		$this->load->view('frontend/index', $data);
 	}
 }

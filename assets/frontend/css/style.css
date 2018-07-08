@@ -821,7 +821,7 @@ header .zinnia-logo {
   max-width: none; }
 
 .page-error {
-  background: url("assets/images/404-home.jpg") no-repeat;
+  background: url("../images/404-home.jpg") no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   position: relative;

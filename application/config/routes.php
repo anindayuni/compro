@@ -60,7 +60,7 @@ $route['news/(:any)'] = 'blog/single/$1';
 $route['category/(:any)'] = 'blog/category/$1';
 $route['maintenance'] = 'home/maintenance';
 // frontend routes end
-$route['404_override'] = '';
+$route['404_override'] = 'error404';
 $route['translate_uri_dashes'] = FALSE;
 $route['logincms'] = 'logincms/login';
 
