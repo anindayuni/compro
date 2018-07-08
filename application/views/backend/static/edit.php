@@ -14,7 +14,9 @@
                                 </ul>
                             </div>            
                             <div class="col-lg-6 col-md-4 col-sm-12 text-right">
-                                
+                                <a href="<?php echo base_url('logincms/static_page'); ?>">
+                                    <button class="btn btn-primary btn-round btn-simple float-right hidden-xs m-l-10"><i class="icon-arrow-left"></i> Kembali</button>
+                                </a>
                             </div>
                         </div>
                     </div>

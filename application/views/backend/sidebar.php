@@ -14,6 +14,9 @@
                         <li>
                             <a href="<?php echo base_url('logincms/artikel'); ?>"><i class="icon-layers"></i><span>Artikel</span></a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url('logincms/static_page'); ?>"><i class="icon-doc"></i><span>Static</span></a>
+                        </li>
                         <!-- <li class="header">FORMS, CHARTS, TABLES</li> -->
                         <!-- <li><a href="<?php echo base_url('logincms/foto'); ?>" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a> -->
                         <!-- </li> -->

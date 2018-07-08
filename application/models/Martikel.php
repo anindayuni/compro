@@ -4,11 +4,7 @@
  */
 class Martikel extends CI_Model
 {
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 79d05727b62478e3b7c66f5610b54caa0b38d64a
 	function all_articles()
 	{
 		$this->db->where('article_status', '1');
@@ -70,16 +66,17 @@ class Martikel extends CI_Model
 		return $data->result_array();
 	}
 
-<<<<<<< HEAD
-	function show_artikel(){
-		$this->db->join('_category', '_category.category_id = _article.article_id_category');
-		$this->db->order_by('article_id', 'DESC');
-		$ambil = $this->db->get('_article');
-=======
+
+	// function show_artikel()
+	// {
+	// 	$this->db->join('_category', '_category.category_id = _article.article_id_category');
+	// 	$this->db->order_by('article_id', 'DESC');
+	// 	$ambil = $this->db->get('_article');
+	// }
+
 	function show_artikel() //Menampilkan artikel yang bukan bertipe static
 	{
 		$ambil = $this->db->query("SELECT * FROM _article JOIN _category ON _category.category_id = _article.article_id_category WHERE _category.category_type != 'static' ORDER BY article_id DESC");
->>>>>>> 79d05727b62478e3b7c66f5610b54caa0b38d64a
 
 		return $ambil->result_array();
 	}
@@ -110,7 +107,8 @@ class Martikel extends CI_Model
         {
             $kirim = $this->upload->data('file_name');
         }
-        else{
+        else
+        {
             $kirim = 'no-image.jpg';
         }
 
