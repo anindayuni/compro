@@ -1,7 +1,4 @@
 <?php 
-/**
- * 
- */
 class Static_page extends MY_Controller
 {
 	
@@ -65,6 +62,11 @@ class Static_page extends MY_Controller
 		}
 
 		$this->render_page('backend/static/edit', $data);
+	}
+	function contact_us()
+	{
+		$data['message'] = $this->Mstatic->get_contat_us();
+		$this->render_page('backend/static/show_contact_us',$data);
 	}
 
 }

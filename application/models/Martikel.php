@@ -214,8 +214,26 @@ class Martikel extends CI_Model
 	    $query = $this->db->get('_article');
 	    return $query->result_array();
 	}
-
-
+	function get_gallery()
+	{
+		$this->db->where('_article.article_status', '1');
+	    $this->db->where('_category.category_status', '1');
+	    $this->db->where('_category.category_type', 'gallery');
+	    $this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
+		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
+	    $query = $this->db->get('_article');
+	    return $query->result_array();
+	}
+	function get_gallery_pagination($limit, $page)
+	{
+		$this->db->where('_article.article_status', '1');
+	    $this->db->where('_category.category_status', '1');
+	    $this->db->where('_category.category_type', 'gallery');
+	    $this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
+		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
+	    $query = $this->db->get('_article',$limit,$page);
+	    return $query->result_array();
+	}
 
 
 }

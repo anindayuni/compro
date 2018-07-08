@@ -32,6 +32,11 @@ class Mstatic extends CI_Model
 	{
 		return $this->db->insert('_contact_us', $input);
 	}
+	function get_contat_us()
+	{
+		$data = $this->db->get('_contact_us');
+		return $data->result_array();
+	}
 
 }
 

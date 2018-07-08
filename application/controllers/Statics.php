@@ -29,7 +29,32 @@ class Statics extends MY_Controller
 	}
 	function gallery()
 	{
-		$this->front_page('frontend/gallery');
+		$gallery = $this->Martikel->get_gallery();
+
+		$config['base_url'] = base_url('statics/gallery');
+		$config['total_rows'] = count($gallery);
+		$config['per_page'] = 4;
+		$config['display_pages'] = FALSE;
+		// pull left
+		$config['first_link'] = "<i class='fa fa-angle-double-left'></i> First Posts &nbsp;&nbsp;";
+		$config['first_tag_open'] = "<div class='pull-left'>";
+		$config['first_tag_close'] = "</div>";
+		$config['prev_link'] = "<i class='fa fa-angle-double-left'></i> Prev Posts &nbsp;&nbsp;";
+		$config['prev_tag_open'] = "<div class='pull-left'>";
+		$config['prev_tag_close'] = "</div>";
+		// pull right
+		$config['next_link'] = " Next Posts <i class='fa fa-angle-double-right'></i> ";
+		$config['next_tag_open'] = "<div class='pull-right'>";
+		$config['next_tag_close'] = "</div>";
+		$config['last_link'] = "Last Posts <i class='fa fa-angle-double-right'></i>&nbsp;&nbsp;";
+		$config['last_tag_open'] = "<div class='pull-right'>";
+		$config['last_tag_close'] = "</div>";
+		$this->pagination->initialize($config);
+		$from = $this->uri->segment(3);
+		$data['gallery'] = $this->Martikel->get_gallery_pagination($config['per_page'], $from);
+		$data['mpaging'] = $this->pagination->create_links();
+
+		$this->front_page('frontend/gallery',$data);
 	}
 }
 ?>
