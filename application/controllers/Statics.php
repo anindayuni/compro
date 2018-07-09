@@ -25,6 +25,7 @@ class Statics extends MY_Controller
 	function faq()
 	{
 		$data['pages'] = $this->Martikel->get_faq();
+		
 		$this->front_page('frontend/static_page',$data);
 	}
 	function gallery()
