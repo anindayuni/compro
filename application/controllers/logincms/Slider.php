@@ -42,7 +42,7 @@ class Slider extends MY_Controller
 		$config['upload_path']      = './gambar/slider';
 		$config['allowed_types']    = 'gif|jpg|png|jpeg';
 		$config['min_width']            = 400;
-		$config['min_height']           = 900;
+		$config['min_height']           = 700;
 		$config['file_name'] = 'slider-'.$id['id'];
 
 		$this->load->library('upload', $config);
@@ -101,7 +101,9 @@ class Slider extends MY_Controller
 
 	public function edit()
 	{
-		$this->render_page('backend/slider/edit');
+		$data['slider']=$this->db->get_where('_article',array('article_id'=>$this->uri->segment('4')))->row_array();
+		$this->render_page('backend/slider/edit',$data);
+
 	}
 
 	public function edit_action()
