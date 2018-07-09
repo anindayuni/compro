@@ -3,12 +3,12 @@
         <div class="row grid">
             <?php foreach ($gallery as $key => $img): ?>
                 <div class="col-md-6">
-                    <article class="single-blog-post">
+                    <article class="single-blog-post polaroid">
                         <div class="post-thumb">
                             <a href="#" data-toggle="modal" data-target="#img<?= $key; ?>"> <img src="<?= base_url('gambar/').$img['photo_img']; ?>" alt=""></a>
                             <div class="post-overlay-meta">
                                 <ul class="post-meta pull-left">
-                                    <li class="comments">Perbesar Gambar</li>
+                                    <li class="comments">Perbesar</li>
                                 </ul>
                             </div>
                         </div>

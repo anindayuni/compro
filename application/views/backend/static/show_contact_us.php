@@ -1,4 +1,4 @@
- <section class="content" style="min-height: 800px;">
+ <div class="content" style="min-height: 800px;">
     <div class="container">
         <div class="row clearfix">
             <div class="col-lg-12">
@@ -69,9 +69,7 @@
         </div>
         <!-- #END# Hover Rows --> 
     </div>
-</section>
-
-<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -88,3 +86,5 @@
         </div>
     </div>
 </div>
+</div>
+

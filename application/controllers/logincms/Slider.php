@@ -14,7 +14,7 @@ class Slider extends MY_Controller
 	{
 		$data=array(
 			'slider'=>$this->Mslider->list_slider(),
-
+			// 'judul_slider'=>$this->db->get_where('_article',array('article_id'=>$this->input->get('id_artikel')))->row_array(),
 		);
 		$this->render_page('backend/slider/list',$data);
 	}
@@ -39,27 +39,36 @@ class Slider extends MY_Controller
 		$this->db->select_max('article_id','id');
 		$id=$this->db->get('_article')->row_array();
 
+
+
+
 		$config['upload_path']      = './gambar/slider';
 		$config['allowed_types']    = 'gif|jpg|png|jpeg';
+		$config['min_width']            = 400;
+		$config['min_height']           = 900;
 		$config['file_name'] = 'slider-'.$id['id'];
-        
+
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);
 
-		   if ( ! $this->upload->do_upload('userfile'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
 
-                        $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                        $data = array('upload_data' => $this->upload->data());
+		if ( ! $this->upload->do_upload('userfile'))
+		{
+			$error = array(
+				'error' => $this->upload->display_errors()
+
+			);
+				$this->render_page('backend/slider/list',$error);
+			// $this->load->view('upload_form', $error);
+		}
+		else
+		{
+			$data = array('upload_data' => $this->upload->data());
 
                         // $this->load->view('upload_success', $data);
-                }
+		}
 
-                
+
 		$id_category=$this->db->get_where('_category',array('category_type'=>'slider'))->row_array();
 		$data_artikel=array(
 			'article_title'=>$this->input->post('nama_slider'),
@@ -97,6 +106,16 @@ class Slider extends MY_Controller
 	public function edit_action()
 	{
 		
+	}
+
+	public function update_status()
+	{
+		$this->db->set('article_status',$this->input->get('status_aktif'));
+		// $this->db->set('article_status',$this->input->get('id'));
+		$id=$this->input->get('id');
+
+		$this->db->where('article_id',$id);
+		$this->db->update('_article');
 	}
 
 }

@@ -68,14 +68,14 @@
                             </div>
                             <div class="col-lg-10 col-md-10 col-sm-8">
                                 <div class="form-group">
-                                    <div class="radio inlineblock m-r-20">
-                                        <input type="radio" name="article_status" id="male" class="with-gap" value="0" checked="">
-                                        <label for="male">Non Aktif</label>
-                                    </div>                                
                                     <div class="radio inlineblock">
-                                        <input type="radio" name="article_status" id="Female" class="with-gap" value="1">
-                                        <label for="Female">Aktif</label>
+                                        <input type="radio" name="article_status" id="aktif" class="with-gap" value="1" checked="">
+                                        <label for="aktif">Aktif</label>
                                     </div>
+                                    <div class="radio inlineblock m-r-20">
+                                        <input type="radio" name="article_status" id="nonaktif" class="with-gap" value="0">
+                                        <label for="nonaktif">Non Aktif</label>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>
