@@ -4,8 +4,8 @@
             <?php foreach ($gallery as $key => $img): ?>
                 <div class="col-md-6">
                     <article class="single-blog-post polaroid">
-                        <div class="post-thumb">
-                            <a href="#" data-toggle="modal" data-target="#img<?= $key; ?>"> <img src="<?= base_url('gambar/gallery/').$img['photo_img']; ?>" alt=""></a>
+                        <div class="post-thumb mygallery">
+                            <a href="#" data-toggle="modal" data-target="#img<?= $key; ?>"> <img src="<?= base_url('gambar/gallery/').$img['photo_img']; ?>" alt="<?= $img['article_title']; ?>"></a>
                             <div class="post-overlay-meta">
                                 <ul class="post-meta pull-left">
                                     <li class="comments">Perbesar</li>
@@ -18,11 +18,11 @@
                 <div class="modal fade bs-example-modal-lg" id="img<?= $key; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
-                            <div class="modal-body">
+                            <div class="modal-body" style="text-align: center;">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <img style="width: 100%; height: auto;" src="<?= base_url('gambar/gallery/').$img['photo_img']; ?>" alt="">
+                                <img style="height: auto;" src="<?= base_url('gambar/gallery/').$img['photo_img']; ?>" alt="">
                             </div>
                         </div>
                     </div>

@@ -189,7 +189,6 @@ class Martikel extends CI_Model
 	    $this->db->where('_category.category_status', '1');
 	    $this->db->where('_category.category_type', 'static');
 	    $this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
-		// $this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
 	    $query = $this->db->get('_article');
 	    return $query->row_array();
 	}
@@ -200,7 +199,6 @@ class Martikel extends CI_Model
 	    $this->db->where('_category.category_status', '1');
 	    $this->db->where('_category.category_type', 'static');
 	    $this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
-		// $this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
 	    $query = $this->db->get('_article');
 	    return $query->row_array();
 	}
@@ -211,7 +209,16 @@ class Martikel extends CI_Model
 	    $this->db->where('_category.category_status', '1');
 	    $this->db->where('_category.category_type', 'static');
 	    $this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
-		// $this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
+	    $query = $this->db->get('_article');
+	    return $query->row_array();
+	}
+	function get_privacy_policy()
+	{
+		$this->db->like('_article.article_url', 'privacy-policy');
+	    $this->db->where('_article.article_status', '1');
+	    $this->db->where('_category.category_status', '1');
+	    $this->db->where('_category.category_type', 'static');
+	    $this->db->join('_category', '_category.category_id = _article.article_id_category', 'left');
 	    $query = $this->db->get('_article');
 	    return $query->row_array();
 	}

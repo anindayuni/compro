@@ -54,9 +54,9 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav text-uppercase">
                         <li><a href="<?= base_url(); ?>">Home</a></li>
-                        <li><a href="<?= base_url('about-us'); ?>">About Us</a></li> 
                         <li><a href="<?= base_url('news'); ?>">Berita</a></li>
                         <li><a href="<?= base_url('gallery'); ?>">Gallery</a></li>
+                        <li><a href="<?= base_url('about-us'); ?>">About Us</a></li> 
                         <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
                     </ul>
                 </div>
