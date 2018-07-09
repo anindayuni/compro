@@ -42,6 +42,7 @@
 	<?php echo $content; ?>
 	<?php echo $footer; ?>
 
+
 <!-- Jquery Core Js --> 
 <script src="<?php echo base_url('assets/backend/bundles/libscripts.bundle.js'); ?>"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
 <script src="<?php echo base_url('assets/backend/bundles/vendorscripts.bundle.js'); ?>"></script> <!-- slimscroll, waves Scripts Plugin Js -->
