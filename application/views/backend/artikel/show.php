@@ -52,7 +52,12 @@
                                 <?php foreach ($artikel as $key => $art) : ?>
                                 <tr>
                                     <th scope="row"><?php echo $key+1; ?></th>
-                                    <td><?php echo $art['article_title']; ?></td>
+                                    <td>
+                                        <?php  
+                                            $cetak = substr($art['article_title'], 0, 50);
+                                            echo $cetak." . . .";
+                                        ?>
+                                    </td>
                                     <td><?php echo $art['category_name']; ?></td>
                                     <td><?php echo date("d-F-Y", strtotime($art['article_publish_date'])); ?></td>
                                     <td>
