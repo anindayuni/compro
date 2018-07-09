@@ -42,7 +42,7 @@ class Slider extends MY_Controller
 		$config['upload_path']      = './gambar/slider';
 		$config['allowed_types']    = 'gif|jpg|png|jpeg';
 		$config['min_width']            = 400;
-		$config['min_height']           = 900;
+		$config['min_height']           = 700;
 		$config['file_name'] = 'slider-'.$id['id'];
 
 		$this->load->library('upload', $config);
