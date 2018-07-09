@@ -1,0 +1,9 @@
+.polaroid .post-thumb{
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.gradient
+{
+	background-color: #ececec;
+	/*background: teal;  For browsers that do not support gradients */
+    /*background: linear-gradient(to bottom left, rgba(0,128,128), rgba(255,0,0,0)); /* Standard syntax (must be last) */*/
+}
