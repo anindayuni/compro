@@ -151,5 +151,15 @@
         </div>
     </div>
 </div>
+<?php   
+
+if (empty($alert)) {
+    echo '';
+}
+
+else {
+    echo $alert;
+}
+ ?>
 
 

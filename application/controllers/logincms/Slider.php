@@ -39,9 +39,6 @@ class Slider extends MY_Controller
 		$this->db->select_max('article_id','id');
 		$id=$this->db->get('_article')->row_array();
 
-
-
-
 		$config['upload_path']      = './gambar/slider';
 		$config['allowed_types']    = 'gif|jpg|png|jpeg';
 		$config['min_width']            = 400;
@@ -55,8 +52,12 @@ class Slider extends MY_Controller
 		if ( ! $this->upload->do_upload('userfile'))
 		{
 			$error = array(
-				'error' => $this->upload->display_errors()
-
+				'error' => $this->upload->display_errors(),
+				'alert' => '
+					<script>
+						alert("gambar mu kudu luwih seko 400px x 900px nduk");
+					</script>
+				',
 			);
 				$this->render_page('backend/slider/list',$error);
 			// $this->load->view('upload_form', $error);
