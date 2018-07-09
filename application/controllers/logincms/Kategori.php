@@ -58,19 +58,8 @@ class Kategori extends MY_Controller
 		if($this->input->post())
 		{
 			$input = $this->input->post();
-            $string = $this->input->post('category_name');
-
-                $replace = '-';         
-                $string = strtolower($string);
-                $string = preg_replace("/[\/\.]/", " ", $string);     
-                $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
-                $string = preg_replace("/[\s-]+/", " ", $string);
-                $string = preg_replace("/[\s_]/", $replace, $string);
-                $string = substr($string, 0, 100);
             
-            $input['category_url'] = $string;
             $category_id = $this->input->post('category_id');
-
             $this->Mkategori->edit($input, $category_id);
             redirect('logincms/kategori', 'refresh');
 		}
