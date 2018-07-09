@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/owl.theme.default.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/font-awesome.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/style.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/css/mystyle.css'); ?>">
 
     <!-- HTML5 shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -31,12 +32,14 @@
     
     
 </head>
-<body class="background-pattern">
+<!-- <body class="background-pattern"> --> 
+<body class="gradient">
     <div class="container zinnia-page">
         <header>
             <div class="zinnia-logo text-center">
                 <!-- <h1><a href="#"><img src="<?= base_url('assets/frontend/images/logo.png'); ?>" alt=""></a></h1> -->
-                <h1><a href="<?= base_url(); ?>"><img src="<?= base_url('gambar/banner/kangemil.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>" title="<?= $sosmed['settings_namesite']; ?>"></a></h1>
+                <h1><a href="#"><?= $sosmed['settings_namesite']; ?></a></h1>
+                <!-- <h1><a href="<?= base_url(); ?>"><img src="<?= base_url('gambar/banner/kangemil.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>" title="<?= $sosmed['settings_namesite']; ?>"></a></h1> -->
             </div>
             <div class="zinnia-menu text-center">
                 <nav class="navbar">
@@ -115,13 +118,24 @@
 
     </div>
     <div class="container footer-copyright-text">
-        <p class="pull-left"><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?>
+        <div class="col-md-6 pull-left">
+            <p><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?></p>
+        </div>
+        <div class="col-md-6 pull right">
+            <p>
+                <ul class="nav navbar-nav pull right">
+                    <li>test</li>
+                    <li>test</li>
+                </ul>
+            </p>
+        </div>
+        <!-- <p class="pull-left"><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?>
             <ul class="navbar-nav pull-right">
                 <?php foreach ($static_page as $key => $page): ?>
                     <li><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
                 <?php endforeach ?>
             </ul>
-        </p>
+        </p> -->
     </div>
 </footer>
 <!--//Script//-->
