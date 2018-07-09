@@ -101,7 +101,9 @@ class Slider extends MY_Controller
 
 	public function edit()
 	{
-		$this->render_page('backend/slider/edit');
+		$data['slider']=$this->db->get_where('_article',array('article_id'=>$this->uri->segment('4')))->row_array();
+		$this->render_page('backend/slider/edit',$data);
+
 	}
 
 	public function edit_action()
