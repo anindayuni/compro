@@ -21,15 +21,8 @@ class Settings extends MY_Controller
 
 	public function update()
 	{
-		$this->db->set('settings_youtube',$this->input->get('youtube_name'));
-		$this->db->set('settings_twitter',$this->input->get('twitter_name'));
-		$this->db->set('settings_facebook',$this->input->get('facebook_name'));
-		$this->db->set('settings_instagram',$this->input->get('instagram_name'));
-		$this->db->set('settings_maintenance',$this->input->get('maintenance_name'));
-
 		$this->Msettings->update('1');
 		$this->render_page('backend/settings/list');
-
 
 	}
 
