@@ -92,7 +92,7 @@ class Martikel extends CI_Model
         $data['article_status'] = $input['article_status'];
         $data['article_id_category'] = $input['article_id_category'];
 
-        $config['upload_path']      = './gambar';
+        $config['upload_path']      = './gambar/article';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
 
         // panggil library upload
@@ -146,7 +146,7 @@ class Martikel extends CI_Model
         $data['article_status'] = $update['article_status'];
         $data['article_id_category'] = $update['article_id_category'];
 
-        $config['upload_path']      = './gambar';
+        $config['upload_path']      = './gambar/article';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
 
         // panggil library upload
@@ -154,11 +154,21 @@ class Martikel extends CI_Model
         // jika benar upload gambar
         if ($this->upload->do_upload('photo_img'))
         {
-        	
-            $kirim = $this->upload->data('file_name');
+        	$kirim = $this->upload->data('file_name');
+
+        	$this->db->where('photo_id_article', $article_id);
+        	$hasil = $this->db->get('_photo');
+        	$ambil = $hasil->row_array();
+
+        	$gambar = $ambil['photo_img'];
+
+        	if (!empty($gambar)) {
+        		unlink("./gambar/article/".$gambar);
+        	}
+
         }
         else{
-        	$kirim = 0;
+        	$kirim = '0';
         }
 
 		$this->db->where('_article.article_id', $article_id);
@@ -244,7 +254,7 @@ class Martikel extends CI_Model
         $gambar = $ambil['photo_img'];
 
         if (!empty($gambar)) {
-            unlink("./gambar/".$gambar);
+            unlink("./gambar/article/".$gambar);
         }
 
 		$this->db->where('photo_id_article', $article_id);

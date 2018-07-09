@@ -72,7 +72,7 @@ class Artikel extends MY_Controller
 				$update['article_publish_date'] = date('Y-m-d');
 
 				$gambar['gambar'] = $this->Martikel->edit($update, $article_id);
-				if (!empty($gambar['gambar']))
+				if ($gambar['gambar'] != '0')
 				{
 					$photo['photo_img'] = $gambar['gambar'];
 				}
@@ -93,7 +93,7 @@ class Artikel extends MY_Controller
 				$update['article_publish_date'] = $this->input->post('article_publish_date');
 
 				$gambar['gambar'] = $this->Martikel->edit($update, $article_id);
-				if ($gambar['gambar'] != 0)
+				if ($gambar['gambar'] != '0')
 				{
 					$photo['photo_img'] = $gambar['gambar'];
 				}
@@ -121,7 +121,7 @@ class Artikel extends MY_Controller
 	{
 		$this->Martikel->delete_photo($article_id);
 		$this->Martikel->delete($article_id);
-		// redirect('logincms/artikel');
+		redirect('logincms/artikel');
 	}
 
 }
