@@ -7,8 +7,7 @@
             <h2 class="me-title">RM Sinar Biyatnujanat SE</h2>
             <p class="sub-title">DPRD DIY</p>
             <div class="about-me-content">
-                <p>I’m a desperate housewife. I live in the country. My house is near Salt Lake Sreet. I
-                love writing Kids comics and cooking easy foods.</p>
+                <p>Menjadi Institusi yang profesional, antisipatif dan responsif dalam mendukung serta memfasilitasi kinerja dan hasil kerja DPRD</p>
             </div>
             <div class="about-me-social">
                 <ul class="list-inline">
