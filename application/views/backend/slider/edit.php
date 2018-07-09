@@ -30,37 +30,37 @@
                 </div>
                 
                 <div class="body">
-                    <form action="<?php echo base_url('logincms/slider/edit_actionn') ?>" class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data" novalidate="novalidate">
+                    <form action="<?php echo base_url('logincms/slider/edit_action/').$this->uri->segment('4')?>" class="form-horizontal" id="form_validation" method="post" enctype="multipart/form-data" novalidate="novalidate">
                         <!-- <input type="hidden" name="article_create_date" value="2018-07-06">
-                        <input type="hidden" name="article_publish_date" value="2018-07-06"> -->
+                            <input type="hidden" name="article_publish_date" value="2018-07-06"> -->
 
 
-                        <div class="row clearfix">
-                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <label>Nama Slider</label>
-                            </div>
-                            <div class="col-lg-10 col-md-10 col-sm-8">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Masukkan nama slider" name="nama_slider" required="required" aria-required="true">
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Nama Slider</label>
                                 </div>
-                            </div>
-                        </div> <br>
-
-
-                        <!-- <div class="row clearfix">
-                          <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <div class="form-group">
-                                    <label>Upload Foto</label>
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Masukkan nama slider" name="nama_slider" required="required" aria-required="true" value=<?php echo $slider['article_title'] ?>>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-10 col-md-10 col-sm-8">
-                                <div class="form-group">
+                            </div> <br>
 
-                                    <input type="file" name="userfile"/>
+
+
+                            <div class="row clearfix">
+                                     <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                    <label>Gambar</label>
 
                                 </div>
+                                
+                                <div class="col-lg-10 col-md-10 col-sm-8">
+                                   <div class="form-group">
+                                    <img width="100px" src="<?php echo base_url('gambar/slider/').$gambar['photo_img'] ?>"> <br>
+                                    <?php echo $gambar['photo_img'] ?>
+                                </div>
                             </div>
-                        </div> -->
+                        </div>
 
           <!--               <div class="row clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
@@ -85,7 +85,7 @@
                                 &nbsp;
                             </div>
                             <div class="col-sm-8 offset-sm-2">
-                                <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">Submit</button>
+                                <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">Update</button>
                             </div>
                         </div>
                     </form>
