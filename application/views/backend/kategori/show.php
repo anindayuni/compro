@@ -41,8 +41,8 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nama Kategori</th>
                                     <th>Foto</th>
+                                    <th>Nama Kategori</th>
                                     <th>Status</th>
                                     <th>Type</th>
                                     <th>URL</th>
@@ -53,8 +53,8 @@
                                 <?php foreach ($kategori as $key => $kat) : ?>
                                 <tr>
                                     <th scope="row"><?php echo $key+1; ?></th>
+                                    <td><img src="<?php echo base_url('gambar/category/').$kat['category_photo']; ?>" height="50" width="50"></td>
                                     <td><?php echo $kat['category_name']; ?></td>
-                                    <td><img src="<?php echo base_url('gambar/').$kat['category_photo']; ?>" height="50" width="50"></td>
                                     <td>
                                         <?php 
                                         if ($kat['category_status'] == 1){
@@ -67,20 +67,49 @@
                                     </td>
                                     <td><?php echo $kat['category_type']; ?></td>
                                     <td><?php echo $kat['category_url']; ?></td>
-                                    <td>
-                                       <!--  <center> -->
+                                    <td align="center">
+                                        <!-- <center> -->
                                         <a href="<?php echo base_url('logincms/kategori/detail/').$kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
                                         </a>
                                         <a href="<?php echo base_url('logincms/kategori/edit/').$kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                         </a>
-                                        <?php if ($kat['category_type'] != "static") : ?>
-                                        <a href="">
+                                        <?php if ($kat['category_type'] == "blog") : ?>
+                                        <a href="#hapus-kategori">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i></button>
                                         </a>
                                         <?php endif; ?>
-                                       <!--  </center> -->
+
+                                            <!--  Modal Hapus Kategori -->
+                                            <div class="light-modal" id="hapus-kategori" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                                <div class="light-modal-content  animated zoomInUp">
+                                                    <div class="light-modal-header">
+                                                        <!-- <h3 class="light-modal-heading"></h3> -->
+                                                        <a href="#" class="light-modal-close-icon" aria-label="close">&times;</a>
+                                                    </div>
+                                                    <!-- light modal body -->
+                                                    <div class="light-modal-body">
+                                                        <div></div>
+                                                        Anda Yakin Ingin Menghapus Data Ini ?
+                                                        <br><br>
+                                                        <a href="#">
+                                                            <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
+                                                        </a>
+                                                        <a href="<?php echo base_url('logincms/kategori/delete/').$kat['category_id']; ?>">
+                                                            <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK</button>
+                                                        </a>
+                                                    </div>
+                                                    <div class="light-modal-footer">
+                                                        
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- / Modal Hapus Kategori -->
+
+
+                                        <!-- </center> -->
                                     </td>
                                     
                                 </tr>
@@ -94,3 +123,23 @@
         <!-- #END# Hover Rows --> 
     </div>
 </section>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                ...
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>

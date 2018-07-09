@@ -43,7 +43,6 @@
                                     <th>#</th>
                                     <th>Judul Artikel</th>
                                     <th>Kategori</th>
-                                    <th>Create Date</th>
                                     <th>Publish Date</th>
                                     <th>Status</th>
                                     <th><center>Aksi</center></th>
@@ -55,7 +54,6 @@
                                     <th scope="row"><?php echo $key+1; ?></th>
                                     <td><?php echo $art['article_title']; ?></td>
                                     <td><?php echo $art['category_name']; ?></td>
-                                    <td><?php echo date("d-F-Y", strtotime($art['article_create_date'])); ?></td>
                                     <td><?php echo date("d-F-Y", strtotime($art['article_publish_date'])); ?></td>
                                     <td>
                                         <?php 
@@ -77,9 +75,37 @@
                                                 <a href="<?php echo base_url('logincms/artikel/edit/').$art['article_id']; ?>">
                                                     <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                                 </a>
-                                                <a href="#defaultModal/<?php echo $art['article_id']; ?>" data-toggle="modal" data-target="#defaultModal/<?php echo $art['article_id']; ?>">
+
+                                                <a href="#hapus-article">
                                                     <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i></button>
                                                 </a>
+
+                                                <!--  Modal Hapus Kategori -->
+                                                <div class="light-modal" id="hapus-article" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                                    <div class="light-modal-content  animated zoomInUp">
+                                                        <div class="light-modal-header">
+                                                            <!-- <h3 class="light-modal-heading"></h3> -->
+                                                            <a href="#" class="light-modal-close-icon" aria-label="close">&times;</a>
+                                                        </div>
+                                                        <!-- light modal body -->
+                                                        <div class="light-modal-body">
+                                                            <div></div>
+                                                            Anda Yakin Ingin Menghapus Data Ini ?
+                                                            <br><br>
+                                                            <a href="#">
+                                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
+                                                            </a>
+                                                            <a href="<?php echo base_url('logincms/artikel/delete/').$art['article_id']; ?>">
+                                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK</button>
+                                                            </a>
+                                                        </div>
+                                                        <div class="light-modal-footer">
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- / Modal Hapus Kategori -->
 
                                             <!-- </div> -->
                                         </center>
@@ -97,7 +123,7 @@
     </div>
 </section>
                                                 <!-- Modal Default Size -->
-                                                <div class="modal fade" id="defaultModal/1" tabindex="-1" role="dialog">
+                                                <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">

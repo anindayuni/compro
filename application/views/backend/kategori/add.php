@@ -36,6 +36,7 @@
                         
                         <form class="form-horizontal" id="form_validation" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="category_date" value="<?php echo date('Y-m-d'); ?>">
+                            <input type="hidden" name="category_type" value="blog">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama Kategori</label>
@@ -69,20 +70,7 @@
                                     </select>
                                 </div> 
                             </div><br>
-
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Type</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <select class="form-control show-tick" name="category_type">
-                                        <?php foreach ($type as $key => $tp): ?>
-                                        <option value="<?php echo $tp; ?>"><?php echo $tp; ?></option>
-                                    <?php endforeach; ?>
-                                    </select>
-                                </div> 
-                            </div><br>
-
+                            
                              <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label >Foto</label>

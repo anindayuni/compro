@@ -38,8 +38,7 @@
         <header>
             <div class="zinnia-logo text-center">
                 <!-- <h1><a href="#"><img src="<?= base_url('assets/frontend/images/logo.png'); ?>" alt=""></a></h1> -->
-                <h1><a href="#"><?= $sosmed['settings_namesite']; ?></a></h1>
-                <!-- <h1><a href="<?= base_url(); ?>"><img src="<?= base_url('gambar/banner/kangemil.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>" title="<?= $sosmed['settings_namesite']; ?>"></a></h1> -->
+                <h1><a href="<?= base_url(); ?>"><?= $sosmed['settings_namesite']; ?></a></h1>
             </div>
             <div class="zinnia-menu text-center">
                 <nav class="navbar">

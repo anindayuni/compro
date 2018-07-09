@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="file" name="photo_img">
+                                        <input type="file" name="photo_img" required="">
                                     </div>
                                 </div> 
                             </div><br>
@@ -93,11 +93,11 @@
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
                                         <div class="radio inlineblock m-r-20">
-                                            <input type="radio" name="article_status" id="male" class="with-gap" value="0" checked="">
+                                            <input type="radio" name="article_status" id="male" class="with-gap" value="0" >
                                             <label for="male">Non Aktif</label>
                                         </div>                                
                                         <div class="radio inlineblock">
-                                            <input type="radio" name="article_status" id="Female" class="with-gap" value="1" >
+                                            <input type="radio" name="article_status" id="Female" class="with-gap" value="1" checked="" >
                                             <label for="Female">Aktif</label>
                                         </div>
                                     </div>

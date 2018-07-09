@@ -70,17 +70,16 @@ class Martikel extends CI_Model
 		$data = $this->db->get('_article a');
 		return $data->result_array();
 	}
-	function show_artikel() //Menampilkan artikel yang bukan bertipe static
+	function show_artikel() //Menampilkan artikel yang hanya bertipe blog
 	{
-		$ambil = $this->db->query("SELECT * FROM _article JOIN _category ON _category.category_id = _article.article_id_category WHERE _category.category_type != 'static' ORDER BY article_id DESC");
+		$ambil = $this->db->query("SELECT * FROM _article JOIN _category ON _category.category_id = _article.article_id_category WHERE _category.category_type = 'blog' ORDER BY article_id DESC");
 
 		return $ambil->result_array();
 	}
 
 	function kategori(){
-		// $this->db->where('category_type !=')
-		// $ambil = $this->db->get('_category');
-		$ambil = $this->db->query("SELECT * FROM _category WHERE category_type != 'static' ");
+		
+		$ambil = $this->db->query("SELECT * FROM _category WHERE category_type = 'blog' ");
 		return $ambil->result_array();
 	}
 
@@ -155,10 +154,11 @@ class Martikel extends CI_Model
         // jika benar upload gambar
         if ($this->upload->do_upload('photo_img'))
         {
+        	
             $kirim = $this->upload->data('file_name');
         }
         else{
-            $kirim = 'no-image.jpg';
+        	$kirim = 0;
         }
 
 		$this->db->where('_article.article_id', $article_id);
@@ -233,6 +233,28 @@ class Martikel extends CI_Model
 		$this->db->join('_photo', '_photo.photo_id_article = _article.article_id', 'left');
 	    $query = $this->db->get('_article',$limit,$page);
 	    return $query->result_array();
+	}
+
+	function delete_photo($article_id)
+	{
+		$this->db->where('photo_id_article', $article_id);
+        $data = $this->db->get('_photo');
+        $ambil = $data->row_array();
+  
+        $gambar = $ambil['photo_img'];
+
+        if (!empty($gambar)) {
+            unlink("./gambar/".$gambar);
+        }
+
+		$this->db->where('photo_id_article', $article_id);
+		$this->db->delete('_photo');
+	}
+
+	function delete($article_id)
+	{
+		$this->db->where('article_id', $article_id);
+		$this->db->delete('_article');
 	}
 
 

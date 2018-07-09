@@ -84,6 +84,12 @@ class Kategori extends MY_Controller
 		$this->render_page('backend/kategori/detail', $data);
 	}
 
+	public function delete($category_id)
+	{
+		$this->Mkategori->delete($category_id);
+		redirect('logincms/kategori', 'refresh');
+	}
+
 }
 
 ?>
