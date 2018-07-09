@@ -36,7 +36,7 @@ class Mkategori extends CI_Model
         $data['category_type'] = $input['category_type'];
         $data['category_url'] = $input['category_url'];
 
-        $config['upload_path']      = './gambar';
+        $config['upload_path']      = './gambar/category';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
 
         // panggil library upload
@@ -69,7 +69,7 @@ class Mkategori extends CI_Model
         $data['category_type'] = $input['category_type'];
         $data['category_url'] = $input['category_url'];
 
-        $config['upload_path']      = './gambar';
+        $config['upload_path']      = './gambar/category';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
 
         // panggil library upload
@@ -77,6 +77,7 @@ class Mkategori extends CI_Model
         // jika benar upload gambar
         if ($this->upload->do_upload('category_photo'))
         {
+            
             $data['category_photo'] = $this->upload->data('file_name');
         }
 
@@ -93,7 +94,7 @@ class Mkategori extends CI_Model
         $gambar = $ambil['category_photo'];
 
         if (!empty($gambar)) {
-            unlink("./gambar/".$gambar);
+            unlink("./gambar/category/".$gambar);
         }
         
         $this->db->where('category_id', $category_id);
