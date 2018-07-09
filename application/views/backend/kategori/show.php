@@ -67,8 +67,8 @@
                                     </td>
                                     <td><?php echo $kat['category_type']; ?></td>
                                     <td><?php echo $kat['category_url']; ?></td>
-                                    <td>
-                                        <center>
+                                    <td align="center">
+                                        <!-- <center> -->
                                         <a href="<?php echo base_url('logincms/kategori/detail/').$kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
                                         </a>
@@ -93,7 +93,7 @@
                                                         <div></div>
                                                         Anda Yakin Ingin Menghapus Data Ini ?
                                                         <br><br>
-                                                        <a href="">
+                                                        <a href="#">
                                                             <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
                                                         </a>
                                                         <a href="<?php echo base_url('logincms/kategori/delete/').$kat['category_id']; ?>">
@@ -109,7 +109,7 @@
                                             <!-- / Modal Hapus Kategori -->
 
 
-                                        </center>
+                                        <!-- </center> -->
                                     </td>
                                     
                                 </tr>
