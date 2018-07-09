@@ -41,8 +41,8 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nama Kategori</th>
                                     <th>Foto</th>
+                                    <th>Nama Kategori</th>
                                     <th>Status</th>
                                     <th>Type</th>
                                     <th>URL</th>
@@ -53,8 +53,8 @@
                                 <?php foreach ($kategori as $key => $kat) : ?>
                                 <tr>
                                     <th scope="row"><?php echo $key+1; ?></th>
+                                    <td><img src="<?php echo base_url('gambar/category/').$kat['category_photo']; ?>" height="50" width="50"></td>
                                     <td><?php echo $kat['category_name']; ?></td>
-                                    <td><img src="<?php echo base_url('gambar/').$kat['category_photo']; ?>" height="50" width="50"></td>
                                     <td>
                                         <?php 
                                         if ($kat['category_status'] == 1){
@@ -68,7 +68,7 @@
                                     <td><?php echo $kat['category_type']; ?></td>
                                     <td><?php echo $kat['category_url']; ?></td>
                                     <td>
-                                       <!--  <center> -->
+                                        <center>
                                         <a href="<?php echo base_url('logincms/kategori/detail/').$kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-eye"></i></button>
                                         </a>
@@ -79,6 +79,7 @@
                                         <a href="#hapus-kategori">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i></button>
                                         </a>
+                                        <?php endif; ?>
 
                                             <!--  Modal Hapus Kategori -->
                                             <div class="light-modal" id="hapus-kategori" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
@@ -92,6 +93,9 @@
                                                         <div></div>
                                                         Anda Yakin Ingin Menghapus Data Ini ?
                                                         <br><br>
+                                                        <a href="">
+                                                            <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
+                                                        </a>
                                                         <a href="<?php echo base_url('logincms/kategori/delete/').$kat['category_id']; ?>">
                                                             <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK</button>
                                                         </a>
@@ -105,8 +109,7 @@
                                             <!-- / Modal Hapus Kategori -->
 
 
-                                        <?php endif; ?>
-                                       <!--  </center> -->
+                                        </center>
                                     </td>
                                     
                                 </tr>
