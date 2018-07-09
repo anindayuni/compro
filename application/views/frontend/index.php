@@ -10,6 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="keywords" content="<?php if(!empty($sosmed['settings_meta_keyword'])) echo $sosmed['settings_meta_keyword']; else echo "Company Profile CMS"; ?>">
+    <meta name="description" content="<?php if(!empty($sosmed['settings_meta_description'])) echo $sosmed['settings_meta_description']; else echo "Production by Otret.com"; ?>">
     <!-- Page Title -->
     <title><?php if(!empty($sosmed['settings_namesite'])) echo $sosmed['settings_namesite']; else echo "Company Profile CMS"; ?></title>
     <!-- Fonts -->
