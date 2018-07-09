@@ -5,7 +5,7 @@
                 <div class="col-md-6">
                     <article class="single-blog-post polaroid">
                         <div class="post-thumb">
-                            <a href="#" data-toggle="modal" data-target="#img<?= $key; ?>"> <img src="<?= base_url('gambar/').$img['photo_img']; ?>" alt=""></a>
+                            <a href="#" data-toggle="modal" data-target="#img<?= $key; ?>"> <img src="<?= base_url('gambar/gallery/').$img['photo_img']; ?>" alt=""></a>
                             <div class="post-overlay-meta">
                                 <ul class="post-meta pull-left">
                                     <li class="comments">Perbesar</li>
@@ -22,7 +22,7 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <img style="width: 100%; height: auto;" src="<?= base_url('gambar/').$img['photo_img']; ?>" alt="">
+                                <img style="width: 100%; height: auto;" src="<?= base_url('gambar/gallery/').$img['photo_img']; ?>" alt="">
                             </div>
                         </div>
                     </div>
@@ -56,12 +56,4 @@
             <?php echo $mpaging; ?>
         </div>
     </div>
-<!-- <div class="post-navigation text-uppercase">
-    <div class="next-navigation pull-left">
-        <a href="#"><i class="fa fa-angle-double-left"></i> Prev Posts </a>
-    </div>
-    <div class="next-navigation pull-right">
-        <a href="#">Next Posts <i class="fa fa-angle-double-right"></i></a>
-    </div>
-</div> -->
 </div>
