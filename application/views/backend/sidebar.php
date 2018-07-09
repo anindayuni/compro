@@ -5,7 +5,7 @@
                 <div class="menu">
                     <ul class="list">
                         <li class="header">MAIN</li>
-                        <li class="active open">
+                        <li echo class="active open">
                             <a href="<?php echo base_url('logincms/home') ?>"><i class="icon-home"></i><span>Dashboard</span></a>
                         </li>
                         <li>
@@ -17,10 +17,6 @@
                         <li>
                             <a href="<?php echo base_url('logincms/static_page'); ?>"><i class="icon-doc"></i><span>Static</span></a>
                         </li>
-                        <!-- <li class="header">FORMS, CHARTS, TABLES</li> -->
-                        <!-- <li><a href="<?php echo base_url('logincms/foto'); ?>" class="menu-toggle"><i class="icon-picture"></i><span>Foto</span></a> -->
-                        <!-- </li> -->
-
                         <li> <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block"><i class="icon-picture"></i><span>Foto</span></a>
                             <ul class="ml-menu">
                                 <li><a href="<?php echo base_url('logincms/gallery'); ?>" class=" waves-effect waves-block">Gallery</a></li>
@@ -30,14 +26,8 @@
                         </li>
 
 
+                        <li><a href="<?php echo base_url('logincms/static_page/contact_us'); ?>" class="menu-toggle"><i class="icon-envelope"></i><span>Message</span></a>
                         <li><a href="<?php echo base_url('logincms/settings'); ?>" class="menu-toggle"><i class="icon-settings"></i><span>Setting</span></a>
-                            <!-- <ul class="ml-menu">                        
-                                <li><a href="table-normal.html">Normal Tables</a></li>
-                                <li><a href="table-jquerydatatable.html">Jquery Datatables</a></li>
-                                <li><a href="table-editable.html">Editable Tables</a></li>                                
-                                <li><a href="table-color.html">Tables Color</a></li>
-                                <li><a href="table-filter.html">Tables Filter</a></li>
-                            </ul> -->
                         </li>
                     </ul>
                 </div>

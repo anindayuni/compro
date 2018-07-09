@@ -94,6 +94,7 @@
                                     <div class="form-group">
                                         <input type="file" name="category_photo" value="<?php echo $kat['category_photo']; ?>">
                                     </div>
+                                    <span><?php echo $kat['category_photo'];?></span>
                                 </div>
                             </div>
 

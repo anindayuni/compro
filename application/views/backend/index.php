@@ -31,11 +31,15 @@
 
 <!-- dialog -->
 <link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/sweetalert/sweetalert.css') ?>"/>
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/jquery-datatable/dataTables.bootstrap4.min.css') ?>">
+
+<!-- dialog -->
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/css/light-modal.css') ?>"/>
+
 </head>
 <body class="theme-purple">
 
-<!-- JQuery DataTable Css -->
-<link rel="stylesheet" href="<?php echo base_url('assets/backend/plugins/jquery-datatable/dataTables.bootstrap4.min.css') ?>">
 
 	<?php echo $header; ?>
 	<?php echo $sidebar; ?>

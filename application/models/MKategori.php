@@ -83,6 +83,22 @@ class Mkategori extends CI_Model
         $this->db->where('category_id', $category_id);
         $this->db->update('_category', $data);
     }
+
+    public function delete($category_id)
+    {
+        $this->db->where('category_id', $category_id);
+        $data = $this->db->get('_category');
+        $ambil = $data->row_array();
+  
+        $gambar = $ambil['category_photo'];
+
+        if (!empty($gambar)) {
+            unlink("./gambar/".$gambar);
+        }
+        
+        $this->db->where('category_id', $category_id);
+        $this->db->delete('_category');
+    }
     
 }
 

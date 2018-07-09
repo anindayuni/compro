@@ -75,10 +75,36 @@
                                         <a href="<?php echo base_url('logincms/kategori/edit/').$kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                         </a>
-                                        <?php if ($kat['category_type'] != "static") : ?>
-                                        <a href="">
+                                        <?php if ($kat['category_type'] == "blog") : ?>
+                                        <a href="#hapus-kategori">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i></button>
                                         </a>
+
+                                            <!--  Modal Hapus Kategori -->
+                                            <div class="light-modal" id="hapus-kategori" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                                <div class="light-modal-content  animated zoomInUp">
+                                                    <div class="light-modal-header">
+                                                        <!-- <h3 class="light-modal-heading"></h3> -->
+                                                        <a href="#" class="light-modal-close-icon" aria-label="close">&times;</a>
+                                                    </div>
+                                                    <!-- light modal body -->
+                                                    <div class="light-modal-body">
+                                                        <div></div>
+                                                        Anda Yakin Ingin Menghapus Data Ini ?
+                                                        <br><br>
+                                                        <a href="<?php echo base_url('logincms/kategori/delete/').$kat['category_id']; ?>">
+                                                            <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK</button>
+                                                        </a>
+                                                    </div>
+                                                    <div class="light-modal-footer">
+                                                        
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- / Modal Hapus Kategori -->
+
+
                                         <?php endif; ?>
                                        <!--  </center> -->
                                     </td>
@@ -94,3 +120,23 @@
         <!-- #END# Hover Rows --> 
     </div>
 </section>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                ...
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
