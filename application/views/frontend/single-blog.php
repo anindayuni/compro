@@ -7,10 +7,10 @@
             <h2 class="post-title"><?= $single['article_title']; ?></h2>
         </div>
         <div class="post-thumb">
-            <a href="#" class="popular-img"><img src="<?php if (!empty($single['photo_img'])) echo base_url().'gambar/article/'.$single['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-height: 400px;" alt="">
+            <a href="#" class="popular-img"><img src="<?php if (!empty($single['photo_img'])) echo base_url().'gambar/article/'.$single['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-height: 400px;" alt="">
                 <div class="post-overlay-meta">
                     <ul class="post-meta pull-left">
-                        <!-- <li class="author">By <a href="#">Admin</a> |</li> -->
+                        <li class="author">By <a href="#">Admin</a> |</li>
                         <li class="date"><?= date('d M Y', strtotime($single['article_publish_date'])) ?></li>
                         <!-- <li class="comments"><a href="#">1 Comments</a></li> -->
                     </ul>
@@ -82,14 +82,4 @@
                 <?php endforeach ?>
             </div>
         </div>
-
-
-        <!-- <div class="post-navigation text-uppercase">
-            <div class="next-navigation pull-left">
-                <a href="#"><i class="fa fa-angle-double-left"></i> Prev Posts </a>
-            </div>
-            <div class="next-navigation pull-right">
-                <a href="#">Next Posts <i class="fa fa-angle-double-right"></i></a>
-            </div>
-        </div> -->
     </div>

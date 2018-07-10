@@ -2,7 +2,7 @@
     <div class="zinnia-sidebar">
         <div class="widget about-me text-center">
             <div class="about-img">
-                <img src="<?= base_url('gambar/profil/Sinar Biyatnujanat.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>">
+                <a href="#" data-toggle="modal" data-target="#myProfile"><img src="<?= base_url('gambar/profil/Sinar Biyatnujanat.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>"></a>
             </div>
             <h2 class="me-title">RM Sinar Biyatnujanat SE</h2>
             <p class="sub-title">DPRD DIY</p>
@@ -72,6 +72,20 @@
                     </li>
                 <?php endforeach ?>
             </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body" style="text-align: center;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <img src="<?= base_url('gambar/profil/Sinar Biyatnujanat.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>">
+            </div>
         </div>
     </div>
 </div>

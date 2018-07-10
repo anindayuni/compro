@@ -1,5 +1,6 @@
-.polaroid .post-thumb{
-  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.polaroid{
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	max-height: 900px;
 }
 .gradient
 {
@@ -7,7 +8,20 @@
 	/*background: teal;  For browsers that do not support gradients */
     /*background: linear-gradient(to bottom left, rgba(0,128,128), rgba(255,0,0,0)); /* Standard syntax (must be last) */*/
 }
+#zinniaCarousel .mygallery
+{
+	max-height: 550px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: block;
+}
 .grid .mygallery{
   	width: 100%;
-    height: 300px;
+    min-height: 280px;
+}
+.myfooter
+{
+	padding-right:0px;
+	padding-left: 0px;
+	line-height: 0px;
 }

@@ -71,10 +71,5 @@ class Blog extends MY_Controller
 	{
 		$this->front_page('frontend/blog-list');
 	}
-
-	function contact_us()
-	{
-
-	}
 }
 ?>
