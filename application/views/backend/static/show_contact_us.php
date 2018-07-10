@@ -6,7 +6,7 @@
                     <div class="body block-header">
                         <div class="row">
                             <div class="col-lg-6 col-md-8 col-sm-12">
-                                <h2>Static Page</h2>
+                                <h2>Message</h2>
                                 <ul class="breadcrumb p-l-0 p-b-0 ">
                                     <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i> Home</a></li>
                                     <li class="breadcrumb-item active"><a href="">Static Page</a></li>
@@ -28,9 +28,6 @@
                     <div class="header">
                         <h2><strong> Daftar Static Page</strong></h2>
                         <ul class="header-dropdown">
-                            <!-- <li>
-                                <a href="<?php echo base_url('logincms/artikel/add'); ?>"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Tambah Artikel</button></a>
-                            </li> -->
                             <li>
                                 &nbsp;
                             </li>

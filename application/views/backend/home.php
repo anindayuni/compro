@@ -4,45 +4,19 @@
             <div class="body block-header">
                 <div class="row">
                     <div class="col-lg-6 col-md-8 col-sm-12">
-                        <h2>Welcome to Infinity</h2>
+                        <h2>Selamat Datang</h2>
                         <ul class="breadcrumb p-l-0 p-b-0 ">
                             <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ul>
                     </div>            
                     <div class="col-lg-6 col-md-4 col-sm-12 text-right">
-                        <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm">
-                            <div class="sparkline" data-type="bar" data-width="97%" data-height="28px" data-bar-Width="2" data-bar-Spacing="5" data-bar-Color="#706bd1">3,2,6,5,9,8,7,9,5,1,3,5,7,4,6</div>
-                            <small>Page Views</small>
-                        </div>
-                        <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm">
-                            <div class="sparkline" data-type="bar" data-width="97%" data-height="28px" data-bar-Width="2" data-bar-Spacing="5" data-bar-Color="#191f28">1,3,5,7,4,6,3,2,6,5,9,8,7,9,5</div>
-                            <small>Visitors</small>
-                        </div>
-                        <button class="btn btn-primary btn-round btn-simple float-right hidden-xs m-l-10">Create New</button>
+                        <!-- <button class="btn btn-primary btn-round btn-simple float-right hidden-xs m-l-10">Create New</button> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <a href="#defaultModal" data-toggle="modal" data-target="#defaultModal"> dfdf</a>
-<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="title" id="defaultModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales orci ante, sed ornare eros vestibulum ut. Ut accumsan
-                vitae eros sit amet  Integer dapibus, mi ac tempor varius, purus
-                nibh mattis erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa egestas fringilla.
-                Vestibulum egestas consectetur nunc at ultricies. Morbi quis consectetur nunc. </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-round waves-effect">SAVE CHANGES</button>
-                <button type="button" class="btn btn-danger btn-simple btn-round waves-effect" data-dismiss="modal">CLOSE</button>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 <div class="row clearfix">
     <div class="col-lg-3 col-md-6 col-sm-12">

@@ -28,9 +28,6 @@
                     <div class="header">
                         <h2><strong> Daftar Static Page</strong></h2>
                         <ul class="header-dropdown">
-                            <!-- <li>
-                                <a href="<?php echo base_url('logincms/artikel/add'); ?>"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Tambah Artikel</button></a>
-                            </li> -->
                             <li>
                                 &nbsp;
                             </li>
