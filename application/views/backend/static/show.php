@@ -54,7 +54,7 @@
                                     <th scope="row"><?php echo $key+1; ?></th>
                                     <td><?php echo $st['article_title']; ?></td>
                                     <td><?php echo $st['category_name']; ?></td>
-                                    <td><?php echo $st['article_url'] ?></td>
+                                    <td><?php echo $st['category_url'] ?></td>
                                     <td>
                                         <?php 
                                         if ($st['article_status'] == 1){

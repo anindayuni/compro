@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     
-                                        <img src="<?php echo base_url('gambar/').$kat['category_photo']; ?>" height="90" width="90">
+                                        <img src="<?php echo base_url('gambar/category/').$kat['category_photo']; ?>" height="150" width="150">
                                        
                                 </div> 
                             </div><br>

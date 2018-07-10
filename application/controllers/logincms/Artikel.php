@@ -57,6 +57,7 @@ class Artikel extends MY_Controller
 	function edit($article_id){
 		$data['kategori'] = $this->Martikel->kategori();
 		$data['artikel'] = $this->Martikel->artikel_by_id($article_id);
+		$data['image'] = $this->Martikel->show_image($article_id);
 		if ($this->input->post()){
 			$input = $this->input->post();
 			$status = $this->input->post('article_status');
@@ -70,7 +71,12 @@ class Artikel extends MY_Controller
 				$update['article_content'] = $this->input->post('article_content');
 				$update['article_publish_date'] = date('Y-m-d');
 
-				$photo['photo_img'] = $this->Martikel->edit($update, $article_id);
+				$gambar['gambar'] = $this->Martikel->edit($update, $article_id);
+				if ($gambar['gambar'] != '0')
+				{
+					$photo['photo_img'] = $gambar['gambar'];
+				}
+
 				$photo['photo_id_article'] = $article_id;
 				$photo['photo_date'] = date('Y-m-d');
 				$photo['photo_information'] = 'featured-image';
@@ -86,7 +92,12 @@ class Artikel extends MY_Controller
 				$update['article_content'] = $this->input->post('article_content');
 				$update['article_publish_date'] = $this->input->post('article_publish_date');
 
-				$photo['photo_img'] = $this->Martikel->edit($update, $article_id);
+				$gambar['gambar'] = $this->Martikel->edit($update, $article_id);
+				if ($gambar['gambar'] != '0')
+				{
+					$photo['photo_img'] = $gambar['gambar'];
+				}
+
 				$photo['photo_id_article'] = $article_id;
 				$photo['photo_date'] = date('Y-m-d');
 				$photo['photo_information'] = 'featured-image';
@@ -105,6 +116,14 @@ class Artikel extends MY_Controller
 
 		$this->render_page('backend/artikel/detail', $data);
 	}
+
+	function delete($article_id)
+	{
+		$this->Martikel->delete_photo($article_id);
+		$this->Martikel->delete($article_id);
+		redirect('logincms/artikel');
+	}
+
 }
 
 ?>

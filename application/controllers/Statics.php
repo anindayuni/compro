@@ -25,15 +25,20 @@ class Statics extends MY_Controller
 	function faq()
 	{
 		$data['pages'] = $this->Martikel->get_faq();
+		
+		$this->front_page('frontend/static_page',$data);
+	}
+	function privacy_policy()
+	{
+		$data['pages'] = $this->Martikel->get_privacy_policy();	
 		$this->front_page('frontend/static_page',$data);
 	}
 	function gallery()
 	{
 		$gallery = $this->Martikel->get_gallery();
-
 		$config['base_url'] = base_url('statics/gallery');
 		$config['total_rows'] = count($gallery);
-		$config['per_page'] = 4;
+		$config['per_page'] = 10;
 		$config['display_pages'] = FALSE;
 		// pull left
 		$config['first_link'] = "<i class='fa fa-angle-double-left'></i> First Posts &nbsp;&nbsp;";

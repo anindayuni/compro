@@ -16,7 +16,7 @@ class Mslider extends CI_Model
 
 	public function list_slider()
 	{
-		$data = $this->db->query('select * from _article a, _photo p where a.article_id = p.photo_id_article')->result();
+		$data = $this->db->query("select * from _article a, _category c, _photo p WHERE a.article_id_category = c.category_id and c.category_type='slider'and p.photo_id_article=a.article_id")->result();
 		return $data;
 	}
 

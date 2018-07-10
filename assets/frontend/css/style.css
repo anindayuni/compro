@@ -86,7 +86,7 @@ footer .container {
   font-size: 10px;
   text-transform: uppercase;
   margin-bottom: 13px;
-  color: #e66eaf;
+  color: #3498DB;
   letter-spacing: 1px; }
 
 .heading, .single-blog-post .post-header h2.post-title {
@@ -112,7 +112,7 @@ div#zinniaCarousel {
     /*background-position: center;*/
     width: 100%;
     height: auto;
-    /*max-height: 530px;*/
+    max-height: 550px;
   }
   div#zinniaCarousel .single-carousel.one {
     /*background: url(assets/frontend/images/post-thumb-3.jpg) no-repeat;*/
@@ -127,10 +127,11 @@ div#zinniaCarousel {
     -webkit-background-size: cover;
     background-size: cover; }
   div#zinniaCarousel .single-carousel {
-    /*height: 530px;*/
+    max-height: 550px;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: block; }
+    /*display: flex; }*/
     div#zinniaCarousel .single-carousel .slide-component {
       margin: auto;
       background: rgba(255, 255, 255, 0.88);
@@ -141,7 +142,7 @@ div#zinniaCarousel {
         font-size: 24px;
         margin-bottom: 20px; }
         div#zinniaCarousel .single-carousel .slide-component .slide-title a:hover {
-          color: #e66eaf; }
+          color: #3498DB; }
       div#zinniaCarousel .single-carousel .slide-component .slide-date {
         font-size: 11px;
         letter-spacing: 1px;
@@ -151,10 +152,10 @@ div#zinniaCarousel {
         display: inline-block;
         text-transform: uppercase;
         letter-spacing: 2px;
-        border: 1px solid #e66eaf;
+        border: 1px solid #3498DB;
         padding: 10px 20px; }
         div#zinniaCarousel .single-carousel .slide-component .slide-read-more:hover {
-          background: #e66eaf;
+          background: #3498DB;
           color: #fff; }
   div#zinniaCarousel:hover .carousel-control .fa-angle-left {
     left: 25px; }
@@ -183,8 +184,8 @@ div#zinniaCarousel {
   -o-transition: all 0.33s;
   transition: all 0.33s; }
   .carousel-control .fa-angle-left:hover, .carousel-control .fa-angle-right:hover {
-    border-color: #e66eaf;
-    background: #e66eaf; }
+    border-color: #3498DB;
+    background: #3498DB; }
 .carousel-control .fa-angle-left {
   margin-left: -10px;
   left: -40px; }
@@ -251,7 +252,7 @@ div#zinniaCarousel {
     border-bottom: 1px solid #d6d6d6;
     margin-bottom: 0; }
     .zinnia-menu .navbar .navbar-toggle .icon-bar {
-      background: #e66eaf; }
+      background: #3498DB; }
     .zinnia-menu .navbar .navbar-toggle.collapsed .icon-bar {
       background: #333; }
     .zinnia-menu .navbar .nav {
@@ -277,13 +278,13 @@ div#zinniaCarousel {
           line-height: 1.8; }
         .zinnia-menu .navbar .nav li.dropdown.open > a {
           background-color: transparent !important;
-          color: #e66eaf; }
+          color: #3498DB; }
           .zinnia-menu .navbar .nav li.dropdown.open > a:focus, .zinnia-menu .navbar .nav li.dropdown.open > a:active {
             background-color: transparent !important; }
           .zinnia-menu .navbar .nav li.dropdown.open > a:after {
-            color: #e66eaf; }
+            color: #3498DB; }
         .zinnia-menu .navbar .nav li.dropdown.open a:hover:after {
-          color: #e66eaf; }
+          color: #3498DB; }
         .zinnia-menu .navbar .nav li.dropdown .dropdown-menu {
           border-radius: 0;
           -webkit-transition: all 0.25s;
@@ -312,10 +313,10 @@ div#zinniaCarousel {
           letter-spacing: 1px; }
           .zinnia-menu .navbar .nav li a:hover, .zinnia-menu .navbar .nav li a:focus {
             background: transparent !important;
-            color: #e66eaf; }
+            color: #3498DB; }
         .zinnia-menu .navbar .nav li.active a {
           background: transparent;
-          color: #e66eaf; }
+          color: #3498DB; }
 
 /* header css */
 header .zinnia-logo {
@@ -350,7 +351,7 @@ header .zinnia-logo {
       letter-spacing: 1px;
       border: 1px solid #d6d6d6; }
   .zinnia-sidebar .widget.widget-categories li a:hover {
-    color: #e66eaf; }
+    color: #3498DB; }
   .zinnia-sidebar .widget.about-me {
     margin-bottom: 39px; }
     .zinnia-sidebar .widget.about-me .about-img {
@@ -363,7 +364,7 @@ header .zinnia-logo {
       font-size: 20px;
       margin-bottom: 7px; }
     .zinnia-sidebar .widget.about-me .sub-title {
-      color: #e66eaf; }
+      color: #3498DB; }
     .zinnia-sidebar .widget.about-me .about-me-content p {
       letter-spacing: 0.5px;
       margin-bottom: 15px; }
@@ -382,8 +383,8 @@ header .zinnia-logo {
           line-height: 32px; }
         .zinnia-sidebar .widget.about-me .about-me-social ul li a:hover {
           color: #fff;
-          background: #e66eaf;
-          border-color: #e66eaf; }
+          background: #3498DB;
+          border-color: #3498DB; }
   .zinnia-sidebar .widget.news-letter input[type="email"] {
     font-style: italic;
     line-height: 26px;
@@ -395,14 +396,14 @@ header .zinnia-logo {
     border-radius: 0;
     background: #fafafa; }
     .zinnia-sidebar .widget.news-letter input[type="email"]:focus {
-      border-color: #e66eaf; }
+      border-color: #3498DB; }
   .zinnia-sidebar .widget.news-letter p {
     text-align: center;
     letter-spacing: 0.5px;
     margin-bottom: 15px; }
   .zinnia-sidebar .widget.news-letter .btn-subscribe {
     width: 100%;
-    background-color: #e66eaf;
+    background-color: #3498DB;
     color: #fff;
     font-weight: 600;
     border-radius: 0;
@@ -456,7 +457,7 @@ header .zinnia-logo {
           margin-bottom: 2px;
           margin-top: -5px; }
           .zinnia-sidebar .widget.latest-post-widget .latest-post .latest-post-content h2 a:hover {
-            color: #e66eaf; }
+            color: #3498DB; }
         .zinnia-sidebar .widget.latest-post-widget .latest-post .latest-post-content p {
           font-size: 11px; }
   .zinnia-sidebar .widget.add-widget img {
@@ -469,7 +470,7 @@ header .zinnia-logo {
     position: absolute;
     width: 200px;
     font-size: 14px;
-    background: #e66eaf;
+    background: #3498DB;
     color: #fff;
     letter-spacing: 1px;
     font-family: "Lato", sans-serif;
@@ -498,10 +499,10 @@ header .zinnia-logo {
     -o-transition: all 0.33s;
     transition: all 0.33s; }
     .zinnia-footer .footer-social-link ul li a:hover {
-      color: #e66eaf; }
+      color: #3498DB; }
       .zinnia-footer .footer-social-link ul li a:hover .fa {
-        background: #e66eaf;
-        border-color: #e66eaf;
+        background: #3498DB;
+        border-color: #3498DB;
         color: #fff; }
     .zinnia-footer .footer-social-link ul li a .fa {
       color: #333;
@@ -527,13 +528,13 @@ header .zinnia-logo {
     color: #222;
     padding: 8px 0; }
     .zinnia-footer .footer-copyright-text p a:hover {
-      color: #e66eaf; }
+      color: #3498DB; }
 
 /* Blog */
 .single-blog-post {
   margin-bottom: 60px; }
   .single-blog-post .post-header h2.post-title a:hover {
-    color: #e66eaf; }
+    color: #3498DB; }
   .single-blog-post .post-thumb {
     position: relative;
     margin-bottom: 30px;
@@ -544,7 +545,8 @@ header .zinnia-logo {
     .single-blog-post .post-thumb img {
       width: 100%; }
     .single-blog-post .post-thumb .post-overlay-meta {
-      background: rgba(230, 110, 175, 0.6);
+      /*background: rgba(230, 110, 175, 0.6);*/
+      background: rgba(52, 152, 219);
       display: block;
       padding: 10px 30px;
       overflow: hidden;
@@ -596,14 +598,14 @@ header .zinnia-logo {
         color: #fff; }
   .single-blog-post .read-more-text a {
     display: inline-block;
-    border: 1px solid #e66eaf;
+    border: 1px solid #3498DB;
     font-size: 11px;
     letter-spacing: 2px;
     line-height: 40px;
     padding: 0 20px;
     font-weight: bold; }
     .single-blog-post .read-more-text a:hover {
-      background: #e66eaf;
+      background: #3498DB;
       color: #fff; }
 
 .post-navigation {
@@ -613,7 +615,7 @@ header .zinnia-logo {
     display: inline-block;
     font-size: 11px; }
     .post-navigation a:hover {
-      color: #e66eaf; }
+      color: #3498DB; }
 
 .large-than-grid .single-blog-post:nth-child(n+2) {
   margin-bottom: 50px;
@@ -704,9 +706,9 @@ header .zinnia-logo {
   border: 1px solid #d6d6d6;
   padding: 5px 10px; }
   .single-post-meta .single-tag a:hover {
-    background: #e66eaf;
+    background: #3498DB;
     color: #fff;
-    border-color: #e66eaf; }
+    border-color: #3498DB; }
 
 .user-profile {
   margin-top: 0;
@@ -720,7 +722,7 @@ header .zinnia-logo {
     color: #777777;
     margin-right: 5px; }
     .user-profile .author-social-profile a:hover {
-      color: #e66eaf; }
+      color: #3498DB; }
 
 .common-title {
   font-size: 14px;
@@ -735,7 +737,7 @@ header .zinnia-logo {
     margin-top: 13px;
     margin-bottom: 8px; }
     .related-posts header h3 a:hover {
-      color: #e66eaf; }
+      color: #3498DB; }
 
 #comments .comment-body {
   margin-bottom: 20px;
@@ -761,7 +763,7 @@ header .zinnia-logo {
     background-color: #f5f5f5;
     letter-spacing: 1px; }
     #comments .comment-reply a:hover {
-      background: #e66eaf;
+      background: #3498DB;
       color: #fff; }
 
 /* === Comments === */
@@ -789,7 +791,7 @@ header .zinnia-logo {
   #respond input:focus[type="url"],
   #respond textarea:focus {
     outline: none;
-    border-color: #e66eaf; }
+    border-color: #3498DB; }
   #respond textarea {
     display: block;
     width: 100%;
@@ -811,8 +813,8 @@ header .zinnia-logo {
     -o-transition: all 0.33s;
     transition: all 0.33s; }
     #respond button.btn:hover {
-      background: #e66eaf;
-      border-color: #e66eaf;
+      background: #3498DB;
+      border-color: #3498DB;
       color: #fff; }
 
 #map {
@@ -847,7 +849,7 @@ header .zinnia-logo {
       .page-error .home-content p a {
         color: #fff; }
         .page-error .home-content p a:hover {
-          color: #e66eaf; }
+          color: #3498DB; }
 
 .page-error:after {
   content: '';

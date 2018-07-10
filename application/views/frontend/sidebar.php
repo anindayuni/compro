@@ -2,13 +2,12 @@
     <div class="zinnia-sidebar">
         <div class="widget about-me text-center">
             <div class="about-img">
-                <img src="<?= base_url('assets/frontend/images/widget-me.jpg'); ?>" alt="">
+                <img src="<?= base_url('gambar/profil/Sinar Biyatnujanat.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>">
             </div>
-            <h2 class="me-title">Zinnia Inspired </h2>
-            <p class="sub-title">Housewife & Blogger</p>
+            <h2 class="me-title">RM Sinar Biyatnujanat SE</h2>
+            <p class="sub-title">DPRD DIY</p>
             <div class="about-me-content">
-                <p>I’m a desperate housewife. I live in the country. My house is near Salt Lake Sreet. I
-                love writing Kids comics and cooking easy foods.</p>
+                <p>Menjadi Institusi yang profesional, antisipatif dan responsif dalam mendukung serta memfasilitasi kinerja dan hasil kerja DPRD</p>
             </div>
             <div class="about-me-social">
                 <ul class="list-inline">
@@ -46,7 +45,7 @@
                 <div class="latest-post">
                     <div class="media">
                         <div class="media-left">
-                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['photo_img'])) echo base_url().'gambar/'.$art['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 115px; max-height: 90px; min-height: 90px;min-width: 115px;" alt="<?= $art['article_title']; ?>">
+                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['photo_img'])) echo base_url().'gambar/article/'.$art['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 115px; max-height: 90px; min-height: 90px;min-width: 115px;" alt="<?= $art['article_title']; ?>">
                             </a>
                         </div>
                         <div class="latest-post-content">

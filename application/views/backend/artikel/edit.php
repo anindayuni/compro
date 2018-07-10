@@ -66,11 +66,14 @@
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Featured Image</label>
                                 </div>
+                                <?php foreach ($image as $key => $im) : ?>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
                                         <input type="file" name="photo_img">
                                     </div>
-                                </div> 
+                                    <span><?php echo $im['photo_img'];?></span>
+                                </div>
+                                <?php endforeach; ?> 
                             </div><br>
 
                             <div class="row clearfix">

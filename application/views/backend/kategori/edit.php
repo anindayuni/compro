@@ -39,6 +39,8 @@
                             <?php foreach ($kategori as $key => $kat): ?>
                             <input type="hidden" name="category_id" value="<?php echo $kat['category_id']; ?>">
                             <input type="hidden" name="category_date" value="<?php echo $kat['category_date']; ?>">
+                            <input type="hidden" name="category_type" value="<?php echo $kat['category_type']; ?>">
+                            <input type="hidden" name="category_url" value="<?php echo $kat['category_url']; ?>">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label>Nama Kategori</label>
@@ -73,19 +75,6 @@
                                 </div> 
                             </div><br>
 
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                    <label>Type</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8">
-                                    <select class="form-control show-tick" name="category_type">
-                                        <?php foreach ($type as $key => $tp): ?>
-                                        <option value="<?php echo $tp; ?>" <?php if($kat['category_type'] == $tp){echo "selected=selected";} ?> ><?php echo $tp; ?></option>
-                                    <?php endforeach; ?>
-                                    </select>
-                                </div> 
-                            </div><br>
-
                              <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                     <label >Foto</label>
@@ -94,6 +83,7 @@
                                     <div class="form-group">
                                         <input type="file" name="category_photo" value="<?php echo $kat['category_photo']; ?>">
                                     </div>
+                                    <span><?php echo $kat['category_photo'];?></span>
                                 </div>
                             </div>
 
