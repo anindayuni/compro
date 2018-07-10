@@ -114,14 +114,24 @@
         </div>
 
     </div>
-    <div class="container footer-copyright-text">
-        <p class="pull-left"><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?>
+    <div class="container footer-copyright-text" >
+        <div class="col-md-8 col-sm-12 col-xs-12" style="margin-left: -30px;">
+            <p><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?></p>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12" style="margin-left: -55px;">
+            <ul class="navbar-nav" >
+                <?php foreach ($static_page as $key => $page): ?>
+                    <li style="display: inline-block;"><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+        <!-- <p class="pull-left"><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?>
             <ul class="navbar-nav pull-right">
                 <?php foreach ($static_page as $key => $page): ?>
                     <li><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
                 <?php endforeach ?>
             </ul>
-        </p>
+        </p> -->
     </div>
 </footer>
 <!--//Script//-->
