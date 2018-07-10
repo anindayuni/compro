@@ -38,6 +38,19 @@ class Mstatic extends CI_Model
 		return $data->result_array();
 	}
 
+	function change_status($id)
+	{
+		$this->db->set('contact_us_status', '1');
+		$this->db->where('contact_us_id', $id);
+		$this->db->update('_contact_us');
+	}
+
+	function delete_message($contact_us_id)
+	{
+		$this->db->where('contact_us_id', $contact_us_id);
+		$this->db->delete('_contact_us');
+	}
+
 }
 
 ?>

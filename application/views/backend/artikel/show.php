@@ -85,7 +85,7 @@
                                                     <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i></button>
                                                 </a>
 
-                                                <!--  Modal Hapus Kategori -->
+                                                <!--  Modal Hapus Artikel -->
                                                 <div class="light-modal" id="hapus-article" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
                                                     <div class="light-modal-content  animated zoomInUp">
                                                         <div class="light-modal-header">
@@ -110,7 +110,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- / Modal Hapus Kategori -->
+                                                <!-- / Modal Hapus Artikel -->
 
                                             <!-- </div> -->
                                         </center>
