@@ -20,14 +20,13 @@ Class Login extends CI_Controller
 			$cek = $this->Mlogin->auth($this->input->post());
 			
 			if ($cek=='berhasil') {
-				$data['hasil'] = "berhasil";
+				redirect(base_url('logincms/home'), 'refresh');
 			}
 			else
 			{
-				$data['hasil'] = "gagal";
+				$this->session->set_flashdata('msg', '<div class="alert alert-danger"><strong>Upss!</strong> Email atau Password Anda Salah.</div>');
 			}
 		}
-
 
 		$this->load->view('backend/login',$data);
 	}

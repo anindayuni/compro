@@ -11,13 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="<?php if(!empty($sosmed['settings_meta_keyword']))echo $sosmed['settings_meta_keyword'];else echo "Company Profile CMS"; ?>">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="keywords" content="<?php if(!empty($sosmed['settings_meta_description']))echo $sosmed['settings_meta_description'];else echo "Company Profile CMS"; ?>">
     <meta name="author" content="Admin">
     <!-- Page Title -->
     <title><?php if(!empty($sosmed['settings_namesite'])) echo $sosmed['settings_namesite']; else echo "Company Profile CMS"; ?></title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,400i,700"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,400i,700" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/font-awesome.min.css'); ?>">

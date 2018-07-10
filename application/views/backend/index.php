@@ -24,6 +24,7 @@
 
 <!-- Custom Css -->
 <link rel="stylesheet" href="<?php echo base_url('assets/backend/css/main.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('assets/backend/css/mymain.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/backend/css/color_skins.css'); ?>">
 
 <!-- Dropzone Css -->
@@ -84,6 +85,9 @@
 <script src="<?php echo base_url('assets/backend/plugins/jquery-datatable/buttons/buttons.print.min.js') ?>"></script>
 
 <script src="<?php echo base_url('assets/backend/js/pages/tables/jquery-datatable.js') ?>"></script>
+
+<script src="<?= base_url('assets/backend/plugins/bootstrap-notify/bootstrap-notify.js'); ?>"></script> <!-- Bootstrap Notify Plugin Js -->
+<script src="<?= base_url('assets/backend/js/pages/ui/notifications.js'); ?>"></script> <!-- Custom Js -->
 
 
 </body>

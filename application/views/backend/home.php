@@ -234,7 +234,7 @@
         </div>                
     </div>
 </div>
-<div class="row clearfix">
+<!-- <div class="row clearfix">
     <div class="col-xl-4 col-lg-6 col-md-12">
         <div class="card">
             <div class="header">
@@ -462,8 +462,8 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row clearfix">
+</div> -->
+<!-- <div class="row clearfix">
     <div class="col-xl-8 col-lg-7 col-md-12">
         <div class="card overflowhidden active-bg daily-sale">
             <div class="body">
@@ -513,8 +513,8 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row clearfix">
+</div> -->
+<!-- <div class="row clearfix">
     <div class="col-xl-4 col-lg-5 col-md-12">
         <div class="card overflowhidden weather2">
             <div class="body city-selected l-khaki">
@@ -682,8 +682,8 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row clearfix">
+</div> -->
+<!-- <div class="row clearfix">
     <div class="col-lg-12 col-xl-4">
         <div class="card">
             <div class="header">
@@ -792,5 +792,5 @@
             </div>
         </div>
     </div>
-</div> 
+</div> --> 
 

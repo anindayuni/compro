@@ -18,16 +18,17 @@
 <body class="theme-purple">
 <div class="authentication">
     <div class="container">
-        <div class="col-md-12 content-center">
+        <div class="col-lg-12 content-center">
         <div class="row clearfix">
-            <div class="col-lg-3 col-md-12">
+            <!-- <div class="col-lg-3 col-md-12">
                 
-            </div>                        
-            <div class="col-lg-5 col-md-12 offset-lg-1">
+            </div> -->                        
+            <div class="col-lg-12 col-md-12">
                 <div class="card-plain">
                     <div class="header">
                         <h5>Log in</h5>
                     </div>
+                    <?php echo $this->session->flashdata('msg'); ?>
                     <form class="form" method="post">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="User Name" name="username">
@@ -40,7 +41,6 @@
                     <div class="footer">
                         <!-- <a class="btn btn-primary btn-round btn-block">SIGN IN</a> -->
                         <button class="btn btn-primary btn-round btn-block">SIGN IN</button>
-                        <a class="btn btn-primary btn-simple btn-round btn-block">SIGN UP</a>
                     </div>
                     </form>
                     <a href="forgot-password.html" class="link">Forgot Password?</a>
@@ -49,11 +49,11 @@
         </div>
         </div>
     </div>
-    <?php if ($hasil=='berhasil'): ?>
+  <!--   <?php if ($hasil=='berhasil'): ?>
         <script>
             location='<?php echo base_url("logincms/home"); ?>';
         </script>
-    <?php endif ?>
+    <?php endif ?> -->
     <div id="particles-js"></div>
 </div>
 <!-- Jquery Core Js -->
