@@ -13,8 +13,8 @@ class Gallery extends MY_Controller
 	}
 
 
-public function pagination()
-{
+	public function pagination()
+	{
 
 			   // konfigurasi class pagination
 		$config['base_url']=base_url()."logincms/gallery/index";
@@ -35,13 +35,14 @@ public function pagination()
 
 		// echo $this->pagination->create_links();
 	# code...
-}
+	}
 
 	public function index()
 	{
 
 
 			// $jumlah_data = $this->m_data->jumlah_data();
+		$this->load->database();
 		$this->load->library('pagination');
 		$config['base_url'] = base_url().'logincms/gallery/index/';
 		$config['total_rows'] =  $this->db->query('SELECT * FROM _article a, _photo p, _category c where a.article_id_category=c.category_id and p.photo_id_article=a.article_id and c.category_type="gallery" ORDER BY a.article_id DESC')->num_rows();
@@ -132,6 +133,8 @@ public function pagination()
 
 		}
 	}
+
+
 
 
 	public function hapus()

@@ -28,7 +28,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="card">
             <div class="header">
-                <h2><strong> Data Gallery <?php     print_r($row) ?></strong></h2>
+                <h2><strong> Data Gallery <?php print_r($row) ?></strong></h2>
                 <ul class="header-dropdown">
                     <li>
                         <a href="<?php echo base_url('logincms/gallery/add') ?>"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Tambah Gallery</button></a>
@@ -39,69 +39,23 @@
                 </ul>
             </div>
             <div class="body">
-                <hr>    
+                        <table> 
+                                <tr>
+                                    <th>   No</th>
+                                    <th>   Gambar</th>
+                                    <th>   aksi</th>
+                                </tr>
+                                <?php foreach ($gallery as $g): ?>
+                                    
+                                <tr>    
+                                        <td><?php echo  $g->article_id ?></td>
+                                        <td><?php echo  $g->photo_img ?></td>
+                                        <td></td>
+                                </tr>
+                                <?php endforeach ?>
 
-                <br>    
-                <script>
-
-
-                    function hapus() {
-                       var id = $("#id_artikel").val();
-                       if(confirm('Anda yakin akan menghapus data ini ?')){
-                        $.ajax({
-                            url:"<?php echo base_url()?>logincms/gallery/hapus",
-                            data:"id="+id,
-                            success:function() {
-
-                               window.location.reload();   
-                           }
-                       })
-                        return true;
-                    }else{
-                        return false;    
-                    }
-                }
-
-
-                    var canvas= document.getElementById("MyCanvas").getContext("2d");
-
-            </script>
-            <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
-                <?php foreach ($gallery as $g): ?>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> 
-                        <!-- <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>"> -->
-                            <!-- <img class="img-fluid img-thumbnail" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" >  -->
-                            <canvas id="MyCanvas" width="100px" height="100px" style="border: 1px">    
-                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" > 
-                            </canvas>
-                            <!-- </a> -->
-                            <form method="get" align="right">  
-                                <input type="hidden" id="id_artikel" value="<?php echo $g->article_id?>">
-                                <button type="submit" onclick="hapus()" class="btn btn-raised btn-primary btn-round waves-effect" >Delete</button>
-                            </form>
-                        </div>
-
-                    <?php endforeach ?>
-                    <?php
-                    echo $this->pagination->create_links();
-                    ?>
-
-                        <!--     <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/2.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/2.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/3.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/3.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/4.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/4.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/5.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/5.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/6.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/6.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/7.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/7.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/8.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/8.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/9.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/9.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/10.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/10.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/11.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/11.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/12.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/12.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/13.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/13.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/14.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/14.jpg" alt=""> </a> </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/15.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/15.jpg" alt=""> </a> </div> -->
-                        </div>
+                        </table>
+<?php echo $this->pagination->create_links(); ?>
                     </div>
                 </div>
             </div>
