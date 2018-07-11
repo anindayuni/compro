@@ -35,7 +35,7 @@
                             <div class="single-tag">
                                 <a href="#"> <?= $list['category_name'] ?></a>
                             </div>
-                            <h2 class="post-title"><a href="<?= base_url().'news/'.$list['article_url']; ?>"><?= substr($list['article_title'], 0,90); ?></a></h2>
+                            <h2 class="post-title"><a href="<?= base_url().'news/'.$list['article_url']; ?>"><?= substr($list['article_title'], 0,70); ?></a></h2>
                         </div>
                         <div class="post-content">
                             <p><?= substr(strip_tags($list['article_content']), 0,120) ?></p>

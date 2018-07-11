@@ -31,17 +31,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="post-content">
-            </div>
-            <div class="read-more-text text-center text-uppercase">
-                <a href="<?= base_url().'news/'.$artikel['article_url']; ?>">continue reading</a>
-            </div>
-        </article>
-    <?php endforeach ?>
+                <div class="post-content" style="text-align: justify;">
+                    <p><?= substr(strip_tags($artikel['article_content']), 0,450) ?></p>
+                </div>
+                <div class="read-more-text text-center text-uppercase">
+                    <a href="<?= base_url().'news/'.$artikel['article_url']; ?>">continue reading</a>
+                </div>
+            </article>
+        <?php endforeach ?>
 
-    <div class="post-navigation text-uppercase">
-        <div class="next-navigation">
-            <?php echo $mpaging; ?>
+        <div class="post-navigation text-uppercase">
+            <div class="next-navigation">
+                <?php echo $mpaging; ?>
+            </div>
         </div>
     </div>
-</div>
