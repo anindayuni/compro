@@ -26,9 +26,16 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>File Upload</strong> </h2>
-
-                    </div>
+                <h2><strong> Data Gallery </strong></h2>
+                <ul class="header-dropdown">
+                    <li>
+                        <a href="http://localhost/github/company-profile/logincms/gallery"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Kembali</button></a>
+                    </li>
+                    <li>
+                        &nbsp;
+                    </li>
+                </ul>
+            </div>
                     <div class="body">
                         <!-- <form action="" id="frmFileUpload" class="dropzone dz-clickable" method="get" enctype="multipart/form-data"> -->
                             <form action="<?php echo base_url('logincms/gallery/add_action') ?>" id="frmFileUpload" class="dropzone dz-clickable" method="get" enctype="multipart/form-data">

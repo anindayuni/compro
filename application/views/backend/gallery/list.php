@@ -56,14 +56,25 @@
                     })
 
                    }
+
+                   function lihat() {
+                       $.ajax({
+                        url:"<?php echo  base_url('gambar/gallery/').$g->photo_img ?>",
+                       })
+                   }
+
+
                </script>
                <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
                 <?php foreach ($gallery as $g): ?>
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>"><img class="img-fluid img-thumbnail" src="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>" alt="" > </a></div>
-                    <form method="get">  
+                    <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>"><img class="img-fluid img-thumbnail" src="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>" alt="" > </a>
+                    <form method="get" align="right">  
                         <input type="hidden" id="id_artikel" value="<?php echo $g->article_id?>">
+                        <button type="submit" onclick="hapus()" class="btn btn-raised btn-primary btn-round waves-effect"> Delete </button>
+                        <a href="<?php echo base_url('gambar/gallery/').$g->photo_img ?>"> <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect"> Preview </button></a>
                     </form>
+                    </div>
 
                 <?php endforeach ?>
                   <?php
