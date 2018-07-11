@@ -4,9 +4,9 @@
             <h2 class="post-title"><?= $contact['article_title']; ?></h2>
         </div>
         <div class="post-thumb">
-            <img src="<?= base_url('assets/frontend/images/post-thumb-1.jpg'); ?>" alt="">
+            <img src="<?= base_url('gambar/category/').$contact['category_photo']; ?>" alt="<?= $contact['article_title']; ?>">
         </div>
-        <div class="post-content">
+        <div class="post-content" style="text-align: justify;">
             <p><?= $contact['article_content']; ?></p>
         </div>
         <div id="respond" class="comment-respond">

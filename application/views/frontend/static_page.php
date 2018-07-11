@@ -4,12 +4,9 @@
             <h2 class="post-title"><?= $pages['article_title']; ?></h2>
         </div>
         <div class="post-thumb">
-            <?php if (!empty($pages['article_title'])): ?>
-                
-            <?php endif ?>
-            <img src="assets/images/post-thumb-6.jpg" alt="">
+           <img src="<?= base_url('gambar/category/').$pages['category_photo']; ?>" alt="<?= $pages['article_title']; ?>">
         </div>
-        <div class="post-content">
+        <div class="post-content" style="text-align: justify;">
             <p><?= $pages['article_content']; ?></p>
         </div>
     </article>
