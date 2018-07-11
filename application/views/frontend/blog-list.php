@@ -7,11 +7,11 @@
             <div class="media">
                 <div class="media-left">
                     <div class="post-thumb">
-                        <a href="#" class="popular-img"><img src="<?php if (!empty($article['photo_img'])) echo base_url().'gambar/article/'.$article['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-width: 362px; max-height: 270px; " alt="<?= $article['article_title']; ?>">
+                        <a href="#" class="popular-img"><img src="<?php if (!empty($article['photo_img'])) echo base_url().'gambar/article/'.$article['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-width: 362px; min-height: 235px; " alt="<?= $article['article_title']; ?>">
                             <div class="post-overlay-meta">
                                 <ul class="post-meta pull-left">
                                     <li class="author">By <a href="#">Admin</a> |</li>
-                                    <li class="date"><?= $article['articles_publish_date']; ?></li>
+                                    <li class="date"><?= $article['article_publish_date']; ?></li>
                                     <!-- <li class="comments"><a href="#">1 Comments</a></li> -->
                                 </ul>
                                 <div class="share-block pull-right">
@@ -31,10 +31,10 @@
                             <div class="single-tag">
                                 <a href="<?= base_url().'category/'.$article['category_url']; ?>"> <?= $article['category_name']; ?></a>
                             </div>
-                            <h2 class="post-title"><a href="<?= base_url().'news/'.$article['article_url']; ?>"><?= substr($article['article_title'], 0,120); ?></a></h2>
+                            <h2 class="post-title"><a href="<?= base_url().'news/'.$article['article_url']; ?>"><?= substr($article['article_title'], 0,70); ?></a></h2>
                         </div>
                         <div class="post-content">
-                            <p><?= substr(strip_tags($article['article_content']), 0,195) ?></p>
+                            <p><?= substr(strip_tags($article['article_content']), 0,120) ?></p>
                         </div>
                         <div class="read-more-text text-left text-uppercase">
                             <a href="<?= base_url().'news/'.$article['article_url']; ?>">continue reading</a>

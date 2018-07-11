@@ -10,13 +10,6 @@ class Home extends MY_Controller
 		$config['total_rows'] = count($article);
 		$config['per_page'] = 3;
 		$config['display_pages'] = FALSE;
-		// $config['num_links'] = 2;
-		// $config['num_tag_open'] = "<div>";
-		// $config['num_tag_close'] = "</div>";
-		// $config['full_tag_open'] = "<li>";
-		// $config['full_tag_close'] = "</li>";
-		// $config['cur_tag_open'] = "<li class='active'><a>";
-		// $config['cur_tag_close'] = "</a></li>";
 		// pull left
 		$config['first_link'] = "<i class='fa fa-angle-double-left'></i> First Posts &nbsp;&nbsp;";
 		$config['first_tag_open'] = "<div class='pull-left'>";

@@ -112,7 +112,7 @@ div#zinniaCarousel {
     /*background-position: center;*/
     width: 100%;
     height: auto;
-    max-height: 500px;
+    max-height: 580px;
   }
   div#zinniaCarousel .single-carousel.one {
     /*background: url(assets/frontend/images/post-thumb-3.jpg) no-repeat;*/
@@ -127,7 +127,7 @@ div#zinniaCarousel {
     -webkit-background-size: cover;
     background-size: cover; }
   div#zinniaCarousel .single-carousel {
-    /*height: 530px;*/
+    max-height: 580px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: block; }
