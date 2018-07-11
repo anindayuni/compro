@@ -70,6 +70,19 @@ class Static_page extends MY_Controller
 		$this->render_page('backend/static/show_contact_us',$data);
 	}
 
+	function change_message_status($id)
+	{
+		$this->Mstatic->change_status($id);
+		redirect('logincms/static_page/contact_us', 'refresh');
+
+	}
+
+	function delete_message($contact_us_id)
+	{
+		$this->Mstatic->delete_message($contact_us_id);
+		redirect('logincms/static_page/contact_us');
+	}
+
 }
 
 ?>

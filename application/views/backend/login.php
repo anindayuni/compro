@@ -23,7 +23,7 @@
             <div class="col-lg-3 col-md-12">
                 
             </div>                        
-            <div class="col-lg-5 col-md-12 offset-lg-1">
+            <div class="col-lg-12 col-md-12">
                 <div class="card-plain">
                     <div class="header">
                         <h5>Log in</h5>
@@ -38,9 +38,7 @@
                             <span class="input-group-addon"><i class="zmdi zmdi-lock"></i></span>
                         </div>                            
                     <div class="footer">
-                        <!-- <a class="btn btn-primary btn-round btn-block">SIGN IN</a> -->
                         <button class="btn btn-primary btn-round btn-block">SIGN IN</button>
-                        <a class="btn btn-primary btn-simple btn-round btn-block">SIGN UP</a>
                     </div>
                     </form>
                     <a href="forgot-password.html" class="link">Forgot Password?</a>
