@@ -77,8 +77,18 @@ class Mkategori extends CI_Model
         // jika benar upload gambar
         if ($this->upload->do_upload('category_photo'))
         {
-            
             $data['category_photo'] = $this->upload->data('file_name');
+
+            $this->db->where('category_id', $category_id);
+            $hasil = $this->db->get('_category');
+            $ambil = $hasil->row_array();
+
+            $foto_lama = $ambil['category_photo'];
+
+            if (!empty($foto_lama)) {
+                unlink("./gambar/category/".$foto_lama);
+            }
+
         }
 
         $this->db->where('category_id', $category_id);

@@ -28,9 +28,6 @@
                     <div class="header">
                         <h2><strong> Daftar Static Page</strong></h2>
                         <ul class="header-dropdown">
-                            <!-- <li>
-                                <a href="<?php echo base_url('logincms/artikel/add'); ?>"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Tambah Artikel</button></a>
-                            </li> -->
                             <li>
                                 &nbsp;
                             </li>
@@ -89,25 +86,3 @@
         <!-- #END# Hover Rows --> 
     </div>
 </section>
-                                                <!-- Modal Default Size -->
-                                                <div class="modal fade" id="defaultModal/1" tabindex="-1" role="dialog">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                            
-                                                            </div>
-                                                           
-                                                            <pre>
-                                                                <?php print_r('$art[article_id]'); ?>
-                                                            </pre>
-                                                            
-                                                            <div class="modal-body">Apakah Anda Yakin Ingin Menghapus Data Ini? </div>
-                                                            <div class="modal-footer">
-                                                                <a href="<?php echo base_url('logincms/artikel/hapus/').$art['article_id']; ?>">
-                                                                    <button type="button" class="btn btn-primary btn-round waves-effect">YA</button>
-                                                                </a>
-                                                                <button type="button" class="btn btn-danger btn-simple btn-round waves-effect" data-dismiss="modal">TIDAK</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
