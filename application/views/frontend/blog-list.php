@@ -2,9 +2,10 @@
     <?php echo $slider; ?>
 <?php endif ?>
 <div class="col-md-8 list">
-
-
-    
+    <div class="archive-header text-center" >
+        <div class="archive-title"><span class="archive-name">Semua Berita</span>
+        </div>
+    </div>
     <?php foreach ($articles as $key => $article): ?>
         <article class="single-blog-post">
             <div class="media">

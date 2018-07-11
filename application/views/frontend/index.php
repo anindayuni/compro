@@ -121,7 +121,7 @@
         <div class="col-md-7 myfooter" >
             <p><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?></p>
         </div>
-        <div class="col-md-5 myfooter" style="margin-left: -25px;">
+        <div class="col-md-5 myfooter" style="margin-left: -25px; margin-right: -40px;">
                 <ul class="navbar-nav pull-right">
                     <?php foreach ($static_page as $key => $page): ?>
                         <li style="display: inline-block;"><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
