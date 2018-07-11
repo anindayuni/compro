@@ -134,6 +134,8 @@ public function pagination()
 	}
 
 
+
+
 	public function hapus()
 	{
 
