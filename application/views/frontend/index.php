@@ -118,17 +118,15 @@
 
     </div>
     <div class="container footer-copyright-text">
-        <div class="col-md-7 pull-left" style="padding: 0px; margin: 0px;">
+        <div class="col-md-7 myfooter" >
             <p><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?></p>
         </div>
-        <div class="col-md-5" style="padding: 0px; margin: 0px;">
-            <p>
-                <ul class="navbar-nav pull-right" style="padding-top: 0px;margin: 0px; ">
+        <div class="col-md-5 myfooter" style="margin-left: -25px;">
+                <ul class="navbar-nav pull-right">
                     <?php foreach ($static_page as $key => $page): ?>
                         <li style="display: inline-block;"><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
                     <?php endforeach ?>
                 </ul>
-            </p>
         </div>
     </div>
 </footer>

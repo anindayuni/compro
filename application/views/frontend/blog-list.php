@@ -10,11 +10,11 @@
             <div class="media">
                 <div class="media-left">
                     <div class="post-thumb">
-                        <a href="#" class="popular-img"><img src="<?php if (!empty($article['photo_img'])) echo base_url().'gambar/article/'.$article['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-width: 362px; min-height: 235px; " alt="<?= $article['article_title']; ?>">
+                        <a href="<?= base_url().'news/'.$article['article_url']; ?>" class="popular-img"><img src="<?php if (!empty($article['photo_img'])) echo base_url().'gambar/article/'.$article['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-width: 362px; min-height: 235px; " alt="<?= $article['article_title']; ?>">
                             <div class="post-overlay-meta">
                                 <ul class="post-meta pull-left">
                                     <li class="author">By <a href="#">Admin</a> |</li>
-                                    <li class="date"><?= $article['article_publish_date']; ?></li>
+                                    <li class="date"><?= date('d M Y', strtotime($article['article_publish_date'])); ?></li>
                                     <!-- <li class="comments"><a href="#">1 Comments</a></li> -->
                                 </ul>
                                 <div class="share-block pull-right">

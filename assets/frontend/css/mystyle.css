@@ -7,3 +7,19 @@
 	/*background: teal;  For browsers that do not support gradients */
     /*background: linear-gradient(to bottom left, rgba(0,128,128), rgba(255,0,0,0)); /* Standard syntax (must be last) */*/
 }
+.grid .mygallery{
+  	width: 100%;
+  	height: 220px;
+    max-height: 270px;
+}
+.grid .post-thumb img
+{
+	height: auto;
+}
+.myfooter{
+	padding: 0px; margin: 0px;
+}
+.zinnia-footer .footer-copyright-text p
+{
+	padding: 5px 0px 5px 0px;
+}
