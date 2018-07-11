@@ -52,7 +52,12 @@
                                 <?php foreach ($artikel as $key => $art) : ?>
                                 <tr>
                                     <th scope="row"><?php echo $key+1; ?></th>
-                                    <td><?php echo $art['article_title']; ?></td>
+                                    <td>
+                                        <?php  
+                                            $cetak = substr($art['article_title'], 0, 50);
+                                            echo $cetak." . . .";
+                                        ?>
+                                    </td>
                                     <td><?php echo $art['category_name']; ?></td>
                                     <td><?php echo date("d-F-Y", strtotime($art['article_publish_date'])); ?></td>
                                     <td>
@@ -80,7 +85,7 @@
                                                     <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i></button>
                                                 </a>
 
-                                                <!--  Modal Hapus Kategori -->
+                                                <!--  Modal Hapus Artikel -->
                                                 <div class="light-modal" id="hapus-article" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
                                                     <div class="light-modal-content  animated zoomInUp">
                                                         <div class="light-modal-header">
@@ -105,7 +110,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- / Modal Hapus Kategori -->
+                                                <!-- / Modal Hapus Artikel -->
 
                                             <!-- </div> -->
                                         </center>

@@ -36,6 +36,7 @@ class Mstatic extends CI_Model
 	
 	function get_contat_us()
 	{
+		$data = $this->db->order_by('contact_us_id', 'DESC');
 		$data = $this->db->get('_contact_us');
 		return $data->result_array();
 	}
