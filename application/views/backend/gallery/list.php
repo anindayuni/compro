@@ -43,43 +43,49 @@
 
                 <br>    
                 <script>
+
+
                     function hapus() {
                        var id = $("#id_artikel").val();
-                       $.ajax({
-                        url:"<?php echo base_url()?>logincms/gallery/hapus",
-                        data:"id="+id,
-                        success:function(html) {
-                            alert('gambar berhasil di hapus');
+                       if(confirm('Anda yakin akan menghapus data ini ?')){
+                        $.ajax({
+                            url:"<?php echo base_url()?>logincms/gallery/hapus",
+                            data:"id="+id,
+                            success:function() {
 
-                        }
-
-                    })
-
-                   }
-
-                   function lihat() {
-                       $.ajax({
-                        url:"<?php echo  base_url('gambar/gallery/').$g->photo_img ?>",
+                               window.location.reload();   
+                           }
                        })
-                   }
+                        return true;
+                    }else{
+                        return false;    
+                    }
+                }
 
 
-               </script>
-               <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
+                    var canvas= document.getElementById("MyCanvas").getContext("2d");
+
+            </script>
+            <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
                 <?php foreach ($gallery as $g): ?>
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>"><img class="img-fluid img-thumbnail" src="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>" alt="" > </a>
-                    <form method="get" align="right">  
-                        <input type="hidden" id="id_artikel" value="<?php echo $g->article_id?>">
-                        <button type="submit" onclick="hapus()" class="btn btn-raised btn-primary btn-round waves-effect"> Delete </button>
-                        <a href="<?php echo base_url('gambar/gallery/').$g->photo_img ?>"> <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect"> Preview </button></a>
-                    </form>
-                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> 
+                        <!-- <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>"> -->
+                            <!-- <img class="img-fluid img-thumbnail" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" >  -->
+                            <canvas id="MyCanvas" width="100px" height="100px" style="border: 1px">    
+                                <img class="img-fluid img-thumbnail" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" > 
+                            </canvas>
+                            <!-- </a> -->
+                            <form method="get" align="right">  
+                                <input type="hidden" id="id_artikel" value="<?php echo $g->article_id?>">
+                                <button type="submit" onclick="hapus()" class="btn btn-raised btn-primary btn-round waves-effect" >Delete</button>
+                            </form>
+                        </div>
 
-                <?php endforeach ?>
-                  <?php
-        echo $this->pagination->create_links();
-                     ?>
+                    <?php endforeach ?>
+                    <?php
+                    echo $this->pagination->create_links();
+                    ?>
 
                         <!--     <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/2.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/2.jpg" alt=""> </a> </div>
                             <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> <a href="assets/images/image-gallery/3.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/3.jpg" alt=""> </a> </div>

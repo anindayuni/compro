@@ -145,10 +145,10 @@ public function pagination()
 		$this->db->delete('_article', array('article_id' => $id));
 		$this->db->delete('_photo', array('photo_id_article' => $id));
 		// $this->render_page('backend/gallery/list');
-		redirect('logincms/gallery', 'refresh');
 
 
 	}
+
 
 	
 }
