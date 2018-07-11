@@ -54,6 +54,7 @@ $route['default_controller'] = 'home';
 $route['contact-us'] = 'statics/contact_us';
 $route['about-us'] = 'statics/about_us';
 $route['faq'] = 'statics/faq';
+$route['privacy-policy'] = 'statics/privacy_policy';
 $route['gallery'] = 'statics/gallery';
 $route['news'] = 'blog';
 $route['news/(:any)'] = 'blog/single/$1';

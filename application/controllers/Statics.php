@@ -27,6 +27,11 @@ class Statics extends MY_Controller
 		$data['pages'] = $this->Martikel->get_faq();
 		$this->front_page('frontend/static_page',$data);
 	}
+	function privacy_policy()
+	{
+		$data['pages'] = $this->Martikel->get_privacy_policy();
+		$this->front_page('frontend/static_page',$data);
+	}
 	function gallery()
 	{
 		$gallery = $this->Martikel->get_gallery();

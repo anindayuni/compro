@@ -46,7 +46,7 @@
                 <div class="latest-post">
                     <div class="media">
                         <div class="media-left">
-                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['photo_img'])) echo base_url().'gambar/'.$art['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 115px; max-height: 90px; min-height: 90px;min-width: 115px;" alt="<?= $art['article_title']; ?>">
+                            <a href="#" class="popular-img"><img src="<?php if (!empty($art['photo_img'])) echo base_url().'gambar/article/'.$art['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-width: 115px; max-height: 90px; min-height: 90px;min-width: 115px;" alt="<?= $art['article_title']; ?>">
                             </a>
                         </div>
                         <div class="latest-post-content">
