@@ -1,3 +1,8 @@
+<?php 
+$hal = $this->uri->segment('2');
+$hal2 = $this->uri->segment('3');
+?>
+
 <aside id="leftsidebar" class="sidebar h_menu">
     <div class="container">
         <div class="row clearfix">
@@ -5,29 +10,35 @@
                 <div class="menu">
                     <ul class="list">
                         <li class="header">MAIN</li>
-                        <li echo class="active open">
-                            <a href="<?php echo base_url('logincms/home') ?>"><i class="icon-home"></i><span>Dashboard</span></a>
+                        <li <?php if ($hal == 'home'){echo "class='active open'";}  ?>>
+                            <a href="<?php echo base_url('logincms/home') ?>"><i class="icon-home"></i><span>Dashboard </span></a>
                         </li>
-                        <li>
+
+                        <li <?php if ($hal == 'kategori'){echo "class='active open'";}  ?>>
                             <a href="<?php echo base_url('logincms/kategori'); ?>" class="menu-toggle"><i class="icon-grid"></i><span>Kategori</span></a>
                         </li>
-                        <li>
+
+                        <li <?php if ($hal == 'artikel'){echo "class='active open'";}  ?>>
                             <a href="<?php echo base_url('logincms/artikel'); ?>"><i class="icon-layers"></i><span>Artikel</span></a>
                         </li>
-                        <li>
+
+                        <li <?php if ($hal == 'static_page' AND $hal2 != 'contact_us'){echo "class='active open'";}  ?>>
                             <a href="<?php echo base_url('logincms/static_page'); ?>"><i class="icon-doc"></i><span>Static</span></a>
                         </li>
-                        <li> <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block"><i class="icon-picture"></i><span>Foto</span></a>
+
+                        <li <?php if ($hal == 'slider' OR $hal == 'gallery'){echo "class='active open'";}  ?>> <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block"><i class="icon-picture"></i><span>Foto</span></a>
                             <ul class="ml-menu">
-                                <li><a href="<?php echo base_url('logincms/gallery'); ?>" class=" waves-effect waves-block">Gallery</a></li>
-                                <li><a href="<?php echo base_url('logincms/slider'); ?>">Slider</a></li>
-                                <!-- <li><a href="map-jvectormap.html" class=" waves-effect waves-block">Foto Artikel</a></li> -->
+                                <li ><a href="<?php echo base_url('logincms/gallery'); ?>" class=" waves-effect waves-block">Gallery</a></li>
+                                <li ><a href="<?php echo base_url('logincms/slider'); ?>">Slider</a></li>
                             </ul>
                         </li>
 
-
-                        <li><a href="<?php echo base_url('logincms/static_page/contact_us'); ?>" class="menu-toggle"><i class="icon-envelope"></i><span>Message</span></a>
-                        <li><a href="<?php echo base_url('logincms/settings'); ?>" class="menu-toggle"><i class="icon-settings"></i><span>Setting</span></a>
+                        <li <?php if ($hal2 == 'contact_us'){echo "class='active open'";}  ?>>
+                            <a href="<?php echo base_url('logincms/static_page/contact_us'); ?>" class="menu-toggle"><i class="icon-envelope"></i><span>Message</span></a>
+                        </li>
+                        
+                        <li <?php if ($hal == 'settings'){echo "class='active open'";}  ?>>
+                            <a href="<?php echo base_url('logincms/settings'); ?>" class="menu-toggle"><i class="icon-settings"></i><span>Setting</span></a>
                         </li>
                     </ul>
                 </div>

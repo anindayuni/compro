@@ -28,14 +28,29 @@ class Mstatic extends CI_Model
 		$this->db->where('article_id', $article_id);
 		$this->db->update('_article', $update);
 	}
+
 	function add_contact_us($input)
 	{
 		return $this->db->insert('_contact_us', $input);
 	}
+	
 	function get_contat_us()
 	{
 		$data = $this->db->get('_contact_us');
 		return $data->result_array();
+	}
+
+	function change_status($id)
+	{
+		$this->db->set('contact_us_status', '1');
+		$this->db->where('contact_us_id', $id);
+		$this->db->update('_contact_us');
+	}
+
+	function delete_message($contact_us_id)
+	{
+		$this->db->where('contact_us_id', $contact_us_id);
+		$this->db->delete('_contact_us');
 	}
 
 }
