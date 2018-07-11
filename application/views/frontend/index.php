@@ -52,9 +52,9 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav text-uppercase">
                         <li><a href="<?= base_url(); ?>">Home</a></li>
-                        <li><a href="<?= base_url('about-us'); ?>">About Us</a></li> 
                         <li><a href="<?= base_url('news'); ?>">Berita</a></li>
                         <li><a href="<?= base_url('gallery'); ?>">Gallery</a></li>
+                        <li><a href="<?= base_url('about-us'); ?>">About Us</a></li> 
                         <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
                     </ul>
                 </div>
@@ -117,24 +117,18 @@
 
     </div>
     <div class="container footer-copyright-text">
-        <div class="col-md-6 pull-left">
+        <div class="col-md-7 pull-left">
             <p><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?></p>
         </div>
-        <div class="col-md-6 pull right">
+        <div class="col-md-5">
             <p>
-                <ul class="nav navbar-nav pull right">
-                    <li>test</li>
-                    <li>test</li>
+                <ul class="nav navbar-nav pull-right">
+                     <?php foreach ($static_page as $key => $page): ?>
+                    <li style="display: inline-block;"><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
+                <?php endforeach ?>
                 </ul>
             </p>
         </div>
-        <!-- <p class="pull-left"><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?>
-            <ul class="navbar-nav pull-right">
-                <?php foreach ($static_page as $key => $page): ?>
-                    <li><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
-                <?php endforeach ?>
-            </ul>
-        </p> -->
     </div>
 </footer>
 <!--//Script//-->

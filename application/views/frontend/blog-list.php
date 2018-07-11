@@ -7,13 +7,12 @@
             <div class="media">
                 <div class="media-left">
                     <div class="post-thumb">
-                        <!-- <a href="#"> <img src="<?= base_url('assets/frontend/images/list-1.jpg'); ?>" alt=""></a> -->
-                        <a href="#" class="popular-img"><img src="<?php if (!empty($article['photo_img'])) echo base_url().'gambar/'.$article['photo_img']; else echo base_url('gambar/no-image.png'); ?>" style="max-width: 362px; max-height: 270px; " alt="<?= $article['article_title']; ?>">
+                        <a href="#" class="popular-img"><img src="<?php if (!empty($article['photo_img'])) echo base_url().'gambar/article/'.$article['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-width: 362px; max-height: 270px; " alt="<?= $article['article_title']; ?>">
                             <div class="post-overlay-meta">
                                 <ul class="post-meta pull-left">
                                     <li class="author">By <a href="#">Admin</a> |</li>
-                                    <li class="date">Jul 14, 2015 |</li>
-                                    <li class="comments"><a href="#">1 Comments</a></li>
+                                    <li class="date"><?= $article['articles_publish_date']; ?></li>
+                                    <!-- <li class="comments"><a href="#">1 Comments</a></li> -->
                                 </ul>
                                 <div class="share-block pull-right">
                                     <span>Share</span>
