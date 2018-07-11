@@ -2,6 +2,9 @@
     <?php echo $slider; ?>
 <?php endif ?>
 <div class="col-md-8 list">
+
+
+    
     <?php foreach ($articles as $key => $article): ?>
         <article class="single-blog-post">
             <div class="media">
