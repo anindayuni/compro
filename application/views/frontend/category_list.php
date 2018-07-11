@@ -11,7 +11,7 @@
             <div class="media">
                 <div class="media-left">
                     <div class="post-thumb">
-                        <a href="#" class="popular-img"><img src="<?php if (!empty($list['photo_img'])) echo base_url().'gambar/article/'.$list['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-width: 362px; max-height: 270px;" alt="<?= $list['article_title']; ?>">
+                        <a href="#" class="popular-img"><img src="<?php if (!empty($list['photo_img'])) echo base_url().'gambar/article/'.$list['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-width: 362px; min-height: 235px;" alt="<?= $list['article_title']; ?>">
                             <div class="post-overlay-meta">
                                 <ul class="post-meta pull-left">
                                     <li class="author">By <a href="#">Admin</a> |</li>
@@ -35,10 +35,10 @@
                             <div class="single-tag">
                                 <a href="#"> <?= $list['category_name'] ?></a>
                             </div>
-                            <h2 class="post-title"><a href="<?= base_url().'news/'.$list['article_url']; ?>"><?= substr($list['article_title'], 0,120); ?></a></h2>
+                            <h2 class="post-title"><a href="<?= base_url().'news/'.$list['article_url']; ?>"><?= substr($list['article_title'], 0,90); ?></a></h2>
                         </div>
                         <div class="post-content">
-                            <p><?= substr(strip_tags($list['article_content']), 0,195) ?></p>
+                            <p><?= substr(strip_tags($list['article_content']), 0,120) ?></p>
                         </div>
                         <div class="read-more-text text-left text-uppercase">
                             <a href="<?= base_url().'news/'.$list['article_url']; ?>">continue reading</a>

@@ -8,7 +8,7 @@ class Blog extends MY_Controller
 		// Pagination
 		$config['base_url'] = base_url('blog/index');
 		$config['total_rows'] = count($article);
-		$config['per_page'] = 3;
+		$config['per_page'] = 6;
 		$config['display_pages'] = FALSE;
 		// pull left
 		$config['first_link'] = "<i class='fa fa-angle-double-left'></i> First Posts &nbsp;&nbsp;";
@@ -44,7 +44,7 @@ class Blog extends MY_Controller
 		// Pagination
 		$config['base_url'] = base_url('blog/category/'.$url);
 		$config['total_rows'] = count($category_list);
-		$config['per_page'] = 1;
+		$config['per_page'] = 6;
 		$config['display_pages'] = FALSE;
 		// pull left
 		$config['first_link'] = "<i class='fa fa-angle-double-left'></i> First Posts &nbsp;&nbsp;";
