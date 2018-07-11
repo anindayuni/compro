@@ -11,7 +11,7 @@
                 <h2 class="post-title"><a href="<?= base_url().'news/'.$artikel['article_url']; ?>"><?= $artikel['article_title']; ?></a></h2>
             </div>
             <div class="post-thumb">
-                <a href="#" class="popular-img"><img src="<?php if (!empty($artikel['photo_img'])) echo base_url().'gambar/article/'.$artikel['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-height: 435px;" alt="<?= $artikel['article_title']; ?>">
+                <a href="<?= base_url().'news/'.$artikel['article_url']; ?>" class="popular-img"><img src="<?php if (!empty($artikel['photo_img'])) echo base_url().'gambar/article/'.$artikel['photo_img']; else echo base_url('gambar/article/no-image.png'); ?>" style="max-height: 435px;" alt="<?= $artikel['article_title']; ?>">
                     <div class="post-overlay-meta">
                         <ul class="post-meta pull-left">
                             <li class="author">By <a href="#">Admin</a> |</li>
