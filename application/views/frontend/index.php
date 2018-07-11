@@ -6,12 +6,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Document Settings -->
     <meta charset="UTF-8">
+    <meta name="keywords" content="<?php if(!empty($sosmed['settings_meta_keyword'])) echo $sosmed['settings_meta_keyword']; else echo "My Blog, Company Profile CMS"; ?>">
+    <meta name="description" content="<?php if(!empty($sosmed['settings_meta_description'])) echo $sosmed['settings_meta_description']; else echo "Company Profile CMS"; ?>">
+    <meta name="author" content="Admin">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <!-- Page Title -->
-    <title><?php if(!empty($sosmed['settings_namesite'])) echo $sosmed['settings_namesite']; else echo "Company Profile CMS"; ?></title>
+    <title><?php if(!empty($sosmed['settings_namesite'])) echo $sosmed['settings_namesite']; else echo "My Blog"; ?></title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,400i,700"
     rel="stylesheet">
@@ -25,10 +27,10 @@
     <link rel="stylesheet" href="<?= base_url('assets/frontend/css/mystyle.css'); ?>">
 
     <!-- HTML5 shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="assets/frontend/js/html5shiv.js"></script>
-    <script src="assets/frontend/js/respond.js"></script>
-<![endif]-->
+   <!--  [if lt IE 9]> -->
+    <script src="<?= base_url('assets/frontend/js/html5shiv.js'); ?>"></script>
+    <script src="<?= base_url('assets/frontend/js/respond.js'); ?>"></script>
+    <!-- [endif] -->
     
     
 </head>
@@ -37,7 +39,6 @@
     <div class="container zinnia-page">
         <header>
             <div class="zinnia-logo text-center">
-                <!-- <h1><a href="#"><img src="<?= base_url('assets/frontend/images/logo.png'); ?>" alt=""></a></h1> -->
                 <h1><a href="<?= base_url(); ?>"><?= $sosmed['settings_namesite']; ?></a></h1>
             </div>
             <div class="zinnia-menu text-center">
@@ -117,17 +118,15 @@
 
     </div>
     <div class="container footer-copyright-text">
-        <div class="col-md-7 pull-left" style="padding: 0px; margin: 0px;">
+        <div class="col-md-7 myfooter" >
             <p><?php if(!empty($sosmed['settings_footer'])) echo $sosmed['settings_footer']; else echo "&copy; Company Profile 2018 - Develop by  <a href='http://www.otret.com' target='_blank'>Otret.com</a>"; ?></p>
         </div>
-        <div class="col-md-5" style="padding: 0px; margin: 0px;">
-            <p>
-                <ul class="navbar-nav pull-right" style="padding-top: 0px;margin: 0px; ">
+        <div class="col-md-5 myfooter" style="margin-left: -25px; margin-right: -40px;">
+                <ul class="navbar-nav pull-right">
                     <?php foreach ($static_page as $key => $page): ?>
                         <li style="display: inline-block;"><a href="<?= base_url().$page['article_url']; ?>" name="<?= $page['article_url']; ?> ?>" ><p><?= $page['article_title']; ?> &nbsp;/&nbsp;</p></a></li>
                     <?php endforeach ?>
                 </ul>
-            </p>
         </div>
     </div>
 </footer>

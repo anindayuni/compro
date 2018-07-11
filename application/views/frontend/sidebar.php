@@ -2,13 +2,12 @@
     <div class="zinnia-sidebar">
         <div class="widget about-me text-center">
             <div class="about-img">
-                <img src="<?= base_url('gambar/profil/Sinar Biyatnujanat.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>">
+                <img src="<?= base_url('gambar/profil/Sinar Biyatnujanat.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>" data-toggle="modal" data-target="#myProfil">
             </div>
             <h2 class="me-title">RM Sinar Biyatnujanat SE</h2>
             <p class="sub-title">DPRD DIY</p>
             <div class="about-me-content">
-                <p>I’m a desperate housewife. I live in the country. My house is near Salt Lake Sreet. I
-                love writing Kids comics and cooking easy foods.</p>
+                <p>Menjadi Institusi yang profesional, antisipatif dan responsif dalam mendukung serta memfasilitasi kinerja dan hasil kerja DPRD.</p>
             </div>
             <div class="about-me-social">
                 <ul class="list-inline">
@@ -73,6 +72,19 @@
                     </li>
                 <?php endforeach ?>
             </ul>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myProfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body" align="center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <img src="<?= base_url('gambar/profil/Sinar Biyatnujanat.jpg'); ?>" alt="<?= $sosmed['settings_namesite']; ?>">
+            </div>
         </div>
     </div>
 </div>

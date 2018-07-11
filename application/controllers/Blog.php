@@ -66,15 +66,5 @@ class Blog extends MY_Controller
 		$data['mpaging'] = $this->pagination->create_links();
 		$this->front_page('frontend/category_list',$data);
 	}
-
-	function blog_list()
-	{
-		$this->front_page('frontend/blog-list');
-	}
-
-	function contact_us()
-	{
-
-	}
 }
 ?>

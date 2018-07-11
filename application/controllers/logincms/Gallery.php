@@ -13,8 +13,8 @@ class Gallery extends MY_Controller
 	}
 
 
-public function pagination()
-{
+	public function pagination()
+	{
 
 			   // konfigurasi class pagination
 		$config['base_url']=base_url()."logincms/gallery/index";
@@ -35,16 +35,18 @@ public function pagination()
 
 		// echo $this->pagination->create_links();
 	# code...
-}
+	}
 
 	public function index()
 	{
 
+			$total_rows=$this->db->query('select * from _article a, _category c, _photo p WHERE a.article_id_category = c.category_id and c.category_type="gallery" and p.photo_id_article=a.article_id order by a.article_id DESC')->num_rows();
 
 			// $jumlah_data = $this->m_data->jumlah_data();
+		$this->load->database();
 		$this->load->library('pagination');
 		$config['base_url'] = base_url().'logincms/gallery/index/';
-		$config['total_rows'] =  $this->db->query('SELECT * FROM _article a, _photo p, _category c where a.article_id_category=c.category_id and p.photo_id_article=a.article_id and c.category_type="gallery" ORDER BY a.article_id DESC')->num_rows();
+		$config['total_rows'] =  $total_rows;
 		$config['per_page'] = 3;
 		$from = $this->uri->segment(4);
 		$this->pagination->initialize($config);		
@@ -54,7 +56,7 @@ public function pagination()
 
 		// $data['gallery']=$this->db->query("select * from _article a, _category c, _photo p WHERE a.article_id_category = c.category_id and c.category_type='gallery' and p.photo_id_article=a.article_id order by a.article_id DESC")->result();
 
-		$data['row']=$from;
+		// $data['row']=$total_rows;
 
 		$this->render_page('backend/gallery/list',$data);
 	}
@@ -134,6 +136,8 @@ public function pagination()
 	}
 
 
+
+
 	public function hapus()
 	{
 
@@ -145,10 +149,10 @@ public function pagination()
 		$this->db->delete('_article', array('article_id' => $id));
 		$this->db->delete('_photo', array('photo_id_article' => $id));
 		// $this->render_page('backend/gallery/list');
-		redirect('logincms/gallery', 'refresh');
 
 
 	}
+
 
 	
 }
