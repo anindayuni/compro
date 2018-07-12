@@ -51,20 +51,20 @@ class User extends MY_Controller
 
 	function change_user_pass($id)
 	{
-			$this->load->library('form_validation');
+			// $this->load->library('form_validation');
 
-			$this->form_validation->set_rules('username', 'Username', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required',
-				array('required' => 'You must provide a %s.')
-			);
-			$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
+			// $this->form_validation->set_rules('username', 'Username', 'required');
+			// $this->form_validation->set_rules('password', 'Password', 'required',
+			// 	array('required' => 'You must provide a %s.')
+			// );
+			// $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
 
 
 		$update = $this->input->post();
 		$pass = $update['password'];
 		$enc_pass = md5(md5($pass));
 
-		$data['user_login'] = $update['user_login'];
+		// $data['user_login'] = $update['user_login'];
 		$data['user_password'] = $enc_pass;
 
 		if ($update) {
@@ -73,13 +73,13 @@ class User extends MY_Controller
 			{
 				$kirim['disable'] ="disabled";
 				$kirim['id'] ="";
-				$this->session->set_flashdata('msg', '<div class="alert alert-info">Username / Password Anda Berhasil Diubah</div>');
+				$this->session->set_flashdata('msg', '<div class="alert alert-info">Password Anda Berhasil Diubah</div>');
 			}
 			else
 			{
 				$kirim['disable'] ="";
 				$kirim['id'] ="";
-				$this->session->set_flashdata('msg', '<div class="alert alert-warning">Username / Password Anda GAGAL Diubah</div>');
+				$this->session->set_flashdata('msg', '<div class="alert alert-warning">Password Anda GAGAL Diubah</div>');
 			}
 		$this->render_page('backend/user/edit', $kirim);
 

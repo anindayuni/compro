@@ -19,6 +19,7 @@
 <div class="authentication">
     <div class="container">
         <div class="col-md-12 content-center">
+            <?php echo $this->session->flashdata('msg'); ?>
         <div class="row clearfix">
             <div class="col-lg-3 col-md-12">
                 

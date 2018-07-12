@@ -18,9 +18,9 @@
         </div>
     </div>
 </div>
-<div class="row clearfix">
+<div class="row clearfix" >
     <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="card ">
+        <div class="card " style="min-height:500px;">
             <div class="body">
                 
                 <div class="content">

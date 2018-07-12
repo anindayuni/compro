@@ -24,6 +24,7 @@ Class Login extends CI_Controller
 			}
 			else
 			{
+				$this->session->set_flashdata('msg', '<div class="alert alert-danger">Password / Username Anda SALAH</div>');
 				$data['hasil'] = "gagal";
 			}
 		}

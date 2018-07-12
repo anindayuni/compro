@@ -8,8 +8,8 @@
                             <div class="col-lg-6 col-md-8 col-sm-12">
                                 <h2>Form Edit Static Page</h2>
                                 <ul class="breadcrumb p-l-0 p-b-0 ">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i> Home</a></li>
-                                    <li class="breadcrumb-item"><a href="">Static</a></li>
+                                    <li class="breadcrumb-item"><a href="<?php echo base_url('logincms/home'); ?>"><i class="icon-home"></i> Home</a></li>
+                                    <li class="breadcrumb-item"><a href="<?php echo base_url('logincms/static_page'); ?>">Static</a></li>
                                     <li class="breadcrumb-item active">Static Page</li>
                                 </ul>
                             </div>            

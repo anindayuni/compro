@@ -40,6 +40,11 @@ $hal2 = $this->uri->segment('3');
                         <li <?php if ($hal == 'settings'){echo "class='active open'";}  ?>>
                             <a href="<?php echo base_url('logincms/settings'); ?>" class="menu-toggle"><i class="icon-settings"></i><span>Setting</span></a>
                         </li>
+
+
+                        <li <?php if ($hal == 'settings'){echo "class='active open'";}  ?> style="text-align: right;">
+                            <a href="<?php echo base_url(); ?>" target="_blank" class="menu-toggle"><i class="icon-cursor"></i><span>Kunjungi Web</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
