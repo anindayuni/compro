@@ -7,6 +7,11 @@ class Slider extends MY_Controller
 		$this->load->model('Mslider');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('upload');
+		if (!$this->session->userdata('user'))
+		{
+			$log = base_url("logincms");
+			echo "<script>alert('Anda Harus Login Dahulu'); location='$log';</script>";
+		}
 
 	}
 

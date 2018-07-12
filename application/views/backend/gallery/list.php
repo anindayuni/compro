@@ -23,7 +23,6 @@
 
 
 
-
 <div class="row clearfix">            
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="card">
@@ -67,32 +66,73 @@
 
 
             </script>
-            <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
-                <?php foreach ($gallery as $g): 
-
-                    $id=$g->article_id;
-                    ?>
 
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> 
-                        <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>">
+            <style type="text/css">
+            li {
+                /*padding-left: 30px;*/
+                padding-right: 30px;
+                /*font-size: 10px;*/
+            }
+
+            .frame-gallery{
+                height: 300px;
+                background: black;
+                /*z-index: 100;*/
+                /*position:inherit;*/
+                /*float: left;*/
+                width: 100%;
+                /*height: 220px;*/
+                /*max-height: 270px;*/
+            }  
+
+            .img-thumbnail {
+                max-height: 300px;
+            }
+
+            img {
+                /*text-align: center;*/
+                /*vertical-align: middle;*/
+                /*horizontal-align:middle;*/
+                /*z-index: -400;*/
+                /*align:'center';*/
+                /*margin-left: auto;*/
+                /*margin-right: auto;*/
+
+            }
+
+
+        </style>
+
+        <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
+            <?php foreach ($gallery as $g): 
+
+                $id=$g->article_id;
+
+                ?>
+
+
+                <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> 
+                    <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>">
+                        <div class="frame-gallery">
 
                           <img class="img-fluid img-thumbnail" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" >
 
-                      </a>
+                      </div>
+                  </a>
 
-                      <form method="get" align="right">  
-                        <input type="hidden" id="id_artikel" value="<?php echo $g->article_id?>">
-                        <button type="submit" onclick="hapus()" class="btn btn-raised btn-primary btn-round waves-effect" >Delete</button>
-                    </form>
-                </div>
+                  <form method="get" align="right">  
+                    <input type="hidden" id="id_artikel" value="<?php echo $g->article_id?>">
+                    <button type="submit" onclick="hapus()" class="btn btn-raised btn-primary btn-round waves-effect" >Delete</button>
+                </form>
+            </div>
 
-            <?php endforeach ?>
+        <?php endforeach ?>
 
 
 
-        </div>
     </div>
+</div>
 </div>
 </div>
 
@@ -113,15 +153,15 @@
                     <div  class="dataTables_wrapper">
                         <div class="row">
                             <div class="col-sm-12 col-md-5">
-                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing <?php echo $this->uri->segment('4') ?> to  of 57 entries</div>
                             </div>
 
-                    <div class="col-sm-12 col-md-7">
-                        <!-- <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"> -->
-                            <div >
+                            <div class="col-sm-12 col-md-7">
+                                <!-- <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"> -->
+                                    <div >
 
 
-<?php echo $mpaging; ?>
+                                        <?php echo $mpaging; ?>
 <!--                         <ul class="pagination">
                             <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
                             <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
@@ -133,7 +173,7 @@
                             <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>
 
                         </ul>
- -->                    </div>
+                    -->                    </div>
                 </div>
             </div>
         </div>

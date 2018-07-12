@@ -6,6 +6,11 @@ class Settings extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('Msettings');
+		if (!$this->session->userdata('user'))
+		{
+			$log = base_url("logincms");
+			echo "<script>alert('Anda Harus Login Dahulu'); location='$log';</script>";
+		}
 	}
 	
 
