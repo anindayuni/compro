@@ -47,16 +47,16 @@
 
 
                     function hapus() {
-                       var id = $("#id_artikel").val();
-                       if(confirm('Anda yakin akan menghapus data ini ?')){
+                     var id = $("#id_artikel").val();
+                     if(confirm('Anda yakin akan menghapus data ini ?')){
                         $.ajax({
                             url:"<?php echo base_url()?>logincms/gallery/hapus",
                             data:"id="+id,
                             success:function() {
 
-                               window.location.reload();   
-                           }
-                       })
+                             window.location.reload();   
+                         }
+                     })
                         return true;
                     }else{
                         return false;    
@@ -76,10 +76,10 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 m-b-30"> 
                         <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>">
-                          
+
                           <img class="img-fluid img-thumbnail" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" >
 
-                        </a>
+                      </a>
 
                       <form method="get" align="right">  
                         <input type="hidden" id="id_artikel" value="<?php echo $g->article_id?>">
@@ -97,34 +97,49 @@
 </div>
 
 
+
+
 </div>
 
 
 
-<div class="row">
 
-    <div class="col-sm-12 col-md-5">
-        <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 26 entries</div>
-    </div>
-    <div class="col-sm-12 col-md-7">
-        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-            <!-- <ul class="pagination"> -->
-<?php
-echo $this->pagination->create_links();
-?>
-                <!-- <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li> -->
-              
-    
-                <!-- <li class="paginate_button page-item active"><a href="<?php echo  base_url('logincms/gallery/index/1') ?>" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li> -->
-                
-                <!-- <li class="paginate_button page-item "><a href="<?php echo base_url('logincms/gallery/index/3') ?>" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li> -->
-                
-                <!-- <li class="paginate_button page-item "><a href="<?php echo base_url('logincms/gallery/index/6') ?>" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li> -->
-                
-                <!-- <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">Next</a></li> -->
-            <!-- </ul> -->
+<div class="row clearfix">
+    <div class="col-lg-12">
+        <div class="card">
+
+            <div class="body">
+                <div>
+                    <div  class="dataTables_wrapper">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                            </div>
+
+                    <div class="col-sm-12 col-md-7">
+                        <!-- <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"> -->
+                            <div >
+
+
+<?php echo $mpaging; ?>
+<!--                         <ul class="pagination">
+                            <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                            <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
+                            <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>
+
+                        </ul>
+ -->                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
+</div>
+</div>
+</div>
 

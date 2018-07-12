@@ -40,17 +40,66 @@ class Gallery extends MY_Controller
 	public function index()
 	{
 
-			$total_rows=$this->db->query('select * from _article a, _category c, _photo p WHERE a.article_id_category = c.category_id and c.category_type="gallery" and p.photo_id_article=a.article_id order by a.article_id DESC')->num_rows();
+		$total_rows=$this->db->query('select * from _article a, _category c, _photo p WHERE a.article_id_category = c.category_id and c.category_type="gallery" and p.photo_id_article=a.article_id order by a.article_id DESC')->num_rows();
 
 			// $jumlah_data = $this->m_data->jumlah_data();
 		$this->load->database();
 		$this->load->library('pagination');
+
 		$config['base_url'] = base_url().'logincms/gallery/index/';
 		$config['total_rows'] =  $total_rows;
 		$config['per_page'] = 3;
+		$config['num_links'] = 2;
+
+		
+		$config['full_tag_open'] = "<ul class='pagination'>";
+        $config['full_tag_close'] ="</ul>";
+
+        $config['num_tag_open'] = '<li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"> <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">';
+        $config['num_tag_close'] = '</a> </li>';
+        
+        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#' aria-controls='DataTables_Table_0' data-dt-idx='1' tabindex='0' class='page-link'>";
+        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+        
+        $config['next_tag_open'] = "<li class='paginate_button page-item'><a href='#' aria-controls='DataTables_Table_0' data-dt-idx='1' tabindex='0' class='page-link'>";
+        $config['next_tagl_close'] = "</a></li>";
+        
+        $config['prev_tag_open'] = "<li class='paginate_button page-item'><a href='#' aria-controls='DataTables_Table_0' data-dt-idx='1' tabindex='0' class='page-link'>";
+        $config['prev_tagl_close'] = "</a></li>";
+        
+        $config['first_tag_open'] = " <li class='paginate_button page-item '><a href='#' aria-controls='DataTables_Table_0' data-dt-idx='3' tabindex='0' class='page-link'>";
+        $config['first_tagl_close'] = "</a></li>";
+        
+        $config['last_tag_open'] = "<li class='paginate_button page-item '><a href='#' aria-controls='DataTables_Table_0' data-dt-idx='4' tabindex='0' class='page-link'>";
+        $config['last_tagl_close'] = "</a></li>";
+ 
+        $config['first_link']='< Pertama ';
+        $config['last_link']='Terakhir > ';
+        $config['next_link']='> ';
+        $config['prev_link']='< ';
+        // $this->pagination->initialize($config);
+ 
+
+		// $config['num_tag_open'] = "<li class='paginate_button page-item active page-link'> <a href='#' aria-controls='DataTables_Table_0' data-dt-idx='0' tabindex='0' class='page-link'>";	
+		// $config['num_tag_close'] = "</li>";
+
+		// $config['first_link'] = "Pertama";
+		// $config['first_tag_open'] = "<li class='paginate_button page-item active '> First P";
+		// $config['first_tag_close'] = "</li>";
+
+		// $config['first_link'] = "<li class='paginate_button page-item active'> First P";
+		// $config['first_tag_open'] = "<div class='pull-left'>";
+		// $config['first_tag_close'] = "</div>";
+
+		// $config['first_link']='<li class="paginate_button page-item active"> First P ';
+		// $config['last_link']='';
+		// $config['next_link']=' <li class="paginate_button page-item next" id="DataTables_Table_0_next"> ';
+		// $config['prev_link']='</li>';
+
 		$from = $this->uri->segment(4);
 		$this->pagination->initialize($config);		
 		$data['gallery'] = $this->Mgallery->data($config['per_page'],$from);
+		$data['mpaging']= $this->pagination->create_links();
 		// $this->load->view('v_data',$data);
 
 
