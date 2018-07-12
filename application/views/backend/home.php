@@ -25,7 +25,7 @@
                 
                 <div class="content">
                     <div class="text">
-                        <h1>Welcome, Admin !</h1>
+                        <h1>Welcome, Admin ! </h1>
                     </div>
                 </div>
             </div>

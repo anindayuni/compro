@@ -64,6 +64,9 @@
 <script src="<?php echo base_url('assets/backend/plugins/jquery-steps/jquery.steps.js') ?>"></script> <!-- JQuery Steps Plugin Js --> 
 <script src="<?php echo base_url('assets/backend/js/pages/forms/form-validation.js') ?>"></script>
 
+<!-- Form Wizard -->
+<script src="<?php echo base_url('assets/backend/js/pages/forms/form-wizard.js') ?>"></script>
+
 <!-- File upload -->
 <script src="<?php echo base_url('assets/backend/plugins/dropzone/dropzone.js') ?>"></script> <!-- Dropzone Plugin Js --> 
 

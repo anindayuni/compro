@@ -35,7 +35,7 @@
                                 </div>
                             </li>
                             <hr>
-                            <li><a href="#"><i class="icon-key m-r-10"></i> <span>Ubah Password</span></a></li>
+                            <li><a href="#cek-password"><i class="icon-key m-r-10"></i> <span>Ubah Password</span></a></li>
                             <hr>
                         </ul>
                     </li>
@@ -46,4 +46,39 @@
         </div>        
     </div>
 </nav>
+                            <!--  Modal Cek Password -->
+                            <div class="light-modal" id="cek-password" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                <div class="light-modal-content  animated zoomInUp">
+                                    <div class="light-modal-header">
+                                        <h3 class="light-modal-heading"> Konfirmasi Password Lama</h3>
+                                        <a href="#" class="light-modal-close-icon" aria-label="close">&times;</a>
+                                    </div>
+
+                                    <!-- light modal body -->
+                                    <div class="light-modal-body">
+                                        <div></div>
+                                        <form method="post" action="<?php echo base_url('logincms/user');?>">
+                                            <label for="email_address">Username / Email</label>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Username Atau Email Lama *" name="user_login" required>
+                                            </div>
+                                            <label for="password">Password</label>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Password Lama *" name="user_password" required>
+                                            </div>
+                                            <br><br>
+                                            <a href="#">
+                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
+                                            </a>
+                                            <a href="<?php echo base_url('logincms/user');?>">
+                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right" type="submit">OK</button>
+                                            </a>
+                                        </form>
+                                    </div>
+                                    <div class="light-modal-footer">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / Modal Cek Password -->
 
