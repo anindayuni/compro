@@ -69,14 +69,18 @@
 
 
             <style type="text/css">
-            .paginate_button .page-item li{
+            ul .page-item{
                 /*padding-left: 30px;*/
                 padding-right: 30px;
                 /*font-size: 10px;*/
             }
 
+            li .active {
+                padding-right: 30px;
+            }
+
             .frame-gallery{
-                height: 300px;
+                height: 250px;
                 /*background: black;*/
                 /*z-index: 100;*/
                 /*position:inherit;*/
@@ -87,10 +91,10 @@
             }  
 
             .img-thumbnail {
-                max-height: 300px;
+                /*max-height: 300px;*/
             }
 
-            img {
+           .frame-gallery{
                 /*text-align: center;*/
                 /*vertical-align: middle;*/
                 /*horizontal-align:middle;*/
@@ -98,6 +102,11 @@
                 /*align:'center';*/
                 /*margin-left: auto;*/
                 /*margin-right: auto;*/
+                /*object-fit: cover;*/
+                /*object-position: center;*/
+                /*object-position: 50% 50%;*/
+                overflow: hidden;
+                /*overflow: auto;*/
 
             }
 
@@ -116,7 +125,7 @@
                     <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>">
                         <div class="frame-gallery">
 
-                          <img class="img-fluid img-thumbnail" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" >
+                          <img class="img-fluid img-thumbnail object" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" >
 
                       </div>
                   </a>
@@ -153,7 +162,15 @@
                     <div  class="dataTables_wrapper">
                         <div class="row">
                             <div class="col-sm-12 col-md-5">
-                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing <?php echo $this->uri->segment('4') ?> to  of 57 entries</div>
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing <?php 
+
+                                    if (empty($this->uri->segment('4'))) {
+                                        echo '1';
+                                    }
+                                    else {
+                                        echo $this->uri->segment('4');
+                                    }
+                                 ?> to  of <?php echo $total_rows ?> entries</div>
                             </div>
 
                             <div class="col-sm-12 col-md-7">

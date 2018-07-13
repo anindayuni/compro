@@ -64,7 +64,7 @@ class Gallery extends MY_Controller
         $config['num_tag_open'] = '<li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">';
         $config['num_tag_close'] = '</li>';
         
-        $config['cur_tag_open'] = "<li class='disabled'><li class='active'>";
+        $config['cur_tag_open'] = "<li class='disabled'><li class='active paginate_button page-item previous'>";
         $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
         
         $config['next_tag_open'] = "<li class='paginate_button page-item'>";
@@ -106,6 +106,7 @@ class Gallery extends MY_Controller
 		$this->pagination->initialize($config);		
 		$data['gallery'] = $this->Mgallery->data($config['per_page'],$from);
 		$data['mpaging']= $this->pagination->create_links();
+		$data['total_rows']=$total_rows;
 		// $this->load->view('v_data',$data);
 
 
