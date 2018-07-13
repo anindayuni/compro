@@ -69,7 +69,7 @@
 
 
             <style type="text/css">
-            li {
+            .paginate_button .page-item li{
                 /*padding-left: 30px;*/
                 padding-right: 30px;
                 /*font-size: 10px;*/
@@ -77,7 +77,7 @@
 
             .frame-gallery{
                 height: 300px;
-                background: black;
+                /*background: black;*/
                 /*z-index: 100;*/
                 /*position:inherit;*/
                 /*float: left;*/
