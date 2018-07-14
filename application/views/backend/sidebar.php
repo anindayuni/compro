@@ -42,7 +42,7 @@ $hal2 = $this->uri->segment('3');
                         </li>
 
 
-                        <li <?php if ($hal == 'settings'){echo "class='active open'";}  ?> style="text-align: right;">
+                        <li style="text-align: right;">
                             <a href="<?php echo base_url(); ?>" target="_blank" class="menu-toggle"><i class="icon-cursor"></i><span>Kunjungi Web</span></a>
                         </li>
                     </ul>

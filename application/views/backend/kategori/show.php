@@ -76,13 +76,13 @@
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                         </a>
                                         <?php if ($kat['category_type'] == "blog") : ?>
-                                        <a href="#hapus-kategori">
+                                        <a href="#hapus-kategori-<?php echo $kat['category_id']; ?>">
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i></button>
                                         </a>
                                         <?php endif; ?>
 
                                             <!--  Modal Hapus Kategori -->
-                                            <div class="light-modal" id="hapus-kategori" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                            <div class="light-modal" id="hapus-kategori-<?php echo $kat['category_id']; ?>" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
                                                 <div class="light-modal-content  animated zoomInUp">
                                                     <div class="light-modal-header">
                                                         <!-- <h3 class="light-modal-heading"></h3> -->
