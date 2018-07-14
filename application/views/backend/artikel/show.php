@@ -81,12 +81,12 @@
                                                     <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                                 </a>
 
-                                                <a href="#hapus-article">
-                                                    <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i></button>
+                                                <a href="#hapus-article-<?php echo $art['article_id']; ?>">
+                                                    <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i><?php echo $art['article_id']; ?></button>
                                                 </a>
 
                                                 <!--  Modal Hapus Artikel -->
-                                                <div class="light-modal" id="hapus-article" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                                <div class="light-modal" id="hapus-article-<?php echo $art['article_id']; ?>" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
                                                     <div class="light-modal-content  animated zoomInUp">
                                                         <div class="light-modal-header">
                                                             <!-- <h3 class="light-modal-heading"></h3> -->
@@ -101,7 +101,7 @@
                                                                 <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
                                                             </a>
                                                             <a href="<?php echo base_url('logincms/artikel/delete/').$art['article_id']; ?>">
-                                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK</button>
+                                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK <?php echo $art['article_id']; ?></button>
                                                             </a>
                                                         </div>
                                                         <div class="light-modal-footer">

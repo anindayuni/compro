@@ -65,7 +65,7 @@
                                                     <div class="light-modal-content  animated zoomInUp">
                                                         <div class="light-modal-header">
                                                             <h3 class="light-modal-heading">Lihat Pesan</h3>
-                                                            <a href="#" class="light-modal-close-icon" aria-label="close">&times;</a>
+                                                            <a href="<?php echo base_url('logincms/static_page/change_message_status/').$pesan['contact_us_id']; ?>" class="light-modal-close-icon" aria-label="close">&times;</a>
                                                         </div>
                                                         <!-- light modal body -->
                                                         <div class="light-modal-body">
@@ -135,13 +135,13 @@
                                                 </div>
                                                 <!-- / Modal Tampil Pesan -->
                                             
-                                            <a href="#hapus-pesan">
+                                            <a href="#hapus-pesan-<?php echo $pesan['contact_us_id']; ?>">
                                                 <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-trash"></i></button>
                                             </a>
                                             <center>
 
                                             <!--  Modal Hapus Pesan -->
-                                                <div class="light-modal" id="hapus-pesan" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                                <div class="light-modal" id="hapus-pesan-<?php echo $pesan['contact_us_id']; ?>" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
                                                     <div class="light-modal-content  animated zoomInUp">
                                                         <div class="light-modal-header">
                                                             <!-- <h3 class="light-modal-heading"></h3> -->
