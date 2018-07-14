@@ -15,7 +15,7 @@
             <div class="col-12">
                 <div class="navbar-logo">
                     <a href="javascript:void(0);" class="bars"></a>
-                    <a class="navbar-brand" href="index.html"><img src="<?php echo base_url('assets/backend/images/logo.svg'); ?>" width="30" alt="infinity"><span class="m-l-10">Company Profile - CMS</span></a>
+                    <a class="navbar-brand" href="<?= base_url(); ?>"><img src="<?php echo base_url('assets/backend/images/logo.svg'); ?>" width="30" alt="infinity"><span class="m-l-10">Company Profile - CMS</span></a>
                 </div>
                 <ul class="nav navbar-nav">
                     <!-- <li class="search_bar hidden-xs">
