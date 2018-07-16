@@ -54,10 +54,9 @@ class Statics extends MY_Controller
 		$config['last_tag_open'] = "<div class='pull-right'>";
 		$config['last_tag_close'] = "</div>";
 		$this->pagination->initialize($config);
-		$from = $this->uri->segment(3);
+		$from = $this->uri->segment(2);
 		$data['gallery'] = $this->Martikel->get_gallery_pagination($config['per_page'], $from);
 		$data['mpaging'] = $this->pagination->create_links();
-
 		$this->front_page('frontend/gallery',$data);
 	}
 }

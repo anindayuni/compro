@@ -15,105 +15,72 @@ class Gallery extends MY_Controller
 			echo "<script>alert('Anda Harus Login Dahulu'); location='$log';</script>";
 		}
 
-	}
+	} 
+
+	// public function upload() {
+	// 	if (!empty($_FILES)) {
+	// 		$tempFile = $_FILES['file']['tmp_name'];
+	// 		$fileName = $_FILES['file']['name'];
+	// 		$targetPath = getcwd() . '/gambar/';
+	// 		$targetFile = $targetPath . $fileName ;
+	// 		move_uploaded_file($tempFile, $targetFile);
+	// 	}
 
 
-	public function pagination()
-	{
 
-			   // konfigurasi class pagination
-		$config['base_url']=base_url()."logincms/gallery/index";
-		$config['total_rows']= $this->db->query('SELECT * FROM _article a, _photo p, _category c where a.article_id_category=c.category_id and p.photo_id_article=a.article_id and c.category_type="gallery"')->num_rows();
-		$config['per_page']=3;
-		$config['num_links'] = 2;
-		$config['uri_segment']=3;
-		$config['first_link']='< Pertama ';
-		$config['last_link']='Terakhir > ';
-		$config['next_link']='> ';
-		$config['prev_link']='< ';
-		$this->pagination->initialize($config);
 
-        // konfigurasi model dan view untuk menampilkan data
-		$this->load->model('Mgallery');
-		$data['datakontak']=$this->Mgallery->getAll($config);
-		// $this->load->view('v_kontak', $data);
-
-		// echo $this->pagination->create_links();
-	# code...
-	}
+	// }
 
 	public function index()
 	{
 		$total_perpage='6';
 		$total_rows=$this->db->query('select * from _article a, _category c, _photo p WHERE a.article_id_category = c.category_id and c.category_type="gallery" and p.photo_id_article=a.article_id order by a.article_id DESC')->num_rows();
 
-			// $jumlah_data = $this->m_data->jumlah_data();
+		
 		$this->load->database();
 		$this->load->library('pagination');
+
+		// pagination
 
 		$config['base_url'] = base_url().'logincms/gallery/index/';
 		$config['total_rows'] =  $total_rows;
 		$config['per_page'] = $total_perpage;
 		$config['num_links'] = 2;
 
-
+		//pagination css
 		
 		$config['full_tag_open'] = "<ul class='pagination'>";
-        $config['full_tag_close'] ="</ul>";
+		$config['full_tag_close'] ="</ul>";
 
-        $config['num_tag_open'] = '<li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">';
-        $config['num_tag_close'] = '</li>';
-        
-        $config['cur_tag_open'] = "<li class='disabled'><li class='active paginate_button page-item previous'>";
-        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
-        
-        $config['next_tag_open'] = "<li class='paginate_button page-item'>";
-        $config['next_tagl_close'] = "</li>";
-        
-        $config['prev_tag_open'] = "<li class='paginate_button page-item'>";
-        $config['prev_tagl_close'] = "</li>";
-        
-        $config['first_tag_open'] = " <li class='paginate_button page-item '>";
-        $config['first_tagl_close'] = "</li>";
-        
-        $config['last_tag_open'] = "<li class='paginate_button page-item '>";
-        $config['last_tagl_close'] = "</li>";
- 
-        $config['first_link']='< First ';
-        $config['last_link']='Last > ';
-        $config['next_link']='> ';
-        $config['prev_link']='< ';
-        // $this->pagination->initialize($config);
- 
+		$config['num_tag_open'] = '<li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">';
+		$config['num_tag_close'] = '</li>';
 
-		// $config['num_tag_open'] = "<li class='paginate_button page-item active page-link'> <a href='#' aria-controls='DataTables_Table_0' data-dt-idx='0' tabindex='0' class='page-link'>";	
-		// $config['num_tag_close'] = "</li>";
+		$config['cur_tag_open'] = "<li class='disabled'><li class='active paginate_button page-item previous'>";
+		$config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
 
-		// $config['first_link'] = "Pertama";
-		// $config['first_tag_open'] = "<li class='paginate_button page-item active '> First P";
-		// $config['first_tag_close'] = "</li>";
+		$config['next_tag_open'] = "<li class='paginate_button page-item'>";
+		$config['next_tagl_close'] = "</li>";
 
-		// $config['first_link'] = "<li class='paginate_button page-item active'> First P";
-		// $config['first_tag_open'] = "<div class='pull-left'>";
-		// $config['first_tag_close'] = "</div>";
+		$config['prev_tag_open'] = "<li class='paginate_button page-item'>";
+		$config['prev_tagl_close'] = "</li>";
 
-		// $config['first_link']='<li class="paginate_button page-item active"> First P ';
-		// $config['last_link']='';
-		// $config['next_link']=' <li class="paginate_button page-item next" id="DataTables_Table_0_next"> ';
-		// $config['prev_link']='</li>';
+		$config['first_tag_open'] = " <li class='paginate_button page-item '>";
+		$config['first_tagl_close'] = "</li>";
+
+		$config['last_tag_open'] = "<li class='paginate_button page-item '>";
+		$config['last_tagl_close'] = "</li>";
+
+		$config['first_link']='< First ';
+		$config['last_link']='Last > ';
+		$config['next_link']='> ';
+		$config['prev_link']='< ';
 
 		$from = $this->uri->segment(4);
 		$this->pagination->initialize($config);		
 		$data['gallery'] = $this->Mgallery->data($config['per_page'],$from);
 		$data['mpaging']= $this->pagination->create_links();
 		$data['total_rows']=$total_rows;
-		// $this->load->view('v_data',$data);
-
-
-		// $data['gallery']=$this->db->query("select * from _article a, _category c, _photo p WHERE a.article_id_category = c.category_id and c.category_type='gallery' and p.photo_id_article=a.article_id order by a.article_id DESC")->result();
-
-		// $data['row']=$total_rows;
-
+		
 		$this->render_page('backend/gallery/list',$data);
 	}
 
@@ -139,13 +106,7 @@ class Gallery extends MY_Controller
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);
 
-		// if ($this->upload->data('image_width') < 700) {
-		// 	echo '
-		// 	<script>
-		// 	alert("gambare gedeni");
-		// 	</script>
-		// 	';
-		// }
+
 
 		if ( ! $this->upload->do_upload('file'))
 		{
@@ -155,10 +116,23 @@ class Gallery extends MY_Controller
 
 				// $this->render_page('backend/slider/list',$error);
 			$this->load->view('upload_form', $error);
+
+			// echo ;
+
 		}
 		else
 		{
+
 			$data = array('upload_data' => $this->upload->data());
+
+
+			// if ($this->upload->data('max_size') < 1000) {
+			// 			echo '<script>alert("Ukuran gambar terlalu besar")</script>';
+			// 			unlink("./gambar/gallery/".$this->upload->data('file_name'));		
+			// 		}
+			// else{
+
+
 			$id_category=$this->db->get_where('_category',array('category_type'=>'gallery'))->row_array();
 			$data_artikel=array(
 				'article_title'=>'ini gallery',
@@ -185,9 +159,8 @@ class Gallery extends MY_Controller
 			$this->db->insert('_photo',$data_foto);
 
 			$this->render_page('backend/gallery/list',$data);
-			// $this->load->view('upload_sukses');
 
-
+		// }
 		}
 	}
 
@@ -204,8 +177,7 @@ class Gallery extends MY_Controller
 
 		$this->db->delete('_article', array('article_id' => $id));
 		$this->db->delete('_photo', array('photo_id_article' => $id));
-		// $this->render_page('backend/gallery/list');
-
+		
 
 	}
 

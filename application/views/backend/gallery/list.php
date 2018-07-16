@@ -70,9 +70,7 @@
 
             <style type="text/css">
             ul .page-item{
-                /*padding-left: 30px;*/
                 padding-right: 30px;
-                /*font-size: 10px;*/
             }
 
             li .active {
@@ -81,33 +79,12 @@
 
             .frame-gallery{
                 height: 250px;
-                /*background: black;*/
-                /*z-index: 100;*/
-                /*position:inherit;*/
-                /*float: left;*/
                 width: 100%;
-                /*height: 220px;*/
-                /*max-height: 270px;*/
             }  
 
-            .img-thumbnail {
-                /*max-height: 300px;*/
-            }
-
-           .frame-gallery{
-                /*text-align: center;*/
-                /*vertical-align: middle;*/
-                /*horizontal-align:middle;*/
-                /*z-index: -400;*/
-                /*align:'center';*/
-                /*margin-left: auto;*/
-                /*margin-right: auto;*/
-                /*object-fit: cover;*/
-                /*object-position: center;*/
-                /*object-position: 50% 50%;*/
+            
+            .frame-gallery{
                 overflow: hidden;
-                /*overflow: auto;*/
-
             }
 
 
@@ -125,7 +102,7 @@
                     <a href="<?php echo  base_url('gambar/gallery/').$g->photo_img ?>">
                         <div class="frame-gallery">
 
-                          <img class="img-fluid img-thumbnail object" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" >
+                          <img class="img-fluid img-thumbnail" src="<?php echo base_url('gambar/gallery/').$g->photo_img ?>" alt="" >
 
                       </div>
                   </a>
@@ -164,39 +141,27 @@
                             <div class="col-sm-12 col-md-5">
                                 <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing <?php 
 
-                                    if (empty($this->uri->segment('4'))) {
-                                        echo '1';
-                                    }
-                                    else {
-                                        echo $this->uri->segment('4');
-                                    }
-                                 ?> to  of <?php echo $total_rows ?> entries</div>
+                                if (empty($this->uri->segment('4'))) {
+                                    echo '1';
+                                }
+                                else {
+                                    echo $this->uri->segment('4');
+                                }
+                                ?> to  of <?php echo $total_rows ?> entries</div>
                             </div>
 
                             <div class="col-sm-12 col-md-7">
-                                <!-- <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"> -->
-                                    <div >
+                                <div >
 
 
-                                        <?php echo $mpaging; ?>
-<!--                         <ul class="pagination">
-                            <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                            <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
-                            <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>
-
-                        </ul>
-                    -->                    </div>
+                                    <?php echo $mpaging; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
 </div>
 

@@ -52,6 +52,7 @@ class Slider extends MY_Controller
 
 		$config['upload_path']      = './gambar/slider';
 		$config['allowed_types']    = 'gif|jpg|png|jpeg';
+		 // $config['max_size']             = 1;
 		// $config['min_width']            = 700;
 		// $config['min_height']           = 400;
 		$config['file_name'] = 'slider-'.$id['id'];
@@ -83,50 +84,58 @@ class Slider extends MY_Controller
 			if ($this->upload->data('image_width') < 699 or $this->upload->data('image_height') < 399) {
 				
 				if ($this->upload->data('image_width') < 699) {
-					echo '<script>alert("Gambar kurang lebar")</script>';
-					unlink("./gambar/slider/".$this->upload->data('file_name'));
+					echo '<script>alert("Lebar gambar kurang dari 700px")</script>';
+					unlink("./gambar/slider/".$this->upload->data('file_name'));	
+
 				}
 
+
 				else {
-					echo '<script>alert("Gambar kurang tinggi")</script>';
+					echo '<script>alert("Tinggi gambar kurang dari 400px")</script>';
 					unlink("./gambar/slider/".$this->upload->data('file_name'));
 				}
 
 
 			}
 
+
+			elseif ($this->upload->data('max_size')<1000) {
+						echo '<script>alert("Ukuran gambar terlalu besar")</script>';
+						unlink("./gambar/slider/".$this->upload->data('file_name'));		
+					}
+
 			else {
 
 
-			$id_category=$this->db->get_where('_category',array('category_type'=>'slider'))->row_array();
-			$data_artikel=array(
-				'article_title'=>$this->input->post('nama_slider'),
-				'article_url'=>NULL,
-				'article_content'=>NULL,
-				'article_create_date'=>date('Y-m-d'),
-				'article_publish_date'=>date('Y-m-d'),
-				'article_status'=>$this->input->post('article_status'),
-				'article_id_category'=>$id_category['category_id'],
+				$id_category=$this->db->get_where('_category',array('category_type'=>'slider'))->row_array();
+				$data_artikel=array(
+					'article_title'=>$this->input->post('nama_slider'),
+					'article_url'=>NULL,
+					'article_content'=>NULL,
+					'article_create_date'=>date('Y-m-d'),
+					'article_publish_date'=>date('Y-m-d'),
+					'article_status'=>$this->input->post('article_status'),
+					'article_id_category'=>$id_category['category_id'],
 
-			);
+				);
 
-			$this->db->insert('_article',$data_artikel);
+				$this->db->insert('_article',$data_artikel);
 
-			$this->db->select_max('article_id','id');
-			$id_artikel=$this->db->get('_article')->row_array();
-			$data_foto=array(
-				'photo_id_article'=>$id_artikel['id'],
-				'photo_img'=>$this->upload->data('file_name'),
-				'photo_date'=>date('Y-m-d'),
-			);
+				$this->db->select_max('article_id','id');
+				$id_artikel=$this->db->get('_article')->row_array();
+				$data_foto=array(
+					'photo_id_article'=>$id_artikel['id'],
+					'photo_img'=>$this->upload->data('file_name'),
+					'photo_date'=>date('Y-m-d'),
+				);
 
-			$this->db->insert('_photo',$data_foto);
+				$this->db->insert('_photo',$data_foto);
 
-			$data['slider']=$this->Mslider->list_slider();
-			$this->render_page('backend/slider/list',$data); }
+				$data['slider']=$this->Mslider->list_slider();
+				$this->render_page('backend/slider/list',$data); }
 
 		               // $this->load->view('upload_success', $data);
-		}
+			}
 
 		// $data_gambar=$this->upload->data('image_width');
 		// $data_gambar1=$this->upload->data('image_height');
@@ -136,36 +145,36 @@ class Slider extends MY_Controller
 		// die;
 
 
-		redirect('logincms/slider', 'refresh');
-	}
+			redirect('logincms/slider', 'refresh');
+		}
 
-	public function edit()
-	{
-		$data['slider']=$this->db->get_where('_article',array('article_id'=>$this->uri->segment('4')))->row_array();
-		$data['gambar']=$this->db->get_where('_photo',array('photo_id_article'=>$this->uri->segment('4')))->row_array();
+		public function edit()
+		{
+			$data['slider']=$this->db->get_where('_article',array('article_id'=>$this->uri->segment('4')))->row_array();
+			$data['gambar']=$this->db->get_where('_photo',array('photo_id_article'=>$this->uri->segment('4')))->row_array();
 
-		$this->render_page('backend/slider/edit',$data);
+			$this->render_page('backend/slider/edit',$data);
 
-	}
+		}
 
-	public function edit_action($id)
-	{
-		$this->db->set('article_title',$this->input->post('nama_slider'));
-		$this->db->where('article_id',$id);
-		$this->db->update('_article');
-		redirect('logincms/slider', 'refresh');
-	}
+		public function edit_action($id)
+		{
+			$this->db->set('article_title',$this->input->post('nama_slider'));
+			$this->db->where('article_id',$id);
+			$this->db->update('_article');
+			redirect('logincms/slider', 'refresh');
+		}
 
-	public function update_status()
-	{
-		$this->db->set('article_status',$this->input->get('status_aktif'));
+		public function update_status()
+		{
+			$this->db->set('article_status',$this->input->get('status_aktif'));
 		// $this->db->set('article_status',$this->input->get('id'));
-		$id=$this->input->get('id');
+			$id=$this->input->get('id');
 
-		$this->db->where('article_id',$id);
-		$this->db->update('_article');
+			$this->db->where('article_id',$id);
+			$this->db->update('_article');
+		}
+
 	}
-
-}
 
 
