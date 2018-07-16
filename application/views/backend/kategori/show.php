@@ -77,7 +77,6 @@
                                         </a>
                                         <?php if ($kat['category_type'] == "blog") : ?>
                                         <a href="#hapus-kategori-<?php echo $kat['category_id']; ?>">
-                                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i> <?php echo $kat['category_id']; ?></button>
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i></button>
                                         </a>
                                         <?php endif; ?>

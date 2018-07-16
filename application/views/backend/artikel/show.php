@@ -83,8 +83,6 @@
 
                                                 <a href="#hapus-article-<?php echo $art['article_id']; ?>">
                                                     <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i></button>
-                                                    <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i><?php echo $art['article_id']; ?></button>
-
                                                 </a>
 
                                                 <!--  Modal Hapus Artikel -->
