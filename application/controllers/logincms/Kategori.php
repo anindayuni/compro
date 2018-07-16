@@ -43,7 +43,14 @@ class Kategori extends MY_Controller
             
             $input['category_url'] = $string;
             $this->Mkategori->save($input);
+
+            if ($this->Mkategori->save($input))
+            {
             redirect('logincms/kategori', 'refresh');
+            }
+            else{
+            	
+            }
 		}
 			
 	

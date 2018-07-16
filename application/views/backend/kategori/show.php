@@ -76,13 +76,13 @@
                                             <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                         </a>
                                         <?php if ($kat['category_type'] == "blog") : ?>
-                                        <a href="#hapus-kategori">
-                                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i></button>
+                                        <a href="#hapus-kategori-<?php echo $kat['category_id']; ?>">
+                                            <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-trash"></i> <?php echo $kat['category_id']; ?></button>
                                         </a>
                                         <?php endif; ?>
 
                                             <!--  Modal Hapus Kategori -->
-                                            <div class="light-modal" id="hapus-kategori" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                            <div class="light-modal" id="hapus-kategori-<?php echo $kat['category_id']; ?>" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
                                                 <div class="light-modal-content  animated zoomInUp">
                                                     <div class="light-modal-header">
                                                         <!-- <h3 class="light-modal-heading"></h3> -->
@@ -97,7 +97,7 @@
                                                             <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
                                                         </a>
                                                         <a href="<?php echo base_url('logincms/kategori/delete/').$kat['category_id']; ?>">
-                                                            <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK</button>
+                                                            <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK <?php echo $kat['category_id']; ?></button>
                                                         </a>
                                                     </div>
                                                     <div class="light-modal-footer">

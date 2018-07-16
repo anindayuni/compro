@@ -2,7 +2,7 @@
 <div class="page-loader-wrapper">   
     <div class="loader">
         <div class="m-t-30"><img class="zmdi-hc-spin" src="<?php echo base_url('assets/backend/images/logo.svg'); ?>" width="48" height="48" alt="sQuare"></div>
-        <p>Please wait...</p>        
+        <p>Harap Tunggu ...</p>        
     </div>
 </div>
 <!-- Overlay For Sidebars -->
@@ -26,7 +26,7 @@
                     <li class="dropdown profile">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <!-- <img class="rounded-circle" src="<?php echo base_url('assets/backend/images/profile_av.jpg'); ?>" alt="User"> -->
-                            User <i class="icon-user"></i>
+                            Pengguna <i class="icon-user"></i>
                         </a>
                         <ul class="dropdown-menu pullDown">
                             <li>
@@ -39,7 +39,7 @@
                             <hr>
                         </ul>
                     </li>
-                    <li><a href="<?php echo base_url('logincms/login/logout'); ?>" >Logout <i class="icon-logout"></i></a></li>
+                    <li><a href="<?php echo base_url('logincms/login/logout'); ?>" >Keluar <i class="icon-logout"></i></a></li>
                     <li><a href="javascript:void(0);" class="js-right-sidebar"><i class="icon-equalizer"></i></a></li>
                 </ul>
             </div>

@@ -43,7 +43,7 @@
                                     <th>#</th>
                                     <th>Judul Artikel</th>
                                     <th>Kategori</th>
-                                    <th>Publish Date</th>
+                                    <th>Tanggal Terbit</th>
                                     <th>Status</th>
                                     <th><center>Aksi</center></th>
                                 </tr>
@@ -81,12 +81,12 @@
                                                     <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit"><i class="icon-pencil"></i></button>
                                                 </a>
 
-                                                <a href="#hapus-article">
+                                                <a href="#hapus-article-<?php echo $art['article_id']; ?>">
                                                     <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i></button>
                                                 </a>
 
                                                 <!--  Modal Hapus Artikel -->
-                                                <div class="light-modal" id="hapus-article" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+                                                <div class="light-modal" id="hapus-article-<?php echo $art['article_id']; ?>" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
                                                     <div class="light-modal-content  animated zoomInUp">
                                                         <div class="light-modal-header">
                                                             <!-- <h3 class="light-modal-heading"></h3> -->

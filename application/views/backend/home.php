@@ -4,7 +4,7 @@
             <div class="body block-header">
                 <div class="row">
                     <div class="col-lg-6 col-md-8 col-sm-12">
-                        <h2>Welcome to Infinity</h2>
+                        <h2>Beranda</h2>
                         <ul class="breadcrumb p-l-0 p-b-0 ">
                             <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
                             <li class="breadcrumb-item active">Dashboard</li>
