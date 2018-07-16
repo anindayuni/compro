@@ -57,6 +57,7 @@ class Martikel extends CI_Model
 		$this->db->where('a.article_status', '1');
 		$this->db->join('_category c', 'c.category_id = a.article_id_category');
 		$this->db->join('_photo', '_photo.photo_id_article = a.article_id', 'left');
+		$this->db->order_by('a.article_id', 'DESC');
 		$data = $this->db->get('_article a');
 		return $data->result_array();
 	}
@@ -67,6 +68,7 @@ class Martikel extends CI_Model
 		$this->db->where('a.article_status', '1');
 		$this->db->join('_category c', 'c.category_id = a.article_id_category');
 		$this->db->join('_photo', '_photo.photo_id_article = a.article_id', 'left');
+		$this->db->order_by('a.article_id', 'DESC');
 		$data = $this->db->get('_article a');
 		return $data->result_array();
 	}
