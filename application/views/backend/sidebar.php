@@ -41,12 +41,7 @@ $hal2 = $this->uri->segment('3');
                             <a href="<?php echo base_url('logincms/settings'); ?>" class="menu-toggle"><i class="icon-settings"></i><span>Pengaturan</span></a>
                         </li>
 
-<<<<<<< HEAD
                         <li  style="text-align: right;">
-=======
-
-                        <li>
->>>>>>> 73e71027c7166de134e9639122410389df9be8d1
                             <a href="<?php echo base_url(); ?>" target="_blank" class="menu-toggle"><i class="icon-cursor"></i><span>Kunjungi Web</span></a>
                         </li>
                     </ul>

@@ -82,11 +82,9 @@
                                                 </a>
 
                                                 <a href="#hapus-article-<?php echo $art['article_id']; ?>">
-<<<<<<< HEAD
                                                     <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i></button>
-=======
                                                     <button class="btn btn-raised btn-primary waves-effect btn-round"><i class="icon-trash"></i><?php echo $art['article_id']; ?></button>
->>>>>>> 73e71027c7166de134e9639122410389df9be8d1
+
                                                 </a>
 
                                                 <!--  Modal Hapus Artikel -->

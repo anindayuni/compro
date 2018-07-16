@@ -135,21 +135,16 @@
                                                 </div>
                                                 <!-- / Modal Tampil Pesan -->
                                             
-<<<<<<< HEAD
+
                                             <a href="#hapus-pesan-<?= $pesan['contact_us_id']; ?>">
-=======
                                             <a href="#hapus-pesan-<?php echo $pesan['contact_us_id']; ?>">
->>>>>>> 73e71027c7166de134e9639122410389df9be8d1
                                                 <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" label="Detail"><i class="icon-trash"></i></button>
                                             </a>
                                             <center>
 
                                             <!--  Modal Hapus Pesan -->
-<<<<<<< HEAD
                                                 <div class="light-modal" id="hapus-pesan-<?= $pesan['contact_us_id']; ?>" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
-=======
                                                 <div class="light-modal" id="hapus-pesan-<?php echo $pesan['contact_us_id']; ?>" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
->>>>>>> 73e71027c7166de134e9639122410389df9be8d1
                                                     <div class="light-modal-content  animated zoomInUp">
                                                         <div class="light-modal-header">
                                                             <!-- <h3 class="light-modal-heading"></h3> -->
