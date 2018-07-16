@@ -46,9 +46,19 @@ class Artikel extends MY_Controller
 			$photo['photo_date'] = date('Y-m-d');
 			$photo['photo_information'] = 'featured-image';
 
-			$this->Martikel->save_photo($photo);
+			$status = $this->Martikel->save_photo($photo);
 
-			redirect('logincms/artikel', 'refresh');
+			if ($status == "berhasil")
+			{
+				$this->session->set_flashdata('msg', '<div class="alert alert-info">Artikel Berhasil Ditambahkan</div>');
+				redirect('logincms/artikel', 'refresh');
+			}
+			else
+			{
+				$this->session->set_flashdata('msg', '<div class="alert alert-warning">Artikel Gagal Ditambahkan</div>');
+				redirect('logincms/artikel', 'refresh');
+			}
+
 		}
 
 		$this->render_page('backend/artikel/add', $data);
@@ -119,9 +129,14 @@ class Artikel extends MY_Controller
 
 	function delete($article_id)
 	{
-		$this->Martikel->delete_photo($article_id);
-		$this->Martikel->delete($article_id);
-		redirect('logincms/artikel');
+		$status_foto = $this->Martikel->delete_photo($article_id);
+		$status_artikel = $this->Martikel->delete($article_id);
+
+		if ($status_foto == "berhasil" && $status_artikel == "berhasil") {
+			$this->session->set_flashdata('msg', '<div class="alert alert-info">Artikel Berhasil Dihapus</div>');
+			redirect('logincms/artikel');
+		}
+
 	}
 
 }

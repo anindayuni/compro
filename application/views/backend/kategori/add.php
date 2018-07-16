@@ -24,6 +24,7 @@
             </div>
         </div>
                
+        <?php echo $this->session->flashdata('msg'); ?>
         <!-- Horizontal Layout -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -78,6 +79,7 @@
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
                                         <input type="file" name="category_photo">
+                                        <label>* Ukuran Foto Maks 1 MB</label>
                                     </div>
                                 </div>
                             </div>

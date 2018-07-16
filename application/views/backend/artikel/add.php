@@ -67,6 +67,7 @@
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
                                         <input type="file" name="photo_img" required="">
+                                        <label>* Ukuran Foto Maks 1 MB</label>
                                     </div>
                                 </div> 
                             </div><br>

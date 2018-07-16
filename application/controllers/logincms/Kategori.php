@@ -42,17 +42,18 @@ class Kategori extends MY_Controller
                 $string = substr($string, 0, 100);
             
             $input['category_url'] = $string;
-            $this->Mkategori->save($input);
+            $status = $this->Mkategori->save($input);
 
-            if ($this->Mkategori->save($input))
+            if ($status == "berhasil")
             {
-            redirect('logincms/kategori', 'refresh');
+	            $this->session->set_flashdata('msg', '<div class="alert alert-info">Kategori Berhasil Ditambahkan</div>');
+	            redirect('logincms/kategori', 'refresh');
             }
             else{
-            	
+            	$this->session->set_flashdata('msg', '<div class="alert alert-warning">Kategori Gagal Ditambahkan</div>');
+            	redirect('logincms/kategori/add', 'refresh');
             }
 		}
-			
 	
 		$this->render_page('backend/kategori/add', $data);
 	}
@@ -82,8 +83,18 @@ class Kategori extends MY_Controller
 
 	public function delete($category_id)
 	{
-		$this->Mkategori->delete($category_id);
-		redirect('logincms/kategori', 'refresh');
+		$status = $this->Mkategori->delete($category_id);
+
+		if ($status == "berhasil")
+		{
+			$this->session->set_flashdata('msg', '<div class="alert alert-info">Data berhasil dihapus</div>');
+			redirect('logincms/kategori', 'refresh');
+		}
+		else
+		{
+			$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gagal menghapus kategori</div>');
+			redirect('logincms/kategori', 'refresh');
+		}
 	}
 
 }

@@ -38,6 +38,7 @@ class Mkategori extends CI_Model
 
         $config['upload_path']      = './gambar/category';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
+        $config['max_size']    = '1000';
 
         // panggil library upload
         $this->load->library('upload', $config);
@@ -46,12 +47,15 @@ class Mkategori extends CI_Model
         {
             $data['category_photo'] = $this->upload->data('file_name');
         }
-        else{
+        else
+        {
             $data['category_photo'] = 'no-image.jpg';
         }
 
-
         $this->db->insert('_category', $data);
+        $status = "berhasil";
+
+        return $status;
     }
 
     public function category_by_id($category_id){
@@ -109,6 +113,10 @@ class Mkategori extends CI_Model
         
         $this->db->where('category_id', $category_id);
         $this->db->delete('_category');
+
+        $status = "berhasil";
+
+        return $status;
     }
     
 }

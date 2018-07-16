@@ -82,6 +82,7 @@
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
                                         <input type="file" name="category_photo" value="<?php echo $kat['category_photo']; ?>">
+                                        <label>* Ukuran Foto Maks 1 MB</label>
                                     </div>
                                     <span><?php echo $kat['category_photo'];?></span>
                                 </div>

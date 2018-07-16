@@ -43,6 +43,49 @@ Class Login extends CI_Controller
 	    $this->session->sess_destroy();
 	    echo "<script>alert('Anda berhasil logout !');location='".base_url("logincms")."'</script>";
 	}
+
+	function reset_password()
+	{
+		$input = $this->input->post();
+		$receiver = $input['user_email'];
+
+		$kirim_email = $this->Mlogin->sendEmail($receiver);
+
+		if ($kirim_email) {
+			$this->session->set_flashdata('msg', '<div class="alert alert-info">Link Reset Password Telah dikirim. Silahkan Cek Email Anda</div>');
+			$data['hasil'] = "gagal";
+		}
+
+		$this->load->view('backend/login',$data);
+		
+	}
+
+	function set_password()
+	{
+		$data['hasil'] =" ";
+		$data['email'] = $_GET['receiver'];
+
+		if ($this->input->post()) {
+			$input['user_password'] = $this->input->post('password');
+			$email = $this->input->post('password');
+
+			$status = $this->Mlogin->change_password($input, $email);
+
+			if ($status == "berhasil")
+			{
+				$this->session->set_flashdata('msg', '<div class="alert alert-info">Password Anda berhasil dirubah</div>');
+				$this->load->view('backend/login', $data);
+			}
+			else
+			{
+				echo "Password Gagal Diubah";
+			}
+			
+		}
+
+		$this->load->view('backend/reset_password', $data);
+	}
+
 }
 
 ?>

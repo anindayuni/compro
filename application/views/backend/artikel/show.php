@@ -20,6 +20,8 @@
                 </div>
             </div>
         </div>
+
+        <?php echo $this->session->flashdata('msg'); ?>
         
         <!-- Hover Rows -->
         <div class="row clearfix">

@@ -119,6 +119,9 @@ class Martikel extends CI_Model
 
 	function save_photo($photo){
 		$this->db->insert('_photo', $photo);
+
+		$status = "berhasil";
+		return $status;
 	}
 
 
@@ -266,12 +269,18 @@ class Martikel extends CI_Model
 
 		$this->db->where('photo_id_article', $article_id);
 		$this->db->delete('_photo');
+
+		$status = "berhasil";
+		return $status;
 	}
 
 	function delete($article_id)
 	{
 		$this->db->where('article_id', $article_id);
 		$this->db->delete('_article');
+
+		$status = "berhasil";
+		return $status;
 	}
 
 

@@ -21,6 +21,7 @@
             </div>
         </div>
         
+        <?php echo $this->session->flashdata('msg'); ?>
         <!-- Hover Rows -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -97,7 +98,7 @@
                                                             <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
                                                         </a>
                                                         <a href="<?php echo base_url('logincms/kategori/delete/').$kat['category_id']; ?>">
-                                                            <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK <?php echo $kat['category_id']; ?></button>
+                                                            <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK</button>
                                                         </a>
                                                     </div>
                                                     <div class="light-modal-footer">
