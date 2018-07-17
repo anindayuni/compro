@@ -116,22 +116,25 @@ class Gallery extends MY_Controller
 			);
 
 				// $this->render_page('backend/slider/list',$error);
-			$this->load->view('upload_form', $error);
+			// $this->load->view('upload_form', $error);
+			$this->load->view('upload_form');
 
-			// echo ;
+			// echo 'gagal';
 
 		}
 		else
 		{
 
+
 			$data = array('upload_data' => $this->upload->data());
 
+			
 
-			// if ($this->upload->data('file_size') <= 1024) {
-			// 			echo '<script>alert("Ukuran gambar terlalu besar")</script>';
-			// 			unlink("./gambar/gallery/".$this->upload->data('file_name'));		
-			// 		}
-			// else{
+			if ($this->upload->data('image_width') <= 1) {
+						echo '<script>alert("Ukuran gambar terlalu besar")</script>';
+						unlink("./gambar/gallery/".$this->upload->data('file_name'));		
+					}
+			else{
 
 
 			$id_category=$this->db->get_where('_category',array('category_type'=>'gallery'))->row_array();
@@ -163,7 +166,7 @@ class Gallery extends MY_Controller
 
 		}
 
-		// }
+		}
 	}
 
 

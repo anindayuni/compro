@@ -27,9 +27,10 @@
                 <div class="card">
                     <div class="header">
                         <h2><strong> Data Gallery </strong></h2>
+                        <!-- <label>Max Image 1 MB</label> -->
                         <ul class="header-dropdown">
                             <li>
-                                <a href="http://localhost/github/company-profile/logincms/gallery"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Kembali</button></a>
+                                <a href="<?php echo base_url('logincms/gallery') ?>"><button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" align="right">Kembali</button></a>
                             </li>
                             <li>
                                 &nbsp;
@@ -42,6 +43,7 @@
                                 <div class="dz-message">
                                     <div class="drag-icon-cph"> <i class="material-icons">touch_app</i> </div>
                                     <h4>Drop files here or click to upload Gallery</h4>
+                                    <h5>[ Maksimum 1 MB / IMG ]</h5>
                                 </div>
 
                                 <div class="fallback">
@@ -73,10 +75,11 @@
             //     return false;
             // }
 
+            // alert('aaa');
 
             var myDropzone = new Dropzone(document.body, { 
                 
-
+alert('aaa');
     });
 
             // "myAwesomeDropzone" is the camelized version of the HTML element's ID
