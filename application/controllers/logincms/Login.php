@@ -66,15 +66,16 @@ Class Login extends CI_Controller
 		$data['email'] = $_GET['receiver'];
 
 		if ($this->input->post()) {
-			$input['user_password'] = $this->input->post('password');
-			$email = $this->input->post('password');
-
+			$pass = $this->input->post('password');
+			$input['user_password'] = md5(md5($pass));
+			$email = $this->input->post('email');
 			$status = $this->Mlogin->change_password($input, $email);
 
 			if ($status == "berhasil")
 			{
 				$this->session->set_flashdata('msg', '<div class="alert alert-info">Password Anda berhasil dirubah</div>');
-				$this->load->view('backend/login', $data);
+				// $this->load->view('backend/login', $data);
+				redirect('logincms/login');
 			}
 			else
 			{

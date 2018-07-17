@@ -46,14 +46,16 @@ class Mkategori extends CI_Model
         if ($this->upload->do_upload('category_photo'))
         {
             $data['category_photo'] = $this->upload->data('file_name');
+            $status = "berhasil";
         }
         else
         {
             $data['category_photo'] = 'no-image.jpg';
+            $status = "gagal";
         }
 
         $this->db->insert('_category', $data);
-        $status = "berhasil";
+        
 
         return $status;
     }
