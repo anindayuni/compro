@@ -27,7 +27,7 @@ class User extends MY_Controller
 			$pass = $this->input->post('user_password');
 			$password = md5(md5($pass));
 
-			$cek = $this->Muser->user_check();
+			$cek = $this->Muser->user_check($username, $password);
 			$cek_username = $cek['user_login'];
 			$cek_password = $cek['user_password'];
 			$cek_id = $cek['user_id'];
@@ -51,15 +51,6 @@ class User extends MY_Controller
 
 	function change_user_pass($id)
 	{
-			// $this->load->library('form_validation');
-
-			// $this->form_validation->set_rules('username', 'Username', 'required');
-			// $this->form_validation->set_rules('password', 'Password', 'required',
-			// 	array('required' => 'You must provide a %s.')
-			// );
-			// $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
-
-
 		$update = $this->input->post();
 		$pass = $update['password'];
 		$enc_pass = md5(md5($pass));
