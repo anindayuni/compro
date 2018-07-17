@@ -100,6 +100,7 @@ class Gallery extends MY_Controller
 
 		$config['upload_path']      = './gambar/gallery';
 		$config['allowed_types']    = 'gif|jpg|png|jpeg';
+		$config['max_size']    		= 1024;
 
 		$config['file_name'] = 'gallery-'.$id['id'];
 
@@ -126,7 +127,7 @@ class Gallery extends MY_Controller
 			$data = array('upload_data' => $this->upload->data());
 
 
-			// if ($this->upload->data('max_size') < 1000) {
+			// if ($this->upload->data('file_size') <= 1024) {
 			// 			echo '<script>alert("Ukuran gambar terlalu besar")</script>';
 			// 			unlink("./gambar/gallery/".$this->upload->data('file_name'));		
 			// 		}
@@ -160,8 +161,9 @@ class Gallery extends MY_Controller
 
 			$this->render_page('backend/gallery/list',$data);
 
-		// }
 		}
+
+		// }
 	}
 
 
@@ -171,8 +173,9 @@ class Gallery extends MY_Controller
 	{
 
 		$id=$this->input->get('id');
-		$gambar = $this->db->get('_photo')->row_array();
+		$gambar = $this->db->query('SELECT * FROM _photo p, _category c, _article a WHERE c.category_id=a.article_id_category and a.article_id=p.photo_id_article AND c.category_type="gallery" and a.article_id="'.$id.'" ORDER BY article_id DESC')->row_array();
 
+		
 		unlink("./gambar/gallery/".$gambar['photo_img']);
 
 		$this->db->delete('_article', array('article_id' => $id));

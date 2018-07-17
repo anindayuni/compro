@@ -67,12 +67,17 @@
             <script type="text/javascript">
 
 
-            // Dropzone class:
-            // var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
+            //    var file_size = $('#file')[0].files[0].size;
+            //    if (file_size > 1048576) {
+            //     alert('Gagal Upload, ukuran file lebih dari 1 MB');
+            //     return false;
+            // }
 
-            // jQuery
-            $("#frmFileUpload").dropzone({ url: "/file/post" });
 
+            var myDropzone = new Dropzone(document.body, { 
+                
+
+    });
 
             // "myAwesomeDropzone" is the camelized version of the HTML element's ID
             // Dropzone.options.myAwesomeDropzone = {
