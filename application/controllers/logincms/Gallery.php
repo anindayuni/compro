@@ -6,9 +6,9 @@ class Gallery extends MY_Controller
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Mgallery');
-		$this->load->helper(array('form', 'url'));
+		// $this->load->helper(array('form', 'url'));
 		$this->load->library('upload');
-		$this->load->library('pagination');
+		// $this->load->library('pagination');
 		if (!$this->session->userdata('user'))
 		{
 			$log = base_url("logincms");
@@ -91,7 +91,15 @@ class Gallery extends MY_Controller
 	}
 
 
+	public function upload_form()
+	{
+		$this->render_page('backend/gallery/upload_form');
+	}
 
+	function error_img()
+	{
+		echo "gagal woi";
+	}
 
 	public function add_action()
 	{
@@ -111,15 +119,23 @@ class Gallery extends MY_Controller
 
 		if ( ! $this->upload->do_upload('file'))
 		{
-			$error = array(
-				'error' => $this->upload->display_errors(),
-			);
-
+			// $error = array(
+			// 	'error' => $this->upload->display_errors(),
+			// ); 
+			$error = $this->upload->display_errors();
 				// $this->render_page('backend/slider/list',$error);
-			// $this->load->view('upload_form', $error);
-			$this->load->view('upload_form');
-
-			// echo 'gagal';
+			// $this->load->view('backend/gallery/upload_form');
+			// $this->session->set_flashdata('msg', '<script>alert("waaaaa")</script>');
+			// redirect('logincms/gallery/add','refresh');
+			// $error='';
+			// $this->load->view('error_img');
+			$this->load->view($error);
+			// echo "<script type='text/javascript'>
+			//  alert('erorrrrrr');
+			//   </script>";
+			// $this->render_page('backend/gallery/add',$data);
+			// redirect('logincms/gallery/add',$data);
+			
 
 		}
 		else
@@ -131,40 +147,40 @@ class Gallery extends MY_Controller
 			
 
 			if ($this->upload->data('image_width') <= 1) {
-						echo '<script>alert("Ukuran gambar terlalu besar")</script>';
-						unlink("./gambar/gallery/".$this->upload->data('file_name'));		
-					}
+				echo '<script>alert("Ukuran gambar terlalu besar")</script>';
+				unlink("./gambar/gallery/".$this->upload->data('file_name'));		
+			}
 			else{
 
 
-			$id_category=$this->db->get_where('_category',array('category_type'=>'gallery'))->row_array();
-			$data_artikel=array(
-				'article_title'=>'ini gallery',
-				'article_url'=>NULL,
-				'article_content'=>NULL,
-				'article_create_date'=>date('Y-m-d'),
-				'article_publish_date'=>date('Y-m-d'),
-				'article_status'=>1,
-				'article_id_category'=>$id_category['category_id'],
+				$id_category=$this->db->get_where('_category',array('category_type'=>'gallery'))->row_array();
+				$data_artikel=array(
+					'article_title'=>'ini gallery',
+					'article_url'=>NULL,
+					'article_content'=>NULL,
+					'article_create_date'=>date('Y-m-d'),
+					'article_publish_date'=>date('Y-m-d'),
+					'article_status'=>1,
+					'article_id_category'=>$id_category['category_id'],
 
-			);
+				);
 
-			$this->db->insert('_article',$data_artikel);
+				$this->db->insert('_article',$data_artikel);
 
 
-			$this->db->select_max('article_id','id');
-			$id_artikel=$this->db->get('_article')->row_array();
-			$data_foto=array(
-				'photo_id_article'=>$id_artikel['id'],
-				'photo_img'=>$this->upload->data('file_name'),
-				'photo_date'=>date('Y-m-d'),
-			);
+				$this->db->select_max('article_id','id');
+				$id_artikel=$this->db->get('_article')->row_array();
+				$data_foto=array(
+					'photo_id_article'=>$id_artikel['id'],
+					'photo_img'=>$this->upload->data('file_name'),
+					'photo_date'=>date('Y-m-d'),
+				);
 
-			$this->db->insert('_photo',$data_foto);
+				$this->db->insert('_photo',$data_foto);
 
-			$this->render_page('backend/gallery/list',$data);
+				$this->render_page('backend/gallery/list',$data);
 
-		}
+			}
 
 		}
 	}
