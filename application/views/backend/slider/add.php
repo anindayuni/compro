@@ -56,7 +56,7 @@
                             <div class="col-lg-10 col-md-10 col-sm-8">
                                 <div class="form-group">
 
-                                    <input type="file" name="userfile"/>
+                                    <input id="file" type="file" name="userfile"/>
 
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                 &nbsp;
                             </div>
                             <div class="col-sm-8 offset-sm-2">
-                                <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">Submit</button>
+                                <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect" onclick="validasi_gambar()">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -96,4 +96,17 @@
 </div>
 
 
+<script type="text/javascript">
+    
+    function validasi_gambar() {
 
+     var file_size = $('#file')[0].files[0].size;
+     if (file_size > 1048576) {
+        alert('Gagal Upload, ukuran file lebih dari 1 MB');
+        return false;
+     }
+
+     
+
+    }
+</script>

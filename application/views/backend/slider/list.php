@@ -60,7 +60,13 @@
                                         <tr>
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $f->article_title?></td>
-                                            <td><img height="50px" width="50px" src="<?php echo base_url("gambar/slider/$f->photo_img")?>"></td>
+                                            <td>
+                                                <a href="<?php echo base_url("gambar/slider/$f->photo_img")?>">
+                                                <img height="50px" width="80px" src="<?php echo base_url("gambar/slider/$f->photo_img")?>"></a>
+
+                                            </td>
+
+
                                             <td><?php echo $f->photo_img ?></td>
                                             <td><?php echo date('m-d-Y', strtotime($f->article_create_date))?></td>
 

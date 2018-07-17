@@ -27,11 +27,13 @@ class Slider extends MY_Controller
 	public function delete($id)
 	{ 
 		$data['foto']=$this->Mslider->list_slider();
-		$gambar = $this->db->get('_photo')->row_array();
+		$gambar = $this->db->query('SELECT * FROM _photo p, _category c, _article a WHERE c.category_id=a.article_id_category and a.article_id=p.photo_id_article AND c.category_type="slider" and a.article_id="'.$id.'"')->row_array();
 
 		if (!empty($gambar['photo_img'])) {
 			unlink("./gambar/slider/".$gambar['photo_img']);
 		}
+
+		$data['gambar']=$gambar['photo_img'];
 
 		$this->db->delete('_article', array('article_id' => $id));
 		$this->db->delete('_photo', array('photo_id_article' => $id));
@@ -52,7 +54,7 @@ class Slider extends MY_Controller
 
 		$config['upload_path']      = './gambar/slider';
 		$config['allowed_types']    = 'gif|jpg|png|jpeg';
-		 // $config['max_size']             = 1;
+		 $config['max_size']             = 1024;
 		// $config['min_width']            = 700;
 		// $config['min_height']           = 400;
 		$config['file_name'] = 'slider-'.$id['id'];
@@ -81,28 +83,47 @@ class Slider extends MY_Controller
 		{
 			$data = array('upload_data' => $this->upload->data());
 
-			if ($this->upload->data('image_width') < 699 or $this->upload->data('image_height') < 399) {
+
+			// if ($this->upload->data('file_size') <= 1) {
+			// 	echo '<script>alert("Ukuran gambar terlalu besar")</script>';
+			// 	unlink("./gambar/slider/".$this->upload->data('file_name'));		
+			// }
+
+
+			// else {
+
+				// if ($this->upload->data('file_size') < 1) {
+				// 	echo '<script>alert("Gagal upload karena ukuran gambar besar")</script>';
+				// 	unlink("./gambar/slider/".$this->upload->data('file_name'));	
 				
+
+				// }
+
+
+			if ($this->upload->data('image_width') <= $this->upload->data('image_height')) {
+
+				echo '<script>alert("Gambar yang di upload harus dalam bentuk Landscape")</script>';
+					unlink("./gambar/slider/".$this->upload->data('file_name'));	
+			}
+
+			else {
+
+			if ($this->upload->data('image_width') < 699 or $this->upload->data('image_height') < 399){
+
 				if ($this->upload->data('image_width') < 699) {
-					echo '<script>alert("Lebar gambar kurang dari 700px")</script>';
+					echo '<script>alert("Gagal upload karena Lebar gambar kurang dari 700px")</script>';
 					unlink("./gambar/slider/".$this->upload->data('file_name'));	
 
 				}
 
 
 				else {
-					echo '<script>alert("Tinggi gambar kurang dari 400px")</script>';
+					echo '<script>alert("Gagal upload karena Tinggi gambar kurang dari 400px")</script>';
 					unlink("./gambar/slider/".$this->upload->data('file_name'));
 				}
 
 
 			}
-
-
-			elseif ($this->upload->data('max_size')<1000) {
-						echo '<script>alert("Ukuran gambar terlalu besar")</script>';
-						unlink("./gambar/slider/".$this->upload->data('file_name'));		
-					}
 
 			else {
 
@@ -135,8 +156,9 @@ class Slider extends MY_Controller
 				$this->render_page('backend/slider/list',$data); }
 
 		               // $this->load->view('upload_success', $data);
+				// }
 			}
-
+			}
 		// $data_gambar=$this->upload->data('image_width');
 		// $data_gambar1=$this->upload->data('image_height');
 		// print_r($data_gambar);
