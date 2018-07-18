@@ -102,7 +102,7 @@
 
      var file_size = $('#file')[0].files[0].size;
      if (file_size > 1048576) {
-        alert('Gagal Upload, ukuran file lebih dari 1 MB');
+        alert('Gagal upload, ukuran file lebih dari 1 MB');
         return false;
      }
 

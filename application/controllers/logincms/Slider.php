@@ -102,7 +102,7 @@ class Slider extends MY_Controller
 
 			if ($this->upload->data('image_width') <= $this->upload->data('image_height')) {
 
-				echo '<script>alert("Gambar yang di upload harus dalam bentuk Landscape")</script>';
+				echo '<script>alert("Gambar yang diupload harus dalam bentuk landscape")</script>';
 					unlink("./gambar/slider/".$this->upload->data('file_name'));	
 			}
 
@@ -111,14 +111,14 @@ class Slider extends MY_Controller
 			if ($this->upload->data('image_width') < 699 or $this->upload->data('image_height') < 399){
 
 				if ($this->upload->data('image_width') < 699) {
-					echo '<script>alert("Gagal upload karena Lebar gambar kurang dari 700px")</script>';
+					echo '<script>alert("Gagal upload karena lebar gambar kurang dari 700px")</script>';
 					unlink("./gambar/slider/".$this->upload->data('file_name'));	
 
 				}
 
 
 				else {
-					echo '<script>alert("Gagal upload karena Tinggi gambar kurang dari 400px")</script>';
+					echo '<script>alert("Gagal upload karena tinggi gambar kurang dari 400px")</script>';
 					unlink("./gambar/slider/".$this->upload->data('file_name'));
 				}
 
