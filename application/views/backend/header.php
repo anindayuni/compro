@@ -18,14 +18,8 @@
                     <a class="navbar-brand" href="<?= base_url(); ?>"><img src="<?php echo base_url('assets/backend/images/logo.svg'); ?>" width="30" alt="infinity"><span class="m-l-10">Company Profile - CMS</span></a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <!-- <li class="search_bar hidden-xs">
-                        <div class="input-group">                
-                            <input type="text" class="form-control" placeholder="Find your stuff...">
-                        </div>
-                    </li> -->
                     <li class="dropdown profile">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            <!-- <img class="rounded-circle" src="<?php echo base_url('assets/backend/images/profile_av.jpg'); ?>" alt="User"> -->
                             Pengguna <i class="icon-user"></i>
                         </a>
                         <ul class="dropdown-menu pullDown">

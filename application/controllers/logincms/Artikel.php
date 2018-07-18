@@ -55,7 +55,7 @@ class Artikel extends MY_Controller
 			}
 			else
 			{
-				$this->session->set_flashdata('msg', '<div class="alert alert-warning">Artikel Gagal Ditambahkan</div>');
+				$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gambar gagal ditambahkan. Ukuran file lebih dari 1 MB</div>');
 				redirect('logincms/artikel', 'refresh');
 			}
 
@@ -134,6 +134,10 @@ class Artikel extends MY_Controller
 
 		if ($status_foto == "berhasil" && $status_artikel == "berhasil") {
 			$this->session->set_flashdata('msg', '<div class="alert alert-info">Artikel Berhasil Dihapus</div>');
+			redirect('logincms/artikel');
+		}
+		else{
+			$this->session->set_flashdata('msg', '<div class="alert alert-warning">Artikel Gagal Dihapus</div>');
 			redirect('logincms/artikel');
 		}
 

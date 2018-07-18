@@ -50,8 +50,8 @@ class Kategori extends MY_Controller
 	            redirect('logincms/kategori', 'refresh');
             }
             else{
-            	$this->session->set_flashdata('msg', '<div class="alert alert-warning">Kategori Gagal Ditambahkan</div>');
-            	redirect('logincms/kategori/add', 'refresh');
+            	$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gambar gagal ditambahkan. Ukuran file lebih dari 1 MB</div>');
+            	redirect('logincms/kategori', 'refresh');
             }
 		}
 	

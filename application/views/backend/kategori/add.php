@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        <input type="file" name="category_photo">
+                                        <input type="file" name="category_photo" id="gbr_kategori">
                                         <label>* Ukuran Foto Maks 1 MB</label>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                                     &nbsp;
                                 </div>
                                 <div class="col-sm-8 offset-sm-2">
-                                    <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">Submit</button>
+                                    <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect" onclick="validasi_gambar()">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -101,3 +101,18 @@
         
     </div>
 </section>
+
+<script type="text/javascript">
+    
+    function validasi_gambar() {
+
+     var file_size = $('#gbr_kategori')[0].files[0].size;
+     if (file_size > 1048576) {
+        alert('Gambar gagal ditambahkan, ukuran file lebih dari 1 MB');
+        return false;
+     }
+
+     
+
+    }
+</script>

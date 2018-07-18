@@ -268,6 +268,9 @@ class Martikel extends CI_Model
         if (!empty($gambar)) {
             unlink("./gambar/article/".$gambar);
         }
+        elseif ($gambar != "no-image.jpg") {
+            unlink("./gambar/article/".$gambar);
+        }
 
 		$this->db->where('photo_id_article', $article_id);
 		$this->db->delete('_photo');
