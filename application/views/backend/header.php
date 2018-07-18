@@ -67,8 +67,8 @@
                                                 <input type="password" class="form-control" placeholder="Password Lama *" name="user_password" required>
                                             </div>
                                             <br><br>
-                                            <a href="<?php echo base_url('logincms/home');?>">
-                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
+                                            <a href="<?php echo base_url('logincms/home');?>" class="btn btn-raised btn-primary btn-round waves-effect">
+                                                CANCEL
                                             </a>
                                             <a href="<?php echo base_url('logincms/user');?>">
                                                 <button class="btn btn-raised btn-primary btn-round waves-effect" align="right" type="submit">OK</button>
