@@ -39,15 +39,32 @@
                     </div>
                     <div class="body">
                         <!-- <form action="/" id="frmFileUpload" class="dropzone dz-clickable" method="get" enctype="multipart/form-data"> -->
-                            <form action="<?php echo base_url('logincms/gallery/add_action') ?>" id="frmFileUpload" class="dropzone dz-clickable" method="get" enctype="multipart/form-data">
+                            <?php 
+                            echo $this->session->userdata('msg');
+                            ?>
+                            <form action="<?php echo base_url('logincms/gallery/add_action') ?>" id="uploadWidget" class="dropzone dz-clickable" method="post" enctype="multipart/form-data">
                                 <div class="dz-message">
                                     <div class="drag-icon-cph"> <i class="material-icons">touch_app</i> </div>
                                     <h4>Drop files here or click to upload Gallery</h4>
                                     <h5>[ Maksimum 1 MB / IMG ]</h5>
+                                    <p>.gif &nbsp; .jpg &nbsp; .png &nbsp; .jpeg</p>
                                 </div>
 
+                                
                                 <div class="fallback">
                                     <input id="file" name="file" type="file" multiple />
+                                    <?php
+                                    // $maxsize = 1024 * 200; // maksimal 200 KB (1KB = 1024 Byte)
+                                    // $valid_ext = array('jpg','jpeg','png','gif','bmp');
+                                    // if(isset($_POST['file']) && $_FILES['file']['size']<=$maxsize){
+                                    //     $ext = strtolower(end(explode('.', $_FILES['file']['name'])));
+                                    //     if(in_array($ext, $valid_array)){
+                                    //         move_uploaded_file($_FILES['file']['tmp_name'], 'upload/'.$_FILES['file']['name']);
+                                    //     }else{
+                                    //         echo "Maaf... file yang ada pilih terlalu besar, maksimal 200 KB..!";
+                                    //     }
+                                    // }
+                                ?>
                                 </div>
 
 
@@ -66,7 +83,98 @@
 
 
 
+<?php 
+if (isset($pesan)) {
+    echo $pesan;
+}
+
+ ?>
+
             <script type="text/javascript">
+
+
+ Dropzone.options.uploadWidget = {
+  paramName: 'file',
+  maxFilesize: 2, // MB
+  maxFiles: 1,
+  dictDefaultMessage: 'Drag an image here to upload, or click to select one',
+  headers: {
+    'x-csrf-token': document.querySelectorAll('meta[name=csrf-token]')[0].getAttributeNode('content').value,
+  },
+  acceptedFiles: 'image/*',
+  init: function() {
+    this.on('success', function( file, resp ){
+      console.log( file );
+      console.log( resp );
+    });
+    this.on('thumbnail', function(file) {
+      if ( file.width < 640 || file.height < 480 ) {
+        file.rejectDimensions();
+      }
+      else {
+        file.acceptDimensions();
+      }
+    });
+  },
+  accept: function(file, done) {
+    file.acceptDimensions = done;
+    file.rejectDimensions = function() {
+      done('The image must be at least 640 x 480px')
+    };
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Dropzone.options.dropzoneElement = {
+//   maxFiles: 1,
+//   maxFilesize: 1, // File size in Mb
+//   acceptedFiles: 'application/pdf'
+// }
+
+
+// Dropzone.options.dropzoneElement = {
+//   maxFilesize: 500,
+//   autoProcessQueue: false,
+//   init: function() {
+
+//     var submitButton = document.querySelector("#btnUpload")
+//     myDropzone = this;
+
+//     submitButton.addEventListener("click", function() {
+
+//       /* Check if file is selected for upload */
+//       if (myDropzone.getUploadingFiles().length === 0 && myDropzone.getQueuedFiles().length === 0) {            
+//         alert('No file selected for upload');   
+//         return false;
+//       }
+//       else {
+//         /* Remove event listener and start processing */ 
+//         myDropzone.removeEventListeners();
+//         myDropzone.processQueue(); 
+
+//       }
+
+//     });
+
+
+//     /* On Success, do whatever you want */
+//     this.on("success", function(file, responseText) {           
+//       alert('Success');
+//     });
+//   }   
+// };
+
 
 
             //    var file_size = $('#file')[0].files[0].size;
@@ -77,10 +185,11 @@
 
             // alert('aaa');
 
-            var myDropzone = new Dropzone(document.body, { 
-                
-alert('aaa');
-    });
+// $("div#frmFileUpload").dropzone({ url: "/file/post" });
+            // var myDropzone = new Dropzone(document.body, { 
+         // var myDropzone = new Dropzone("div#frmFileUpload", { alert('aaa')});       
+// alert('aaa');
+    // });
 
             // "myAwesomeDropzone" is the camelized version of the HTML element's ID
             // Dropzone.options.myAwesomeDropzone = {

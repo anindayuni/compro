@@ -93,7 +93,7 @@
                         function hapus<?php echo $g->article_id ?>() {
 
                            var id = $("#id_artikel<?php echo $g->article_id?>").val();
-                           // alert(id);
+                           alert(id);
                      if(confirm('Anda yakin akan menghapus data ini ?')){
                         $.ajax({
                             url:"<?php echo base_url()?>logincms/gallery/hapus",
