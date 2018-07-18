@@ -61,12 +61,12 @@
                                         <form method="post" action="<?php echo base_url('logincms/login/reset_password');?>">
                                             <label for="email_address">Masukkan Email</label>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Masukkan Email Anda *" name="user_email" required>
+                                                <input type="text" class="form-control" placeholder="Masukkan Email Anda *" name="user_email" required="">
                                             </div>
                                             
                                             <br>
-                                            <a href="<?php echo base_url('logincms/login');?>">
-                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
+                                            <a href="#" class="btn btn-raised btn-primary btn-round waves-effect">
+                                                CANCEL
                                             </a>
                                             <a href="<?php echo base_url('logincms/login/reset_password');?>">
                                                 <button class="btn btn-raised btn-primary btn-round waves-effect" align="right" type="submit">OK</button>
