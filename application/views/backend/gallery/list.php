@@ -80,7 +80,8 @@
 
                               </div>
                           </a>
-
+                          <!-- <br> -->
+                            <label float="left"><?php echo $g->photo_img; ?></label>
                           <form method="get" align="right">  
                             <input type="hidden" id="id_artikel<?php echo $g->article_id?>" value="<?php echo $g->article_id?>">
                             <button type="submit" onclick="hapus<?php echo $g->article_id ?>()" class="btn btn-raised btn-primary btn-round waves-effect" >Delete</button>
@@ -93,8 +94,8 @@
                         function hapus<?php echo $g->article_id ?>() {
 
                            var id = $("#id_artikel<?php echo $g->article_id?>").val();
-                           alert(id);
-                     if(confirm('Anda yakin akan menghapus data ini ?')){
+                           // alert(id);
+                     if(confirm('Anda yakin akan menghapus gambar "<?php echo $g->photo_img ?>" ?')){
                         $.ajax({
                             url:"<?php echo base_url()?>logincms/gallery/hapus",
                             data:"id="+id,

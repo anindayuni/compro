@@ -1,3 +1,3 @@
 <?php
-	echo "Maaf Gambar anda terlalu besar atau tipe tidak dikenali .";
+	echo "Maaf gambar anda terlalu besar atau tipe file tidak dikenali .";
 ?>
