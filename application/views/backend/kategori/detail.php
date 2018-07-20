@@ -103,12 +103,8 @@
                                     <label>Foto Kategori</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
-                                    
-<<<<<<< HEAD
-                                        <img src="<?php if($kat['category_photo']==null){ echo base_url('gambar/category/no-image.jpg'); } else {echo base_url('gambar/category/').$kat['category_photo']; } ?>" height="150" width="150">
-=======
-                                        <img src="<?php echo base_url('gambar/category/').$kat['category_photo']; ?>" height="150" width="auto">
->>>>>>> 9708efb1bc53fddbe8139663936579fd2c4fae11
+
+                                        <img src="<?php if($kat['category_photo']==null){ echo base_url('gambar/category/no-image.jpg'); } else {echo base_url('gambar/category/').$kat['category_photo']; } ?>" height="150" width="auto">
                                        
                                 </div> 
                             </div><br>
