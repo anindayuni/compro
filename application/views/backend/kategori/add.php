@@ -108,7 +108,6 @@
 
      var file_size = $('#gbr_kategori')[0].files[0].size;
      if (file_size > 1048576) {
-        alert('Gambar gagal ditambahkan, ukuran file lebih dari 1 MB');
         return false;
      }
 
