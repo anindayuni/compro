@@ -38,7 +38,7 @@ class Mkategori extends CI_Model
 
         $config['upload_path']      = './gambar/category';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
-        $config['max_size']    = '1000';
+        $config['max_size']    = '1024';
 
         // panggil library upload
         $this->load->library('upload', $config);
@@ -110,6 +110,9 @@ class Mkategori extends CI_Model
         $gambar = $ambil['category_photo'];
 
         if (!empty($gambar)) {
+            unlink("./gambar/category/".$gambar);
+        }
+        elseif ($gambar != "no-image.jpg") {
             unlink("./gambar/category/".$gambar);
         }
         

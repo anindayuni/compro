@@ -103,7 +103,7 @@
                                                                 <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">CANCEL</button>
                                                             </a>
                                                             <a href="<?php echo base_url('logincms/artikel/delete/').$art['article_id']; ?>">
-                                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK <?php echo $art['article_id']; ?></button>
+                                                                <button class="btn btn-raised btn-primary btn-round waves-effect" align="right">OK</button>
                                                             </a>
                                                         </div>
                                                         <div class="light-modal-footer">
