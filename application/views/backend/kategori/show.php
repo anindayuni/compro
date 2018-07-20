@@ -54,7 +54,7 @@
                                 <?php foreach ($kategori as $key => $kat) : ?>
                                 <tr>
                                     <th scope="row"><?php echo $key+1; ?></th>
-                                    <td><img src="<?php echo base_url('gambar/category/').$kat['category_photo']; ?>" height="50" width="50"></td>
+                                    <td><img src="<?php echo base_url('gambar/category/').$kat['category_photo']; ?>" height="50" width="70"></td>
                                     <td><?php echo $kat['category_name']; ?></td>
                                     <td>
                                         <?php 
