@@ -125,7 +125,7 @@
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
                                         <label>: </label>
-                                        <img src="<?php echo base_url('gambar/category/').$st['category_photo']; ?>" width="100" height="100">
+                                        <img src="<?php echo base_url('gambar/category/').$st['category_photo']; ?>" width="auto" height="150">
                                     </div>
                                 </div>
                             </div><br>

@@ -54,7 +54,11 @@
                                 <?php foreach ($kategori as $key => $kat) : ?>
                                 <tr>
                                     <th scope="row"><?php echo $key+1; ?></th>
+<<<<<<< HEAD
                                     <td><img src="<?php if($kat['category_photo']==null){ echo base_url('gambar/category/no-image.jpg'); } else {echo base_url('gambar/category/').$kat['category_photo']; } ?>" height="50" width="50"></td>
+=======
+                                    <td><img src="<?php echo base_url('gambar/category/').$kat['category_photo']; ?>" height="50" width="70"></td>
+>>>>>>> 9708efb1bc53fddbe8139663936579fd2c4fae11
                                     <td><?php echo $kat['category_name']; ?></td>
                                     <td>
                                         <?php 
