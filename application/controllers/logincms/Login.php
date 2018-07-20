@@ -48,16 +48,26 @@ Class Login extends CI_Controller
 	{
 		$input = $this->input->post();
 		$receiver = $input['user_email'];
+		$cek_email = $this->Mlogin->cek_user_email($receiver);
+		$cek_jml = $cek_email['jml'];
 
-		$kirim_email = $this->Mlogin->sendEmail($receiver);
+		if ($cek_jml == 0)
+		{
+			$this->session->set_flashdata('msg', '<div class="alert alert-danger">Maaf, email anda tidak terdaftar</div>');
+			// $data['hasil'] = "gagal";
+		}
+		else
+		{
+			$kirim_email = $this->Mlogin->sendEmail($receiver);
 
-		if ($kirim_email) {
-			$this->session->set_flashdata('msg', '<div class="alert alert-info">Link Reset Password Telah dikirim. Silahkan Cek Email Anda</div>');
-			$data['hasil'] = "gagal";
+			if ($kirim_email)
+			{
+				$this->session->set_flashdata('msg', '<div class="alert alert-info">Link Reset Password Telah dikirim. Silahkan Cek Email Anda</div>');
+				
+			}
 		}
 
-		$this->load->view('backend/login',$data);
-		
+		redirect('logincms/login');
 	}
 
 	function set_password()

@@ -85,6 +85,15 @@ class Mlogin extends CI_Model {
         return $status;
     }
 
+    function cek_user_email($receiver)
+    {
+        $this->db->select('count(user_email) AS jml');
+        $this->db->where('user_email', $receiver);
+        $cek_jml = $this->db->get('_user');
+
+        return $cek_jml->row_array;
+    }
+
 }
 
 ?>
