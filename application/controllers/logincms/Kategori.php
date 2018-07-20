@@ -50,7 +50,7 @@ class Kategori extends MY_Controller
 	            redirect('logincms/kategori', 'refresh');
             }
             else{
-            	$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gambar gagal ditambahkan. Ukuran file lebih dari 1 MB</div>');
+            	$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gambar gagal ditambahkan. Ukuran file lebih dari 1 MB atau file tidak ada</div>');
             	redirect('logincms/kategori', 'refresh');
             }
 		}
@@ -85,9 +85,13 @@ class Kategori extends MY_Controller
 	{
 		$cek = $this->Mkategori->cek_isi_kategori($category_id);
 		$jumlah_artikel = $cek['jml'];
-		if ($jumlah_artikel > 0) {
+		echo "<pre>";
+		print_r($jumlah_artikel);
+		echo "</pre>";
+
+		if ($jumlah_artikel == 0) {
 			$status = $this->Mkategori->delete($category_id);
-			
+
 			if ($status == "berhasil")
 			{
 				$this->session->set_flashdata('msg', '<div class="alert alert-info">Data berhasil dihapus</div>');
@@ -98,6 +102,10 @@ class Kategori extends MY_Controller
 				$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gagal menghapus kategori</div>');
 				redirect('logincms/kategori', 'refresh');
 			}
+		}
+		else{
+			$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gagal menghapus. Kategori digunakan dalam artikel</div>');
+			redirect('logincms/kategori', 'refresh');
 		}
 
 	}

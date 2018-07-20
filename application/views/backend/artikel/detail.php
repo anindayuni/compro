@@ -104,7 +104,7 @@
                                     <div class="form-group">
                                         <label>: </label>
                                         <?php foreach ($gambar as $key => $gbr) : ?>
-                                        <img src="<?php echo base_url('gambar/article/').$gbr['photo_img']; ?>" width="150" height="150">
+                                        <img src="<?php if($gbr['photo_img']==null){ echo base_url('gambar/article/no-image.jpg'); } else {echo base_url('gambar/article/').$gbr['photo_img']; } ?>" width="150" height="150">
                                     <?php endforeach; ?>
                                     </div>
                                 </div>

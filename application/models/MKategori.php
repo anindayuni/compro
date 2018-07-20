@@ -50,7 +50,7 @@ class Mkategori extends CI_Model
         }
         else
         {
-            $data['category_photo'] = 'no-image.jpg';
+            $data['category_photo'] = '';
             $status = "gagal";
         }
 
@@ -113,29 +113,29 @@ class Mkategori extends CI_Model
         if (!empty($gambar)) {
             unlink("./gambar/category/".$gambar);
         }
-        elseif ($gambar != "no-image.jpg") {
-            unlink("./gambar/category/".$gambar);
-        }
         
         $this->db->where('category_id', $category_id);
         $hapus = $this->db->delete('_category');
 
-        if ($hapus) {
+        if ($hapus)
+        {
             $status = "berhasil";
         }
-        else{
+        else
+        {
             $status = "gagal";
         }
 
         return $status;
     }
 
-    public function cek_isi_kategori($category_id){
+    public function cek_isi_kategori($category_id)
+    {
         $this->db->select('count(article_id_category) AS jml');
         $this->db->where('article_id_category', $category_id);
         $jml = $this->db->get('_article');
 
-        return $jml->result_array();
+        return $jml->row_array();
     }
     
 }
