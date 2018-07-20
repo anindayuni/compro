@@ -83,18 +83,23 @@ class Kategori extends MY_Controller
 
 	public function delete($category_id)
 	{
-		$status = $this->Mkategori->delete($category_id);
+		$cek = $this->Mkategori->cek_isi_kategori($category_id);
+		$jumlah_artikel = $cek['jml'];
+		if ($jumlah_artikel > 0) {
+			$status = $this->Mkategori->delete($category_id);
+			
+			if ($status == "berhasil")
+			{
+				$this->session->set_flashdata('msg', '<div class="alert alert-info">Data berhasil dihapus</div>');
+				redirect('logincms/kategori', 'refresh');
+			}
+			else
+			{
+				$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gagal menghapus kategori</div>');
+				redirect('logincms/kategori', 'refresh');
+			}
+		}
 
-		if ($status == "berhasil")
-		{
-			$this->session->set_flashdata('msg', '<div class="alert alert-info">Data berhasil dihapus</div>');
-			redirect('logincms/kategori', 'refresh');
-		}
-		else
-		{
-			$this->session->set_flashdata('msg', '<div class="alert alert-warning">Gagal menghapus kategori</div>');
-			redirect('logincms/kategori', 'refresh');
-		}
 	}
 
 }

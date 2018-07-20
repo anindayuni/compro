@@ -96,6 +96,7 @@ class Martikel extends CI_Model
 
         $config['upload_path']      = './gambar/article';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
+        $config['max_size']    = '1024';
 
         // panggil library upload
         $this->load->library('upload', $config);
@@ -153,6 +154,7 @@ class Martikel extends CI_Model
 
         $config['upload_path']      = './gambar/article';
         $config['allowed_types']    = 'gif|jpg|png|jpeg';
+        $config['max_size']    = '1024';
 
         // panggil library upload
         $this->load->library('upload', $config);
