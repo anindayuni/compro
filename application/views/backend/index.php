@@ -40,7 +40,6 @@
 </head>
 <body class="theme-purple">
 
-
 	<?php echo $header; ?>
 	<?php echo $sidebar; ?>
 	<?php echo $content; ?>
