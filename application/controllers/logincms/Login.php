@@ -50,7 +50,7 @@ Class Login extends CI_Controller
 		$receiver = $input['user_email'];
 		$cek_email = $this->Mlogin->cek_user_email($receiver);
 		$cek_jml = $cek_email['jml'];
-
+		
 		if ($cek_jml == 0)
 		{
 			$this->session->set_flashdata('msg', '<div class="alert alert-danger">Maaf, email anda tidak terdaftar</div>');

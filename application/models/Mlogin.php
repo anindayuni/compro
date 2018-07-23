@@ -91,7 +91,7 @@ class Mlogin extends CI_Model {
         $this->db->where('user_email', $receiver);
         $cek_jml = $this->db->get('_user');
 
-        return $cek_jml->row_array;
+        return $cek_jml->row_array();
     }
 
 }
